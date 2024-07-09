@@ -5,9 +5,8 @@ import { PrayerTimesData } from "@/lib/definitions";
 
 const typedPrayerTimes: PrayerTimesData = prayerTimes as PrayerTimesData;
 
-export function fetchPrayerTimes(date: String) {
-  const today = typedPrayerTimes[date];
-  return today;
+export function fetchPrayerTimes(date: string): PrayerTimesData[string] {
+  return typedPrayerTimes[date];
 }
 
 function getCurrentMonthAbbreviation() {

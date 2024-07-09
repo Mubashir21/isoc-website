@@ -1,6 +1,4 @@
-import { BellRing, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,10 +9,11 @@ import {
 } from "@/components/ui/card";
 import { DatePicker } from "@/components/ui/date-picker";
 import { fetchPrayerTimes, getDate } from "@/lib/utils";
+import { CountDown } from "@/components/ui/countdown";
 
 type CardProps = React.ComponentProps<typeof Card>;
 
-export function CardDemo({ className, ...props }: CardProps) {
+export function PrayerCard({ className, ...props }: CardProps) {
   const date = getDate();
   const today = fetchPrayerTimes(date);
   return (
@@ -40,16 +39,13 @@ export function CardDemo({ className, ...props }: CardProps) {
           {Object.entries(today.prayerTimes).map(([key, timing], index) => (
             <div key={index} className="flex justify-between">
               <p>{key}</p>
-              <p>{timing}</p>
+              <p>{timing as string}</p>
             </div>
           ))}
         </div>
       </CardContent>
       <CardFooter>
-        <div className="flex justify-between w-full">
-          <p>Time to next prayer:</p>
-          <p>04:30</p>
-        </div>
+        <CountDown />
       </CardFooter>
     </Card>
   );

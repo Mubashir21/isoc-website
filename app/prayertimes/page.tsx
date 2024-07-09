@@ -1,12 +1,12 @@
-import { CardDemo } from "@/components/ui/carddemo";
+import { PrayerCard } from "@/components/ui/prayercard";
 import { Divide } from "lucide-react";
-import { fetchPrayerTimes, getDate } from "@/lib/utils";
+import { format } from "date-fns";
 
-export default function PrayerTimes() {
+export default async function PrayerTimes() {
   return (
     <main className="h-full">
       <div className="flex h-full justify-center items-center">
-        <CardDemo />
+        <PrayerCard />
       </div>
     </main>
   );
