@@ -1,15 +1,15 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import prayerTimes from "@/public/data/prayerTimes.json";
-import { PrayerTimesData } from "@/lib/definitions";
+import { PrayerTimesJSON, PrayerTimesData } from "@/lib/definitions";
 
-const typedPrayerTimes: PrayerTimesData = prayerTimes as PrayerTimesData;
+const typedPrayerTimes: PrayerTimesJSON = prayerTimes as PrayerTimesJSON;
 
-export function fetchPrayerTimes(date: string): PrayerTimesData[string] {
+export function fetchPrayerTimes(date: string): PrayerTimesJSON[string] {
   return typedPrayerTimes[date];
 }
 
-function getCurrentMonthAbbreviation() {
+function getCurrentMonthAbbreviation(date: Date) {
   const monthNames = [
     "Jan",
     "Feb",
@@ -24,18 +24,34 @@ function getCurrentMonthAbbreviation() {
     "Nov",
     "Dec",
   ];
-  const date = new Date();
   const monthIndex = date.getMonth();
   return monthNames[monthIndex];
 }
 
-export function getDate() {
-  const now = new Date();
+export function getDate(now: Date) {
   const year = now.getFullYear().toString().slice(-2);
   const day = String(now.getDate());
 
-  const formattedDate = `${day} ${getCurrentMonthAbbreviation()} ${year}`;
+  const formattedDate = `${day} ${getCurrentMonthAbbreviation(now)} ${year}`;
   return formattedDate;
+}
+
+export function getNextPrayerTime(now: Date, data: PrayerTimesData) {
+  const prayerTimes = data.prayerTimes;
+  const today = new Date(now.toDateString()); // Start of today
+  const times = Object.entries(prayerTimes).map(([key, timing]) => {
+    const [hours, minutes] = timing.split(":").map(Number);
+    const prayerTime = new Date(today);
+    prayerTime.setHours(hours, minutes, 0, 0);
+    return prayerTime;
+  });
+  for (let i = 0; i < times.length; i++) {
+    if (times[i] > now) {
+      return times[i];
+    }
+  }
+  // If all prayer times are in the past, return the first prayer time of the next day
+  return new Date(times[0].getTime() + 24 * 60 * 60 * 1000);
 }
 
 export function cn(...inputs: ClassValue[]) {
