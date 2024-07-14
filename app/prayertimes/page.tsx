@@ -7,7 +7,7 @@ export default async function PrayerTimes() {
   return (
     <main className="h-full">
       <div className="flex h-full justify-center items-center">
-        <PrayerCard initialTime={now} />
+        <PrayerCard />
       </div>
     </main>
   );

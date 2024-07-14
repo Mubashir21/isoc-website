@@ -11,13 +11,12 @@ import {
 } from "@/components/ui/card";
 import DatePicker from "@/components/ui/date-picker";
 import { fetchPrayerTimes, getDate, getNextPrayerTime } from "@/lib/utils";
-import CountDown from "@/components/ui/countdown";
 import { useState, useEffect } from "react";
 
 type CardProps = React.ComponentProps<typeof Card>;
 
-export function PrayerCard({ initialTime, className, ...props }: CardProps) {
-  const [time, setTime] = useState(new Date(initialTime));
+export function PrayerCard({ className, ...props }: CardProps) {
+  const [time, setTime] = useState(new Date());
   const [date, setDate] = useState(getDate(time));
   const [prayerTimes, setPrayerTimes] = useState(fetchPrayerTimes(date));
   const [nextPrayerTime, setNextPrayerTime] = useState(
@@ -35,6 +34,7 @@ export function PrayerCard({ initialTime, className, ...props }: CardProps) {
         if (newDate !== date) {
           setDate(newDate);
           setPrayerTimes(fetchPrayerTimes(newDate));
+          setNextPrayerTime(getNextPrayerTime(time, prayerTimes));
         }
 
         return newTime;
@@ -44,52 +44,31 @@ export function PrayerCard({ initialTime, className, ...props }: CardProps) {
     return () => clearInterval(timer); // Clean up the interval on component unmount
   }, [date]);
 
-  // Update next prayer time whenever the current time or prayer times change
-  useEffect(() => {
-    if (prayerTimes) {
-      setNextPrayerTime(getNextPrayerTime(time, prayerTimes));
-    }
-  }, [prayerTimes]);
-
   // Update countdown timer
   useEffect(() => {
     const countdownTimer = setInterval(() => {
       if (nextPrayerTime) {
-        const now = time;
-        const timeDifference = nextPrayerTime - now;
+        const now = new Date();
+        const timeDifference = nextPrayerTime.getTime() - now.getTime();
         if (timeDifference > 0) {
-          const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-          const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
-          const seconds = Math.floor((timeDifference / 1000) % 60);
-          setCountdown(`${hours}h ${minutes}m ${seconds}s`);
+          const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24)
+            .toString()
+            .padStart(2, "0");
+          const minutes = Math.floor((timeDifference / (1000 * 60)) % 60)
+            .toString()
+            .padStart(2, "0");
+          const seconds = Math.floor((timeDifference / 1000) % 60)
+            .toString()
+            .padStart(2, "0");
+          setCountdown(`${hours}:${minutes}:${seconds}`);
         } else {
-          setCountdown("Time for the next prayer!");
+          setNextPrayerTime(getNextPrayerTime(time, prayerTimes));
         }
       }
     }, 1000);
 
     return () => clearInterval(countdownTimer); // Clean up the interval on component unmount
-  }, [nextPrayerTime, time]);
-
-  // useEffect(() => {
-  //   const updateCountdown = () => {
-  //     const timeDiff = nextPrayerTime - now;
-
-  //     if (timeDiff <= 0) {
-  //       setNextPrayerTime(getNextPrayerTime(time, prayerTimes));
-  //       return;
-  //     }
-
-  //     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-  //     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  //     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-  //     setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
-  //   };
-
-  //   const intervalId = setInterval(updateCountdown, 1000);
-  //   return () => clearInterval(intervalId);
-  // }, [nextPrayerTime, prayerTimes]);
+  }, [nextPrayerTime]);
 
   return (
     <Card className={cn("w-[380px]", className)} {...props}>
@@ -122,32 +101,11 @@ export function PrayerCard({ initialTime, className, ...props }: CardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        {/* <CountDown
-        // initialTime={format(now.getTimezoneOffset(), "yyyy-MM-dd HH:mm:ss")}
-        // initialTime={now}
-        /> */}
-        {countdown}
+        <div className="flex justify-between w-full">
+          <p>Time to next prayer:</p>
+          <p>{countdown}</p>
+        </div>
       </CardFooter>
     </Card>
   );
 }
-
-// function CountDown({ time }) {
-//   const [time, setTime] = useState(new Date(initialTime));
-
-//   useEffect(() => {
-//     const intervalId = setInterval(() => {
-//       setTime(new Date());
-//     }, 1000);
-//     // console.log(time);
-
-//     return () => clearInterval(intervalId);
-//   }, [initialTime]);
-
-//   return (
-//     <div className="flex justify-between w-full">
-//       <p>Time to next prayer:</p>
-//       <p>{time.toLocaleTimeString()}</p>
-//     </div>
-//   );
-// }
