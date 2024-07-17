@@ -4,15 +4,17 @@ export type PrayerTimesJSON = {
 };
 
 export type PrayerTimesData = {
-  prayerTimes: {
-    fajr: string;
-    dhuhr: string;
-    asr: string;
-    maghrib: string;
-    isha: string;
-  };
+  prayerTimes: PrayerTimes;
   info: {
     hijri: string;
     day: string;
   };
+};
+
+export type PrayerTimes = {
+  Fajr: string;
+  Dhuhr: string;
+  Asr: string;
+  Maghrib: string;
+  Isha: string;
 };
