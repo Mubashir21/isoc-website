@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import prayerTimes from "@/public/data/prayerTimes.json";
+import prayerTimes from "../public/data/prayertimes.json";
 import { PrayerTimesJSON, PrayerTimesData } from "@/lib/definitions";
 
 const typedPrayerTimes: PrayerTimesJSON = prayerTimes as PrayerTimesJSON;
