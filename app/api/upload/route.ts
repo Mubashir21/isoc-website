@@ -42,8 +42,10 @@
 //   }
 // }
 
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json({ message: "File uploaded successfully" });
+export async function POST(request: Request) {
+  const data = await request.json();
+  // Your file upload logic here, e.g., saving the file to a storage service
+  return NextResponse.json({ message: "File uploaded successfully" });
 }
