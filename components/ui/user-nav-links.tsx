@@ -23,7 +23,7 @@ const links = [
   { name: "Events", href: "/events", icon: UserGroupIcon },
 ];
 
-export default function NavLinks() {
+export function UserNavLinks() {
   const pathname = usePathname();
   return (
     <>
