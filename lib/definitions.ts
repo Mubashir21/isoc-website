@@ -18,3 +18,24 @@ export type PrayerTimes = {
   Maghrib: string;
   Isha: string;
 };
+
+export type EventsTable = {
+  id: string;
+  created_by: string;
+  title: string;
+  datetime: string;
+  pic_url: string;
+  location: string;
+  speaker: number;
+  updated_at: string;
+};
+
+export type EventsForm = {
+  id: string;
+  created_by: string;
+  title: string;
+  datetime: string;
+  location: string;
+  speaker: string;
+  pic_url: string;
+};
