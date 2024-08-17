@@ -78,3 +78,31 @@ export async function fetchEventById(id: string) {
     throw new Error("Failed to fetch event.");
   }
 }
+
+export async function fetchFutureEvents() {
+  const currentDateTime = new Date().toISOString(); // Get current datetime in ISO format
+
+  try {
+    const { rows } = await sql<EventsTable>`
+      SELECT
+        events.id,
+        events.title,
+        events.location,
+        events.datetime,
+        events.pic_url,
+        events.speaker,
+        events.updated_at,
+        users.name AS created_by
+      FROM events
+      JOIN users ON events.created_by = users.id
+      WHERE
+        events.datetime >= ${currentDateTime}
+        ORDER BY events.datetime ASC  -- Order by upcoming events
+    `;
+
+    return rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch future events.");
+  }
+}

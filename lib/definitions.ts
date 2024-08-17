@@ -39,3 +39,11 @@ export type EventsForm = {
   speaker: string;
   pic_url: string;
 };
+
+export type EventCard = {
+  title: string;
+  speaker: string;
+  location: string;
+  datetime: string;
+  pic_url: string;
+};

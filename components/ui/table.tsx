@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { UpdateEvent, DeleteEvent } from "@/components/ui/events-edit";
-import { formatDateToLocal } from "@/lib/utils";
+import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
 import { fetchFilteredEvents } from "@/lib/data";
 
 export default async function EventsTable({
@@ -41,6 +41,7 @@ export default async function EventsTable({
                   <div>
                     <p className="text-xl font-medium">{event.location}</p>
                     <p>{formatDateToLocal(event.datetime)}</p>
+                    <p>{formatTimeTo24Hour(event.datetime)}</p>
                     <p>{event.created_by}</p>
                   </div>
                   <div className="flex justify-end gap-2">
@@ -62,6 +63,9 @@ export default async function EventsTable({
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
                   Location
+                </th>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Time
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
                   Date
@@ -100,6 +104,9 @@ export default async function EventsTable({
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {event.location}
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-3">
+                    {formatTimeTo24Hour(event.datetime)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {formatDateToLocal(event.datetime)}
