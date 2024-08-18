@@ -20,7 +20,7 @@ const links = [
     href: "/prayertimes",
     icon: MosqueIcon,
   },
-  { name: "Events", href: "/events", icon: UserGroupIcon },
+  { name: "Events", href: "/events/future", icon: UserGroupIcon },
 ];
 
 export function UserNavLinks() {

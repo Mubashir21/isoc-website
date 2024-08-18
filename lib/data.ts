@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import { EventsTable, EventsForm } from "./definitions";
+import { EventsTable, EventsForm, AdminField } from "./definitions";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -104,5 +104,51 @@ export async function fetchFutureEvents() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch future events.");
+  }
+}
+
+export async function fetchPastEvents() {
+  const currentDateTime = new Date().toISOString(); // Get current datetime in ISO format
+
+  try {
+    const { rows } = await sql<EventsTable>`
+      SELECT
+        events.id,
+        events.title,
+        events.location,
+        events.datetime,
+        events.pic_url,
+        events.speaker,
+        events.updated_at,
+        users.name AS created_by
+      FROM events
+      JOIN users ON events.created_by = users.id
+      WHERE
+        events.datetime < ${currentDateTime}
+        ORDER BY events.datetime ASC
+    `;
+
+    return rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch past events.");
+  }
+}
+
+export async function fetchAdmins() {
+  try {
+    const data = await sql<AdminField>`
+      SELECT
+        id,
+        name
+      FROM users
+      ORDER BY name ASC
+    `;
+
+    const admins = data.rows;
+    return admins;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch all customers.");
   }
 }

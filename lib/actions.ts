@@ -15,7 +15,7 @@ const FormSchema = z.object({
   speaker: z.string().min(1, { message: "Speaker is required." }),
   pic_url: z.string().url({ message: "Please enter a valid URL." }),
   description: z.string(),
-  created_by: z.string().min(1, { message: "Creator is required." }),
+  created_by: z.string().min(1, { message: "Admin is required." }),
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
 });

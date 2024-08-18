@@ -47,3 +47,8 @@ export type EventCard = {
   datetime: string;
   pic_url: string;
 };
+
+export type AdminField = {
+  id: string;
+  name: string;
+};

@@ -4,9 +4,9 @@ import Link from "next/link";
 const links = [
   {
     name: "Future Events",
-    href: "/events",
+    href: "/events/future",
   },
-  { name: "Past Events", href: "/events" },
+  { name: "Past Events", href: "/events/past" },
 ];
 
 export function EventsToggle() {

@@ -6,7 +6,7 @@ import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
 
 type CardProps = React.ComponentProps<typeof Card>;
 
-export function FutureEventsCard({
+export function EventsCard({
   event,
   className,
   ...props
