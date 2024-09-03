@@ -67,7 +67,8 @@ export async function fetchEventById(id: string) {
         events.datetime,
         events.location,
         events.speaker,
-        events.pic_url
+        events.pic_url,
+        events.description
       FROM events
       WHERE events.id = ${id};
     `;

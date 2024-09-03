@@ -13,7 +13,9 @@ const FormSchema = z.object({
   datetime: z.string().min(1, { message: "Date and time are required." }),
   location: z.string().min(1, { message: "Location is required." }),
   speaker: z.string().min(1, { message: "Speaker is required." }),
-  pic_url: z.string().url({ message: "Please enter a valid URL." }),
+  pic_url: z.any().refine((file) => file instanceof File && file.size > 0, {
+    message: "Please upload a valid image file.",
+  }),
   description: z.string(),
   created_by: z.string().min(1, { message: "Admin is required." }),
   created_at: z.date().optional(),
@@ -51,7 +53,7 @@ export async function createEvent(prevState: State, formData: FormData) {
     created_by: formData.get("created_by"),
   });
 
-  // If form validation fails, return errors early. Otherwise, continue.
+  // If form validation fails, return errors early.
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
@@ -69,25 +71,53 @@ export async function createEvent(prevState: State, formData: FormData) {
     description,
     created_by,
   } = validatedFields.data;
+
   const malaysiaTime = new Date().toLocaleString("en-US", {
     timeZone: "Asia/Kuala_Lumpur",
   });
   const formattedDate = new Date(malaysiaTime).toISOString();
 
-  // Insert data into the database
+  let imageUrl: string | undefined;
+  if (typeof pic_url === "object" && pic_url instanceof File) {
+    // Handle file upload
+    const imageFormData = new FormData();
+    imageFormData.append("file", pic_url);
+    try {
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+      const uploadResponse = await fetch(`${baseUrl}/api/upload`, {
+        method: "POST",
+        body: imageFormData,
+      });
+
+      const uploadResult = await uploadResponse.json();
+      if (uploadResponse.ok) {
+        imageUrl = uploadResult.url;
+      } else {
+        console.error("File Upload Error:", uploadResult.error);
+        return { message: "File Upload Error: Failed to upload image." };
+      }
+    } catch (error) {
+      console.error("Network Error:", error);
+      return { message: "File Upload Error: Failed to upload image." };
+    }
+  } else {
+    imageUrl = pic_url as string; // In case it's already a URL
+  }
+
+  // // Insert data into the database
   try {
     await sql`
      INSERT INTO events (title, datetime, location, speaker, pic_url, description, created_by, created_at, updated_at)
-    VALUES (${title}, ${datetime}, ${location}, ${speaker}, ${pic_url}, ${description}, ${created_by}, ${formattedDate}, ${formattedDate})
+    VALUES (${title}, ${datetime}, ${location}, ${speaker}, ${imageUrl}, ${description}, ${created_by}, ${formattedDate}, ${formattedDate})
   `;
   } catch (error) {
-    // If a database error occurs, return a more specific error.
+    console.error("Database Error:", error);
     return {
       message: "Database Error: Failed to Create Event.",
     };
   }
 
-  // Revalidate the cache for the invoices page and redirect the user.
+  // Revalidate the cache for the events page and redirect the user.
   revalidatePath("/admin/events");
   redirect("/admin/events");
 }
@@ -97,10 +127,13 @@ const UpdateEvent = FormSchema.omit({
   id: true,
   created_at: true,
   updated_at: true,
+}).extend({
+  pic_url: z.any().optional(),
 });
 
 export async function updateEvent(
   id: string,
+  prev_pic_url: string,
   prevState: State,
   formData: FormData,
 ) {
@@ -121,19 +154,68 @@ export async function updateEvent(
     };
   }
 
-  const {
-    title,
-    datetime,
-    location,
-    speaker,
-    pic_url,
-    description,
-    created_by,
-  } = validatedFields.data;
+  const { title, datetime, location, speaker, description, created_by } =
+    validatedFields.data;
   const malaysiaTime = new Date().toLocaleString("en-US", {
     timeZone: "Asia/Kuala_Lumpur",
   });
   const formattedDate = new Date(malaysiaTime).toISOString();
+
+  // Handle pic_url: if a new file is provided, upload it; otherwise, use the previous URL
+  let pic_url = prev_pic_url;
+  const newPicFile = formData.get("pic_url") as File;
+
+  if (newPicFile && newPicFile.size > 0) {
+    if (prev_pic_url) {
+      try {
+        const deleteResponse = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ url: prev_pic_url }),
+          },
+        );
+
+        const deleteResult = await deleteResponse.json();
+        if (!deleteResponse.ok) {
+          console.error("File Deletion Error:", deleteResult.error);
+          return {
+            message: "File Deletion Error: Failed to delete old image.",
+          };
+        }
+      } catch (error) {
+        console.error("Network Error:", error);
+        return { message: "File Deletion Error: Failed to delete old image." };
+      }
+    }
+
+    // Step 2: Upload the new image
+    const imageFormData = new FormData();
+    imageFormData.append("file", newPicFile);
+    try {
+      const uploadResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/upload`,
+        {
+          method: "POST",
+          body: imageFormData,
+        },
+      );
+
+      const uploadResult = await uploadResponse.json();
+      if (uploadResponse.ok) {
+        pic_url = uploadResult.url;
+      } else {
+        console.error("File Upload Error:", uploadResult.error);
+        return { message: "File Upload Error: Failed to upload image." };
+      }
+    } catch (error) {
+      console.error("Network Error:", error);
+      return { message: "File Upload Error: Failed to upload image." };
+    }
+  }
 
   try {
     await sql`
@@ -149,7 +231,31 @@ export async function updateEvent(
   redirect("/admin/events");
 }
 
-export async function deleteEvent(id: string) {
+export async function deleteEvent(id: string, pic_url: string) {
+  try {
+    const deleteResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: pic_url }),
+      },
+    );
+
+    const deleteResult = await deleteResponse.json();
+    if (!deleteResponse.ok) {
+      console.error("File Deletion Error:", deleteResult.error);
+      return {
+        message: "File Deletion Error: Failed to delete old image.",
+      };
+    }
+  } catch (error) {
+    console.error("Network Error:", error);
+    return { message: "File Deletion Error: Failed to delete old image." };
+  }
+
   try {
     await sql`DELETE FROM events WHERE id = ${id}`;
     revalidatePath("/admin/events");

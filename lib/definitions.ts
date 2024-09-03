@@ -38,6 +38,7 @@ export type EventsForm = {
   location: string;
   speaker: string;
   pic_url: string;
+  description: string;
 };
 
 export type EventCard = {

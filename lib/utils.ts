@@ -128,3 +128,8 @@ export const formatTimeTo24Hour = (
   const formatter = new Intl.DateTimeFormat(locale, options);
   return formatter.format(date);
 };
+
+export const formatDateTime = (datetime: string): string => {
+  const date = new Date(datetime);
+  return date.toISOString().slice(0, 16);
+};

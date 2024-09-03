@@ -120,7 +120,7 @@ export default async function EventsTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateEvent id={event.id} />
-                      <DeleteEvent id={event.id} />
+                      <DeleteEvent id={event.id} pic_url={event.pic_url} />
                     </div>
                   </td>
                 </tr>

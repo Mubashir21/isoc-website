@@ -17,7 +17,7 @@ export function CreateEvent() {
 export function UpdateEvent({ id }: { id: string }) {
   return (
     <Link
-      href={`/dashboard/invoices/${id}/edit`}
+      href={`/admin/events/${id}/edit`}
       className="rounded-md border p-2 hover:bg-gray-100"
     >
       <PencilIcon className="w-5" />
@@ -25,8 +25,8 @@ export function UpdateEvent({ id }: { id: string }) {
   );
 }
 
-export function DeleteEvent({ id }: { id: string }) {
-  const deleteEventeWithId = deleteEvent.bind(null, id);
+export function DeleteEvent({ id, pic_url }: { id: string; pic_url: string }) {
+  const deleteEventeWithId = deleteEvent.bind(null, id, pic_url);
 
   return (
     <form action={deleteEventeWithId}>
