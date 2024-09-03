@@ -30,7 +30,7 @@ function getCurrentMonthAbbreviation(date: Date) {
 
 export function getDate(now: Date) {
   const year = now.getFullYear().toString();
-  const day = String(now.getDate());
+  const day = now.getDate().toString().padStart(2, "0");
 
   const formattedDate = `${day} ${getCurrentMonthAbbreviation(now)} ${year}`;
   return formattedDate;
