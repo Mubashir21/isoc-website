@@ -46,7 +46,7 @@ export default async function EventsTable({
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdateEvent id={event.id} />
-                    <DeleteEvent id={event.id} />
+                    <DeleteEvent id={event.id} pic_url={event.pic_url} />
                   </div>
                 </div>
               </div>

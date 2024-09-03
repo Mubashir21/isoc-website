@@ -39,6 +39,7 @@ export type State = {
     created_by?: string[];
   };
   message?: string | null;
+  loading?: boolean;
 };
 
 export async function createEvent(prevState: State, formData: FormData) {

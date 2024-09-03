@@ -3,7 +3,7 @@
 import { AdminField, EventsForm } from "@/lib/definitions";
 import { CalendarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, State } from "@/lib/actions";
 import { useFormState } from "react-dom";
 import { formatDateTime } from "@/lib/utils";
@@ -270,7 +270,7 @@ export default function EditEventForm({
         >
           Cancel
         </Link>
-        <Button type="submit">Edit Event</Button>
+        <SubmitButton />
       </div>
     </form>
   );

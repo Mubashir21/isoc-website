@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import SubmitButton from "@/components/ui/form-submit-button";
 import { createEvent, State } from "@/lib/actions";
 import { useFormState } from "react-dom";
 import { AdminField } from "@/lib/definitions";
 
 export default function Form({ admins }: { admins: AdminField[] }) {
-  const initialState: State = { message: null, errors: {} };
+  const initialState: State = { message: null, errors: {}, loading: false };
   const [state, formAction] = useFormState(createEvent, initialState);
-  console.log(state);
 
   return (
     <form action={formAction}>
@@ -198,7 +197,7 @@ export default function Form({ admins }: { admins: AdminField[] }) {
         >
           Cancel
         </Link>
-        <Button type="submit">Create Event</Button>
+        <SubmitButton />
       </div>
     </form>
   );
