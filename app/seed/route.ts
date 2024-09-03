@@ -74,3 +74,11 @@
 //     return Response.json({ error }, { status: 500 });
 //   }
 // }
+
+import { NextResponse } from "next/server";
+
+export async function POST(request: Request) {
+  const data = await request.json();
+  // Your file upload logic here, e.g., saving the file to a storage service
+  return NextResponse.json({ message: "File uploaded successfully" });
+}
