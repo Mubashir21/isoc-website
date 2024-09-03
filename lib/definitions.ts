@@ -26,7 +26,7 @@ export type EventsTable = {
   datetime: string;
   pic_url: string;
   location: string;
-  speaker: number;
+  speaker: string;
   updated_at: string;
 };
 
