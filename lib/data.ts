@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import { EventsTable, EventsForm, AdminField } from "./definitions";
+import { EventsTable, EventsForm, AdminField, EventCard } from "./definitions";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -84,7 +84,7 @@ export async function fetchFutureEvents() {
   const currentDateTime = new Date().toISOString(); // Get current datetime in ISO format
 
   try {
-    const { rows } = await sql<EventsTable>`
+    const { rows } = await sql<EventCard>`
       SELECT
         events.id,
         events.title,
@@ -93,6 +93,7 @@ export async function fetchFutureEvents() {
         events.pic_url,
         events.speaker,
         events.updated_at,
+        events.description,
         users.name AS created_by
       FROM events
       JOIN users ON events.created_by = users.id

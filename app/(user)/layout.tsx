@@ -12,7 +12,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full flex-none md:w-64">
         <SideNav isAdmin={false} />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      <div className="flex-grow p-5 md:overflow-y-auto lg:px-4 lg:py-4">
+        {children}
+      </div>
     </div>
   );
 }

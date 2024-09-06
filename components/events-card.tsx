@@ -3,6 +3,7 @@ import { Card, CardTitle, CardDescription } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { EventCard } from "@/lib/definitions";
 import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
+import Title from "./ui/event-detail-link";
 
 type CardProps = React.ComponentProps<typeof Card>;
 
@@ -28,7 +29,9 @@ export function EventsCard({
         </div>
         <div className="flex-auto flex flex-col justify-around py-2 px-5">
           <div>
-            <CardTitle>{event.title}</CardTitle>
+            <CardTitle>
+              <Title id={event.id} title={event.title} />
+            </CardTitle>
             <CardDescription className="leading-6">
               {event.speaker}
             </CardDescription>

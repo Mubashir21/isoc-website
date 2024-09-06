@@ -14,7 +14,7 @@ import MosqueIcon from "@/components/icons/mosque";
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: "Home", href: "/", icon: HomeIcon },
+  { name: "Home", href: "/home", icon: HomeIcon },
   {
     name: "Prayer Times",
     href: "/prayertimes",

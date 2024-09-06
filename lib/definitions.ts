@@ -42,11 +42,13 @@ export type EventsForm = {
 };
 
 export type EventCard = {
+  id: string;
   title: string;
   speaker: string;
   location: string;
   datetime: string;
   pic_url: string;
+  description: string;
 };
 
 export type AdminField = {
