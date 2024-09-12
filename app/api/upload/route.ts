@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from "cloudinary";
+import { v2 as cloudinary, UploadApiResponse } from "cloudinary";
 import { NextRequest, NextResponse } from "next/server";
 
 cloudinary.config({
@@ -33,19 +33,17 @@ export async function POST(request: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    const result = await new Promise<cloudinary.UploadApiResponse>(
-      (resolve, reject) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          { folder: "society_events" },
-          (error, result) => {
-            if (error) reject(error);
-            else resolve(result as cloudinary.UploadApiResponse);
-          },
-        );
+    const result = await new Promise<UploadApiResponse>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder: "society_events" },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result as UploadApiResponse);
+        },
+      );
 
-        uploadStream.end(buffer);
-      },
-    );
+      uploadStream.end(buffer);
+    });
 
     return NextResponse.json({
       message: "Upload successful",
@@ -60,11 +58,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
-// import { NextResponse } from "next/server";
-
-// export async function POST(request: Request) {
-//   const data = await request.json();
-//   // Your file upload logic here, e.g., saving the file to a storage service
-//   return NextResponse.json({ message: "File uploaded successfully" });
-// }
