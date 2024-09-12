@@ -28,6 +28,7 @@ export type EventsTable = {
   location: string;
   speaker: string;
   updated_at: string;
+  description: string;
 };
 
 export type EventsForm = {
