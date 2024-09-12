@@ -55,3 +55,10 @@ export type AdminField = {
   id: string;
   name: string;
 };
+
+export type Admin = {
+  id: string;
+  name: string;
+  username: string;
+  password: string;
+};

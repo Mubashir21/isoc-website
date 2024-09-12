@@ -10,20 +10,11 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import Image from "next/image";
-import MosqueIcon from "@/components/icons/mosque";
+import { SignOutButton } from "@clerk/nextjs"; // Import Clerk's SignOutButton
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
-const links = [
-  { name: "Events", href: "/admin/events", icon: BriefcaseIcon },
-  {
-    name: "Log Out",
-    href: "/logout",
-    icon: PowerIcon,
-  },
-  // { name: "Events", href: "/events", icon: UserGroupIcon },
-];
+const links = [{ name: "Events", href: "/admin/events", icon: BriefcaseIcon }];
 
 export function AdminNavLinks() {
   const pathname = usePathname();
@@ -47,6 +38,18 @@ export function AdminNavLinks() {
           </Link>
         );
       })}
+
+      {/* Add the SignOutButton for logout */}
+      <SignOutButton redirectUrl="/home">
+        <div
+          className={clsx(
+            "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+          )}
+        >
+          <PowerIcon className="w-6 text-black" />
+          <p className="hidden md:block">Log Out</p>
+        </div>
+      </SignOutButton>
     </>
   );
 }
