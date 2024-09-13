@@ -27,7 +27,7 @@ const CreateEvent = FormSchema.omit({
 });
 
 export type State = {
-  errors?: {
+  errors: {
     title?: string[];
     datetime?: string[];
     location?: string[];
@@ -36,11 +36,13 @@ export type State = {
     description?: string[];
     created_by?: string[];
   };
-  message?: string | null;
-  loading?: boolean;
+  message: string | null;
 };
 
-export async function createEvent(prevState: State, formData: FormData) {
+export async function createEvent(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
   // Validate form using Zod
   const validatedFields = CreateEvent.safeParse({
     title: formData.get("title"),
@@ -93,32 +95,41 @@ export async function createEvent(prevState: State, formData: FormData) {
         imageUrl = uploadResult.url;
       } else {
         console.error("File Upload Error:", uploadResult.error);
-        return { message: "File Upload Error: Failed to upload image." };
+        return {
+          errors: {},
+          message: "File Upload Error: Failed to upload image.",
+        };
       }
     } catch (error) {
       console.error("Network Error:", error);
-      return { message: "File Upload Error: Failed to upload image." };
+      return {
+        errors: {},
+        message: "File Upload Error: Failed to upload image.",
+      };
     }
   } else {
     imageUrl = pic_url as string; // In case it's already a URL
   }
 
-  // // Insert data into the database
   try {
     await sql`
      INSERT INTO events (title, datetime, location, speaker, pic_url, description, created_by, created_at, updated_at)
     VALUES (${title}, ${datetime}, ${location}, ${speaker}, ${imageUrl}, ${description}, ${created_by}, ${formattedDate}, ${formattedDate})
-  `;
+    `;
+
+    // Revalidate the cache for the events page and redirect the user.
+    revalidatePath("/admin/events");
+    redirect("/admin/events");
+
+    // This line will never be reached due to the redirect, but it's necessary for TypeScript
+    return { errors: {}, message: "Event created successfully" };
   } catch (error) {
     console.error("Database Error:", error);
     return {
+      errors: {},
       message: "Database Error: Failed to Create Event.",
     };
   }
-
-  // Revalidate the cache for the events page and redirect the user.
-  revalidatePath("/admin/events");
-  redirect("/admin/events");
 }
 
 // Use Zod to update the expected types
@@ -135,7 +146,7 @@ export async function updateEvent(
   prev_pic_url: string,
   prevState: State,
   formData: FormData,
-) {
+): Promise<State> {
   const validatedFields = UpdateEvent.safeParse({
     title: formData.get("title"),
     datetime: formData.get("datetime"),
@@ -182,12 +193,16 @@ export async function updateEvent(
         if (!deleteResponse.ok) {
           console.error("File Deletion Error:", deleteResult.error);
           return {
+            errors: {},
             message: "File Deletion Error: Failed to delete old image.",
           };
         }
       } catch (error) {
         console.error("Network Error:", error);
-        return { message: "File Deletion Error: Failed to delete old image." };
+        return {
+          errors: {},
+          message: "File Deletion Error: Failed to delete old image.",
+        };
       }
     }
 
@@ -208,11 +223,17 @@ export async function updateEvent(
         pic_url = uploadResult.url;
       } else {
         console.error("File Upload Error:", uploadResult.error);
-        return { message: "File Upload Error: Failed to upload image." };
+        return {
+          errors: {},
+          message: "File Upload Error: Failed to upload image.",
+        };
       }
     } catch (error) {
       console.error("Network Error:", error);
-      return { message: "File Upload Error: Failed to upload image." };
+      return {
+        errors: {},
+        message: "File Upload Error: Failed to upload image.",
+      };
     }
   }
 
@@ -222,12 +243,15 @@ export async function updateEvent(
       SET title = ${title}, datetime = ${datetime}, location = ${location}, speaker = ${speaker}, pic_url = ${pic_url}, description = ${description}, created_by = ${created_by}, updated_at = ${formattedDate}
       WHERE id = ${id}
     `;
-  } catch (error) {
-    return { message: "Database Error: Failed to Update Event." };
-  }
 
-  revalidatePath("/admin/events");
-  redirect("/admin/events");
+    revalidatePath("/admin/events");
+    redirect("/admin/events");
+
+    // This line will never be reached due to the redirect, but it's necessary for TypeScript
+    return { errors: {}, message: "Event updated successfully" };
+  } catch (error) {
+    return { errors: {}, message: "Database Error: Failed to Update Event." };
+  }
 }
 
 export async function deleteEvent(id: string, pic_url: string) {

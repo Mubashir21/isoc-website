@@ -4,11 +4,16 @@ import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { createEvent, State } from "@/lib/actions";
 import { useFormState } from "react-dom";
+// import { useActionState } from "react";
 import { AdminField } from "@/lib/definitions";
+import { useActionState } from "react";
 
 export default function Form({ admins }: { admins: AdminField[] }) {
-  const initialState: State = { message: null, errors: {}, loading: false };
-  const [state, formAction] = useFormState(createEvent, initialState);
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction, pending] = useActionState(
+    createEvent,
+    initialState,
+  );
 
   return (
     <form action={formAction}>

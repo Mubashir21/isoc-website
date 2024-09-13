@@ -5,7 +5,7 @@ import { CalendarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, State } from "@/lib/actions";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { formatDateTime } from "@/lib/utils";
 import { useState } from "react";
 
@@ -18,7 +18,10 @@ export default function EditEventForm({
 }) {
   const initialState: State = { message: null, errors: {} };
   const updateEventWithId = updateEvent.bind(null, event.id, event.pic_url);
-  const [state, formAction] = useFormState(updateEventWithId, initialState);
+  const [state, formAction, pending] = useActionState(
+    updateEventWithId,
+    initialState,
+  );
   const [newImage, setNewImage] = useState<File | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,36 +30,36 @@ export default function EditEventForm({
     }
   };
 
-  const handleSubmit = async (formData: FormData) => {
-    if (newImage) {
-      // If there's a new image, upload it to Cloudinary first
-      const imageData = new FormData();
-      imageData.append("file", newImage);
-      imageData.append("upload_preset", "your_cloudinary_upload_preset");
+  // const handleSubmit = async (formData: FormData) => {
+  //   if (newImage) {
+  //     // If there's a new image, upload it to Cloudinary first
+  //     const imageData = new FormData();
+  //     imageData.append("file", newImage);
+  //     imageData.append("upload_preset", "your_cloudinary_upload_preset");
 
-      try {
-        const res = await fetch(
-          "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload",
-          {
-            method: "POST",
-            body: imageData,
-          },
-        );
-        const data = await res.json();
-        formData.set("pic_url", data.secure_url);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        // Handle error (e.g., show error message to user)
-        return;
-      }
-    } else {
-      // If no new image, keep the existing pic_url
-      formData.set("pic_url", event.pic_url);
-    }
+  //     try {
+  //       const res = await fetch(
+  //         "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload",
+  //         {
+  //           method: "POST",
+  //           body: imageData,
+  //         },
+  //       );
+  //       const data = await res.json();
+  //       formData.set("pic_url", data.secure_url);
+  //     } catch (error) {
+  //       console.error("Error uploading image:", error);
+  //       // Handle error (e.g., show error message to user)
+  //       return;
+  //     }
+  //   } else {
+  //     // If no new image, keep the existing pic_url
+  //     formData.set("pic_url", event.pic_url);
+  //   }
 
-    // Now submit the form with potentially updated pic_url
-    formAction(formData);
-  };
+  //   // Now submit the form with potentially updated pic_url
+  //   formAction(formData);
+  // };
 
   return (
     <form action={formAction}>
