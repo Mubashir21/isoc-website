@@ -4,7 +4,9 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  MegaphoneIcon,
 } from "@heroicons/react/24/outline";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -21,6 +23,7 @@ const links = [
     icon: MosqueIcon,
   },
   { name: "Events", href: "/events/future", icon: UserGroupIcon },
+  { name: "Announcements", href: "/announcements", icon: MegaphoneIcon },
 ];
 
 export function UserNavLinks() {

@@ -1,5 +1,8 @@
+"use client";
 import { buttonVariants } from "@/components/ui/button";
+import clsx from "clsx";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -10,15 +13,24 @@ const links = [
 ];
 
 export function EventsToggle() {
+  const pathname = usePathname();
   return (
-    <div className="flex p-2 bg-slate-300 w-fit gap-2 rounded-md">
+    <div className="flex w-full p-2 bg-slate-300 gap-2 rounded-lg">
       {links.map((link) => (
         <Link
           key={link.name}
           href={link.href}
-          className={`${buttonVariants({ variant: "default" })}`}
+          className={clsx(buttonVariants({ variant: "default" }), "w-full", {
+            "bg-sky-100": pathname !== link.href,
+          })}
         >
-          {link.name}
+          <p
+            className={clsx("text-base", {
+              "text-blue-600": pathname !== link.href,
+            })}
+          >
+            {link.name}
+          </p>
         </Link>
       ))}
     </div>

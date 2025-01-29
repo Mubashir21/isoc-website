@@ -14,13 +14,17 @@ import Image from "next/image";
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
   const event = await fetchEventById(id);
+  const eventDate = new Date(event.datetime);
+  const currentDate = new Date();
+  const eventsHref =
+    eventDate < currentDate ? "/events/past" : "/events/future";
 
   return (
     <main>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/events/future">Events</BreadcrumbLink>
+            <BreadcrumbLink href={eventsHref}>Events</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

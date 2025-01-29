@@ -14,11 +14,11 @@ export function EventsCard({
 }: { event: EventCard } & CardProps) {
   return (
     <Card
-      className={cn("w-[390px] h-[490px] overflow-hidden", className)}
+      className={cn("w-full h-[600px] overflow-hidden", className)}
       {...props}
     >
-      <div className="flex flex-col h-[490px] w-[390px] overflow-hidden">
-        <div className="flex-none h-[380px] w-full overflow-hidden">
+      <div className="flex flex-col h-[600px] overflow-hidden">
+        <div className="flex-none h-[490px] w-full overflow-hidden">
           <Image
             src={event.pic_url}
             height={690}

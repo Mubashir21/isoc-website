@@ -1,0 +1,133 @@
+"use client";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import { linkSync } from "fs";
+
+const links = {
+  socials: [
+    {
+      name: "Brother's Instagram",
+      icon: InstagramIcon,
+      href: "https://www.instagram.com/unmisocbrothers/?hl=en",
+    },
+    {
+      name: "Sister's Instagram",
+      icon: InstagramIcon,
+      href: "https://www.instagram.com/unmisocsisters/?hl=en",
+    },
+    {
+      name: "Youtube Channel",
+      icon: YouTubeIcon,
+      href: "https://www.youtube.com/learnyourreligion",
+    },
+  ],
+  navigate: [
+    {
+      name: "Home",
+      href: "/home",
+    },
+    {
+      name: "Prayer Times",
+      href: "/prayertimes",
+    },
+    {
+      name: "Events",
+      href: "events/future",
+    },
+    {
+      name: "Announcements",
+      href: "/announcements",
+    },
+  ],
+  contribute: [
+    {
+      name: "Github Repository",
+      href: "https://github.com/Mubashir21/isoc-website",
+      icon: GitHubIcon,
+      description: "Help us improve!",
+    },
+  ],
+};
+
+export default function Footer() {
+  const pathname = usePathname();
+  return (
+    <footer className="flex flex-col gap-3">
+      <div>
+        <span className="block text-2xl font-semibold mb-3 text-blue-600">
+          Join Our Socials
+        </span>
+        <div className="flex flex-col gap-2">
+          {links.socials.map((link) => {
+            const LinkIcon = link.icon;
+            return (
+              <Link
+                className="flex hover:text-blue-600"
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkIcon />
+                <span className="mx-3 font-medium">{link.name}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <hr className="border-blue-600" />
+      <div>
+        <span className="block text-2xl font-semibold mb-3 text-blue-600">
+          Navigate
+        </span>
+        <div className="flex flex-col gap-2">
+          {links.navigate.map((link) => {
+            return (
+              <Link
+                className="flex hover:text-blue-600 text-md"
+                key={link.name}
+                href={link.href}
+              >
+                <span
+                  className={clsx(" font-medium", {
+                    underline: pathname == link.href,
+                  })}
+                >
+                  {link.name}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <hr className="border-blue-600" />
+      <div>
+        <span className="block text-2xl font-semibold mb-3 text-blue-600">
+          Contribute
+        </span>
+        <div className="flex flex-col gap-2">
+          {" "}
+          <Link
+            className="flex hover:text-blue-600"
+            key={links.contribute[0].name}
+            href={links.contribute[0].href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon />
+            <span className="mx-3 font-medium">
+              {links.contribute[0].description}
+            </span>
+          </Link>
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <p className="text-muted-foreground text-sm"> &#174; UNM ISOC 2025</p>
+      </div>
+    </footer>
+  );
+}

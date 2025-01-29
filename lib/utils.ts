@@ -1,12 +1,37 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import prayerTimes from "../public/data/prayertimes_2025.json";
-import { PrayerTimesJSON, PrayerTimesData } from "@/lib/definitions";
+import {
+  PrayerTimesJSON,
+  PrayerTimesData,
+  PrayerTimes,
+} from "@/lib/definitions";
 
 const typedPrayerTimes: PrayerTimesJSON = prayerTimes as PrayerTimesJSON;
 
 export function fetchPrayerTimes(date: string): PrayerTimesJSON[string] {
   return typedPrayerTimes[date];
+}
+
+export function fetchIqamaTimes(adhanTimes: PrayerTimes): PrayerTimes {
+  // Helper function to add minutes to a given time in "HH:mm" format
+  const addMinutes = (time: string, minutes: number): string => {
+    const [hours, mins] = time.split(":").map(Number);
+    const date = new Date();
+    date.setHours(hours, mins + minutes);
+    const newHours = date.getHours();
+    const newMinutes = date.getMinutes();
+    // Format as "HH:mm"
+    return `${String(newHours).padStart(2, "0")}:${String(newMinutes).padStart(2, "0")}`;
+  };
+
+  return {
+    Fajr: addMinutes(adhanTimes.Fajr, 25),
+    Dhuhr: addMinutes(adhanTimes.Dhuhr, 15),
+    Asr: addMinutes(adhanTimes.Asr, 15),
+    Maghrib: addMinutes(adhanTimes.Maghrib, 10),
+    Isha: addMinutes(adhanTimes.Isha, 15),
+  };
 }
 
 function getCurrentMonthAbbreviation(date: Date) {

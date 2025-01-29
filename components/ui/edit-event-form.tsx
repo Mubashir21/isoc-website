@@ -5,7 +5,7 @@ import { CalendarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, State } from "@/lib/actions";
-import { useActionState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import { formatDateTime } from "@/lib/utils";
 import { useState } from "react";
 
@@ -18,10 +18,8 @@ export default function EditEventForm({
 }) {
   const initialState: State = { message: null, errors: {} };
   const updateEventWithId = updateEvent.bind(null, event.id, event.pic_url);
-  const [state, formAction, pending] = useActionState(
-    updateEventWithId,
-    initialState,
-  );
+  const [state, formAction] = useFormState(updateEventWithId, initialState);
+  const { pending } = useFormStatus();
   const [newImage, setNewImage] = useState<File | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

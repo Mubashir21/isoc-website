@@ -1,11 +1,11 @@
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const fontSans = FontSans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -15,12 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className={inter.className}>
         <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable,
-          )}
+          className={cn("min-h-screen bg-background font-sans antialiased")}
         >
           {children}
         </body>

@@ -1,5 +1,11 @@
 import { sql } from "@vercel/postgres";
-import { EventsTable, EventsForm, AdminField, EventCard } from "./definitions";
+import {
+  EventsTable,
+  EventsForm,
+  AdminField,
+  EventCard,
+  AnnouncementInfo,
+} from "./definitions";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -77,6 +83,52 @@ export async function fetchEventById(id: string) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch event.");
+  }
+}
+
+export async function fetchTodayAnnouncements() {
+  const today = new Date().toISOString().split("T")[0];
+
+  try {
+    const { rows } = await sql<AnnouncementInfo>`
+      SELECT
+        announcements.id,
+        announcements.title,
+        announcements.content,
+        announcements.updated_at
+      FROM announcements
+      WHERE 
+        DATE(announcements.updated_at) = ${today}
+        ORDER BY announcements.updated_at ASC  -- Order by upcoming events
+    `;
+
+    return rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch today's announcements.");
+  }
+}
+
+export async function fetchPastAnnouncements() {
+  const today = new Date().toISOString().split("T")[0];
+
+  try {
+    const { rows } = await sql<AnnouncementInfo>`
+      SELECT
+        announcements.id,
+        announcements.title,
+        announcements.content,
+        announcements.updated_at
+      FROM announcements
+      WHERE 
+        DATE(announcements.updated_at) < ${today}
+        ORDER BY announcements.updated_at ASC  -- Order by upcoming events
+    `;
+
+    return rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch past announcements.");
   }
 }
 

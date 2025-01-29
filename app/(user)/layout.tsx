@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SideNav from "@/components/sidenav";
+import Footer from "@/components/ui/footer";
 
 export const metadata: Metadata = {
   title: "ISOC Website",

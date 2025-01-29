@@ -119,7 +119,6 @@ export async function createEvent(
 
     // Revalidate the cache for the events page and redirect the user.
     revalidatePath("/admin/events");
-    redirect("/admin/events");
 
     // This line will never be reached due to the redirect, but it's necessary for TypeScript
     return { errors: {}, message: "Event created successfully" };
@@ -245,7 +244,6 @@ export async function updateEvent(
     `;
 
     revalidatePath("/admin/events");
-    redirect("/admin/events");
 
     // This line will never be reached due to the redirect, but it's necessary for TypeScript
     return { errors: {}, message: "Event updated successfully" };

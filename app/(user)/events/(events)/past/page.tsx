@@ -5,7 +5,11 @@ export default async function Events() {
   const pastEvents = await fetchPastEvents();
   return (
     <main>
-      {pastEvents?.map((event) => <EventsCard key={event.id} event={event} />)}
+      <div className="flex flex-col gap-5">
+        {pastEvents?.map((event) => (
+          <EventsCard key={event.id} event={event} />
+        ))}
+      </div>
     </main>
   );
 }
