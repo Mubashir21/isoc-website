@@ -6,6 +6,7 @@ import {
   DocumentDuplicateIcon,
   BriefcaseIcon,
   PowerIcon,
+  MegaphoneIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,7 +15,10 @@ import { SignOutButton } from "@clerk/nextjs"; // Import Clerk's SignOutButton
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
-const links = [{ name: "Events", href: "/admin/events", icon: BriefcaseIcon }];
+const links = [
+  { name: "Events", href: "/admin/events", icon: BriefcaseIcon },
+  { name: "Announcements", href: "/admin/announcements", icon: MegaphoneIcon },
+];
 
 export function AdminNavLinks() {
   const pathname = usePathname();

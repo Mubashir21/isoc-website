@@ -5,6 +5,7 @@ import {
   AdminField,
   EventCard,
   AnnouncementInfo,
+  AnnouncementsTable,
 } from "./definitions";
 
 const ITEMS_PER_PAGE = 6;
@@ -42,6 +43,40 @@ export async function fetchFilteredEvents(query: string, currentPage: number) {
   }
 }
 
+export async function fetchFilteredAnnouncements(
+  query: string,
+  currentPage: number,
+) {
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  try {
+    const { rows } = await sql<AnnouncementsTable>`
+      SELECT
+        announcements.id,
+        announcements.title,
+        announcements.content,
+        announcements.created_at,
+        announcements.updated_at,
+        users.name AS created_by
+      FROM announcements
+      JOIN users ON announcements.created_by = users.id
+      WHERE
+        users.name ILIKE ${`%${query}%`} OR
+        announcements.title ILIKE ${`%${query}%`} OR
+        announcements.content ILIKE ${`%${query}%`} OR
+        announcements.created_at::text ILIKE ${`%${query}%`} OR
+        announcements.updated_at::text ILIKE ${`%${query}%`}
+      ORDER BY announcements.updated_at DESC
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+    `;
+
+    return rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch announcements.");
+  }
+}
+
 export async function fetchEventsPages(query: string) {
   try {
     const count = await sql`SELECT COUNT(*)
@@ -60,6 +95,27 @@ export async function fetchEventsPages(query: string) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch total number of events.");
+  }
+}
+
+export async function fetchAnnouncementsPages(query: string) {
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM announcements
+    JOIN users ON announcements.created_by = users.id
+    WHERE
+        users.name ILIKE ${`%${query}%`} OR
+        announcements.title ILIKE ${`%${query}%`} OR
+        announcements.content ILIKE ${`%${query}%`} OR
+        announcements.updated_at::text ILIKE ${`%${query}%`} OR
+        announcements.created_at::text ILIKE ${`%${query}%`}
+  `;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of announcements.");
   }
 }
 

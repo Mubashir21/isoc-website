@@ -31,6 +31,15 @@ export type EventsTable = {
   description: string;
 };
 
+export type AnnouncementsTable = {
+  id: string;
+  created_by: string;
+  title: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+};
+
 export type EventsForm = {
   id: string;
   created_by: string;
