@@ -4,6 +4,7 @@ import { z } from "zod";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { DateTime } from "luxon";
 
 const FormSchema = z.object({
   id: z.string(),
@@ -73,10 +74,15 @@ export async function createEvent(
     created_by,
   } = validatedFields.data;
 
-  const malaysiaTime = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Kuala_Lumpur",
-  });
-  const formattedDate = new Date(malaysiaTime).toISOString();
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // Parse the existing datetime string into Luxon's DateTime object
+  const dateTime = DateTime.fromISO(datetime, { zone: userTimezone }).toUTC();
+
+  // Format the UTC datetime for insertion into the database
+  const formattedUtcDateTime = dateTime
+    .toFormat("yyyy-MM-dd HH:mm:ssZZ")
+    .replace("+00:00", "+00");
 
   let imageUrl: string | undefined;
   if (typeof pic_url === "object" && pic_url instanceof File) {
@@ -113,8 +119,8 @@ export async function createEvent(
 
   try {
     await sql`
-     INSERT INTO events (title, datetime, location, speaker, pic_url, description, created_by, created_at, updated_at)
-    VALUES (${title}, ${datetime}, ${location}, ${speaker}, ${imageUrl}, ${description}, ${created_by}, ${formattedDate}, ${formattedDate})
+     INSERT INTO events (title, datetime, location, speaker, pic_url, description, created_by)
+    VALUES (${title}, ${formattedUtcDateTime}, ${location}, ${speaker}, ${imageUrl}, ${description}, ${created_by})
     `;
 
     // Revalidate the cache for the events page and redirect the user.
@@ -165,11 +171,22 @@ export async function updateEvent(
 
   const { title, datetime, location, speaker, description, created_by } =
     validatedFields.data;
-  const malaysiaTime = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Kuala_Lumpur",
-  });
-  const formattedDate = new Date(malaysiaTime).toISOString();
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
+  // Parse the existing datetime string into Luxon's DateTime object
+  const dateTime = DateTime.fromISO(datetime, { zone: userTimezone }).toUTC();
+
+  // Format the UTC datetime for insertion into the database
+  const formattedUtcDateTime = dateTime
+    .toFormat("yyyy-MM-dd HH:mm:ssZZ")
+    .replace("+00:00", "+00");
+
+  const updatedDateTime = DateTime.now().setZone(userTimezone).toUTC();
+
+  // Format the UTC datetime
+  const formattedUpdatedDateTime = dateTime
+    .toFormat("yyyy-MM-dd HH:mm:ssZZ")
+    .replace("+00:00", "+00");
   // Handle pic_url: if a new file is provided, upload it; otherwise, use the previous URL
   let pic_url = prev_pic_url;
   const newPicFile = formData.get("pic_url") as File;
@@ -239,7 +256,7 @@ export async function updateEvent(
   try {
     await sql`
       UPDATE events
-      SET title = ${title}, datetime = ${datetime}, location = ${location}, speaker = ${speaker}, pic_url = ${pic_url}, description = ${description}, created_by = ${created_by}, updated_at = ${formattedDate}
+      SET title = ${title}, datetime = ${formattedUtcDateTime}, location = ${location}, speaker = ${speaker}, pic_url = ${pic_url}, description = ${description}, created_by = ${created_by}, updated_at = ${formattedUpdatedDateTime}
       WHERE id = ${id}
     `;
 

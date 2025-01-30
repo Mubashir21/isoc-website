@@ -143,7 +143,8 @@ export async function fetchEventById(id: string) {
 }
 
 export async function fetchTodayAnnouncements() {
-  const today = new Date().toISOString().split("T")[0];
+  // const today = new Date().toISOString().split("T")[0];
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   try {
     const { rows } = await sql<AnnouncementInfo>`
@@ -154,8 +155,8 @@ export async function fetchTodayAnnouncements() {
         announcements.updated_at
       FROM announcements
       WHERE 
-        DATE(announcements.updated_at) = ${today}
-        ORDER BY announcements.updated_at ASC  -- Order by upcoming events
+        DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) = CURRENT_DATE
+        ORDER BY announcements.updated_at DESC;
     `;
 
     return rows;
@@ -166,7 +167,8 @@ export async function fetchTodayAnnouncements() {
 }
 
 export async function fetchPastAnnouncements() {
-  const today = new Date().toISOString().split("T")[0];
+  // const today = new Date().toISOString().split("T")[0];
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   try {
     const { rows } = await sql<AnnouncementInfo>`
@@ -177,8 +179,8 @@ export async function fetchPastAnnouncements() {
         announcements.updated_at
       FROM announcements
       WHERE 
-        DATE(announcements.updated_at) < ${today}
-        ORDER BY announcements.updated_at ASC  -- Order by upcoming events
+        DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
+        ORDER BY announcements.updated_at DESC  -- Order by upcoming events
     `;
 
     return rows;
