@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { UpdateEvent, DeleteEvent } from "@/components/ui/events-edit";
+import {
+  UpdateEvent,
+  DeleteEvent,
+  UpdateAnnouncement,
+  DeleteAnnouncement,
+} from "@/components/ui/events-edit";
 import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
 import { fetchFilteredAnnouncements, fetchFilteredEvents } from "@/lib/data";
 
@@ -169,8 +174,8 @@ export async function AnnouncementsTable({
                     <p>{formatTimeTo24Hour(announcement.updated_at)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
-                    {/* <UpdateEvent id={announcement.id} /> */}
-                    {/* <DeleteEvent id={announcement.id} pic_url={event.pic_url} /> */}
+                    <UpdateAnnouncement id={announcement.id} />
+                    <DeleteAnnouncement id={announcement.id} />
                   </div>
                 </div>
               </div>
@@ -227,8 +232,8 @@ export async function AnnouncementsTable({
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      {/* <UpdateEvent id={event.id} />
-                      <DeleteEvent id={event.id} pic_url={event.pic_url} /> */}
+                      <UpdateAnnouncement id={announcement.id} />
+                      <DeleteAnnouncement id={announcement.id} />
                     </div>
                   </td>
                 </tr>

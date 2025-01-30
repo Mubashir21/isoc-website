@@ -4,7 +4,7 @@ import { AdminField, EventsForm } from "@/lib/definitions";
 import { CalendarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
-import { updateEvent, State } from "@/lib/actions";
+import { updateEvent, EventState } from "@/lib/actions";
 import { useFormState, useFormStatus } from "react-dom";
 import { formatDateTime } from "@/lib/utils";
 import { useState } from "react";
@@ -16,7 +16,7 @@ export default function EditEventForm({
   event: EventsForm;
   admins: AdminField[];
 }) {
-  const initialState: State = { message: null, errors: {} };
+  const initialState: EventState = { message: null, errors: {} };
   const updateEventWithId = updateEvent.bind(null, event.id, event.pic_url);
   const [state, formAction] = useFormState(updateEventWithId, initialState);
   const { pending } = useFormStatus();

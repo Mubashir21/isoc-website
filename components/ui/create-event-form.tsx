@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
-import { createEvent, State } from "@/lib/actions";
+import { createEvent, EventState } from "@/lib/actions";
 import { useFormState, useFormStatus } from "react-dom";
 import { AdminField } from "@/lib/definitions";
 
 export default function Form({ admins }: { admins: AdminField[] }) {
-  const initialState: State = { message: null, errors: {} };
+  const initialState: EventState = { message: null, errors: {} };
   const [state, formAction] = useFormState(createEvent, initialState);
   const { pending } = useFormStatus();
 

@@ -51,6 +51,13 @@ export type EventsForm = {
   description: string;
 };
 
+export type AnnouncementsForm = {
+  id: string;
+  created_by: string;
+  title: string;
+  content: string;
+};
+
 export type EventCard = {
   id: string;
   title: string;

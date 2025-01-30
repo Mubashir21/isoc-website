@@ -6,6 +6,7 @@ import {
   EventCard,
   AnnouncementInfo,
   AnnouncementsTable,
+  AnnouncementsForm,
 } from "./definitions";
 
 const ITEMS_PER_PAGE = 6;
@@ -139,6 +140,25 @@ export async function fetchEventById(id: string) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch event.");
+  }
+}
+
+export async function fetchAnnouncementById(id: string) {
+  try {
+    const data = await sql<AnnouncementsForm>`
+      SELECT
+        announcements.id,
+        announcements.created_by,
+        announcements.title,
+        announcements.content
+      FROM announcements
+      WHERE announcements.id = ${id};
+    `;
+
+    return data.rows[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch announcement.");
   }
 }
 

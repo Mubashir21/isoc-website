@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { DateTime } from "luxon";
 
-const FormSchema = z.object({
+const EventFormSchema = z.object({
   id: z.string(),
   title: z.string().min(1, { message: "Title is required." }),
   datetime: z.string().min(1, { message: "Date and time are required." }),
@@ -21,13 +21,22 @@ const FormSchema = z.object({
   updated_at: z.date().optional(),
 });
 
-const CreateEvent = FormSchema.omit({
+const AnnouncementFormSchema = z.object({
+  id: z.string(),
+  title: z.string().min(1, { message: "Title is required." }),
+  content: z.string().min(1, { message: "Content is required." }),
+  created_by: z.string().min(1, { message: "Admin is required." }),
+  created_at: z.date().optional(),
+  updated_at: z.date().optional(),
+});
+
+const CreateEvent = EventFormSchema.omit({
   id: true,
   created_at: true,
   updated_at: true,
 });
 
-export type State = {
+export type EventState = {
   errors: {
     title?: string[];
     datetime?: string[];
@@ -40,10 +49,120 @@ export type State = {
   message: string | null;
 };
 
-export async function createEvent(
-  prevState: State,
+export type AnnouncementState = {
+  errors: {
+    title?: string[];
+    content?: string[];
+    created_by?: string[];
+  };
+  message: string | null;
+};
+
+const CreateAnnouncement = AnnouncementFormSchema.omit({
+  id: true,
+  created_at: true,
+  updated_at: true,
+});
+
+export async function createAnnouncement(
+  prevState: AnnouncementState,
   formData: FormData,
-): Promise<State> {
+): Promise<AnnouncementState> {
+  // Validate form using Zod
+  const validatedFields = CreateAnnouncement.safeParse({
+    title: formData.get("title"),
+    content: formData.get("content"),
+    created_by: formData.get("created_by"),
+  });
+
+  // If form validation fails, return errors early.
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: "Missing Fields. Failed to Create Announcement.",
+    };
+  }
+  // Prepare data for insertion into the database
+  const { title, content, created_by } = validatedFields.data;
+
+  try {
+    await sql`
+     INSERT INTO announcements (title, content, created_by)
+    VALUES (${title}, ${content}, ${created_by})
+    `;
+
+    // Revalidate the cache for the events page and redirect the user.
+    revalidatePath("/admin/announcements");
+
+    // This line will never be reached due to the redirect, but it's necessary for TypeScript
+    return { errors: {}, message: "Announcement created successfully" };
+  } catch (error) {
+    console.error("Database Error:", error);
+    return {
+      errors: {},
+      message: "Database Error: Failed to Create Announcement.",
+    };
+  }
+}
+
+// Use Zod to update the expected types
+const UpdateAnnouncement = AnnouncementFormSchema.omit({
+  id: true,
+  created_at: true,
+  updated_at: true,
+});
+
+export async function updateAnnouncement(
+  id: string,
+  prevState: AnnouncementState,
+  formData: FormData,
+): Promise<AnnouncementState> {
+  const validatedFields = UpdateAnnouncement.safeParse({
+    title: formData.get("title"),
+    content: formData.get("content"),
+    created_by: formData.get("created_by"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: "Missing Fields. Failed to Update Announcement.",
+    };
+  }
+
+  const { title, content, created_by } = validatedFields.data;
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  const updatedDateTime = DateTime.now().setZone(userTimezone).toUTC();
+
+  // Format the UTC datetime
+  const formattedUpdatedDateTime = updatedDateTime
+    .toFormat("yyyy-MM-dd HH:mm:ssZZ")
+    .replace("+00:00", "+00");
+
+  try {
+    await sql`
+      UPDATE announcements
+      SET title = ${title}, content = ${content}, created_by = ${created_by}, updated_at = ${formattedUpdatedDateTime}
+      WHERE id = ${id}
+    `;
+
+    revalidatePath("/admin/announcements");
+
+    // This line will never be reached due to the redirect, but it's necessary for TypeScript
+    return { errors: {}, message: "Announcement updated successfully" };
+  } catch (error) {
+    return {
+      errors: {},
+      message: "Database Error: Failed to Update Announcement.",
+    };
+  }
+}
+
+export async function createEvent(
+  prevState: EventState,
+  formData: FormData,
+): Promise<EventState> {
   // Validate form using Zod
   const validatedFields = CreateEvent.safeParse({
     title: formData.get("title"),
@@ -138,7 +257,7 @@ export async function createEvent(
 }
 
 // Use Zod to update the expected types
-const UpdateEvent = FormSchema.omit({
+const UpdateEvent = EventFormSchema.omit({
   id: true,
   created_at: true,
   updated_at: true,
@@ -149,9 +268,9 @@ const UpdateEvent = FormSchema.omit({
 export async function updateEvent(
   id: string,
   prev_pic_url: string,
-  prevState: State,
+  prevState: EventState,
   formData: FormData,
-): Promise<State> {
+): Promise<EventState> {
   const validatedFields = UpdateEvent.safeParse({
     title: formData.get("title"),
     datetime: formData.get("datetime"),
@@ -300,5 +419,15 @@ export async function deleteEvent(id: string, pic_url: string) {
     return { message: "Deleted Event." };
   } catch (error) {
     return { message: "Database Error: Failed to Delete Event." };
+  }
+}
+
+export async function deleteAnnouncement(id: string) {
+  try {
+    await sql`DELETE FROM announcements WHERE id = ${id}`;
+    revalidatePath("/admin/announcements");
+    return { message: "Deleted Announcement." };
+  } catch (error) {
+    return { message: "Database Error: Failed to Delete Announcement." };
   }
 }

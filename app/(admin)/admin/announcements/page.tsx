@@ -1,7 +1,7 @@
 import Pagination from "@/components/ui/pagination";
 import Search from "@/components/ui/search";
 import { AnnouncementsTable } from "@/components/ui/table";
-import { CreateEvent } from "@/components/ui/events-edit";
+import { CreateAnnouncement } from "@/components/ui/events-edit";
 // import { lusitana } from "@/app/ui/fonts";
 // import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
@@ -29,7 +29,7 @@ export default async function Page({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search announcements..." />
-        <CreateEvent />
+        <CreateAnnouncement />
       </div>
       {/* <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}> */}
       <AnnouncementsTable query={query} currentPage={currentPage} />

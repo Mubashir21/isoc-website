@@ -44,9 +44,9 @@ export default function EventsCarousel() {
                         style={{ backgroundImage: `url(${link.image_url})` }}
                         className="relative bg-cover bg-center w-full h-full flex items-center justify-center"
                       >
-                        <div className="absolute inset-0 bg-black opacity-40"></div>
+                        <div className="absolute inset-0 bg-black opacity-50"></div>
                         <div className="relative z-10">
-                          <span className=" text-4xl font-bold text-white">
+                          <span className=" text-4xl font-bold text-white ">
                             {link.name}
                           </span>
                         </div>

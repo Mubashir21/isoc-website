@@ -1,6 +1,6 @@
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { deleteEvent } from "@/lib/actions";
+import { deleteEvent, deleteAnnouncement } from "@/lib/actions";
 
 export function CreateEvent() {
   return (
@@ -29,7 +29,7 @@ export function CreateAnnouncement() {
 export function UpdateAnnouncement({ id }: { id: string }) {
   return (
     <Link
-      href={`/admin/announcement/${id}/edit`}
+      href={`/admin/announcements/${id}/edit`}
       className="rounded-md border p-2 hover:bg-gray-100"
     >
       <PencilIcon className="w-5" />
@@ -37,18 +37,18 @@ export function UpdateAnnouncement({ id }: { id: string }) {
   );
 }
 
-// export function DeleteAnnouncement({ id }: { id: string; }) {
-//   const deleteEventeWithId = deleteEvent.bind(null, id);
+export function DeleteAnnouncement({ id }: { id: string }) {
+  const deleteAnnouncementWithId = deleteAnnouncement.bind(null, id);
 
-//   return (
-//     <form action={deleteEventeWithId}>
-//       <button className="rounded-md border p-2 hover:bg-gray-100">
-//         <span className="sr-only">Delete</span>
-//         <TrashIcon className="w-5" />
-//       </button>
-//     </form>
-//   );
-// }
+  return (
+    <form action={deleteAnnouncementWithId}>
+      <button className="rounded-md border p-2 hover:bg-gray-100">
+        <span className="sr-only">Delete</span>
+        <TrashIcon className="w-5" />
+      </button>
+    </form>
+  );
+}
 
 export function UpdateEvent({ id }: { id: string }) {
   return (
