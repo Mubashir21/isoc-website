@@ -20,8 +20,8 @@ export function EventsToggle() {
         <Link
           key={link.name}
           href={link.href}
-          className={clsx(buttonVariants({ variant: "default" }), "w-full", {
-            "bg-sky-100": pathname !== link.href,
+          className={clsx(buttonVariants({ variant: "default" }), "w-full ", {
+            "bg-sky-100 hover:bg-sky-200": pathname !== link.href,
           })}
         >
           <p

@@ -2,28 +2,53 @@
 
 import {
   UserGroupIcon,
-  HomeIcon,
+  // HomeIcon,
   DocumentDuplicateIcon,
   MegaphoneIcon,
 } from "@heroicons/react/24/outline";
+
+import CampaignIcon from "@mui/icons-material/Campaign";
+import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
+import MosqueIcon from "@mui/icons-material/Mosque";
+import MosqueOutlinedIcon from "@mui/icons-material/MosqueOutlined";
+import HomeIcon from "@mui/icons-material/Home";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import EventIcon from "@mui/icons-material/Event";
+import EventOutlinedIcon from "@mui/icons-material/EventOutlined";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Image from "next/image";
-import MosqueIcon from "@/components/icons/mosque";
+// import MosqueIcon from "@/components/icons/mosque";
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: "Home", href: "/home", icon: HomeIcon },
+  {
+    name: "Home",
+    href: "/home",
+    icon: HomeIcon,
+    selectedIcon: HomeOutlinedIcon,
+  },
   {
     name: "Prayer Times",
     href: "/prayertimes",
     icon: MosqueIcon,
+    selectedIcon: MosqueOutlinedIcon,
   },
-  { name: "Events", href: "/events/future", icon: UserGroupIcon },
-  { name: "Announcements", href: "/announcements", icon: MegaphoneIcon },
+  {
+    name: "Events",
+    href: "/events/future",
+    icon: EventIcon,
+    selectedIcon: EventOutlinedIcon,
+  },
+  {
+    name: "Announcements",
+    href: "/announcements",
+    icon: CampaignIcon,
+    selectedIcon: CampaignOutlinedIcon,
+  },
 ];
 
 export function UserNavLinks() {
@@ -31,7 +56,8 @@ export function UserNavLinks() {
   return (
     <>
       {links.map((link) => {
-        const LinkIcon = link.icon;
+        const isActive = pathname === link.href;
+        const LinkIcon = isActive ? link.icon : link.selectedIcon;
         return (
           <Link
             key={link.name}

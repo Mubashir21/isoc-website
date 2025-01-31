@@ -22,7 +22,7 @@ export default async function Announcements() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <p className="text-4xl font-bold text-blue-600">Today</p>
+        <p className="text-3xl font-bold text-blue-600">Today</p>
         {todayAnnouncements.length > 0 ? (
           todayAnnouncements.map((announcement) => (
             <AnnouncementCard
@@ -33,7 +33,7 @@ export default async function Announcements() {
         ) : (
           <p className="text-gray-500">No announcements for today.</p>
         )}
-        <p className="text-4xl font-bold text-blue-600">Past</p>
+        <p className="text-3xl font-bold text-blue-600">Past</p>
         {pastAnnouncements.length > 0 ? (
           pastAnnouncements.map((announcement) => (
             <AnnouncementCard
