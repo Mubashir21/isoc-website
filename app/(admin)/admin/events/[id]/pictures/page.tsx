@@ -1,42 +1,42 @@
 // // import Form from "@/components/ui/add-images-form";
-// import {
-//   Breadcrumb,
-//   BreadcrumbItem,
-//   BreadcrumbLink,
-//   BreadcrumbList,
-//   BreadcrumbPage,
-//   BreadcrumbSeparator,
-// } from "@/components/ui/breadcrumb";
-// import { notFound } from "next/navigation";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { notFound } from "next/navigation";
 
-// import { fetchAdmins, fetchEventById } from "@/lib/data";
+import { fetchAdmins, fetchEventById } from "@/lib/data";
 
-// export default async function Page({ params }: { params: { id: string } }) {
-//   const id = params.id;
-//   const [admins, event] = await Promise.all([
-//     fetchAdmins(),
-//     fetchEventById(id),
-//   ]);
+export default async function Page({ params }: { params: { id: string } }) {
+  const id = params.id;
+  const [admins, event] = await Promise.all([
+    fetchAdmins(),
+    fetchEventById(id),
+  ]);
 
-//   if (!event) {
-//     notFound();
-//   }
+  if (!event) {
+    notFound();
+  }
 
-//   return (
-//     <main>
-//       <Breadcrumb>
-//         <BreadcrumbList>
-//           <BreadcrumbItem>
-//             <BreadcrumbLink href="/admin/events">Events</BreadcrumbLink>
-//           </BreadcrumbItem>
-//           <BreadcrumbSeparator />
-//           <BreadcrumbItem>
-//             <BreadcrumbPage>Edit Event</BreadcrumbPage>
-//           </BreadcrumbItem>
-//         </BreadcrumbList>
-//       </Breadcrumb>
+  return (
+    <main>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/admin/events">Events</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Edit Event</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-//       <Form admins={admins} event={event} />
-//     </main>
-//   );
-// }
+      {/* <Form admins={admins} event={event} /> */}
+    </main>
+  );
+}
