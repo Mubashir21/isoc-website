@@ -24,6 +24,16 @@ const links = [
     image_url:
       "https://res.cloudinary.com/daukkeshg/image/upload/v1737724898/003_nwasnj.jpg",
   },
+  {
+    name: "Charity Tournament",
+    image_url:
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1737725037/006_ycptyr.jpg",
+  },
+  {
+    name: "Workshops",
+    image_url:
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1737724898/003_nwasnj.jpg",
+  },
 ];
 
 export default function EventsCarousel() {
@@ -32,14 +42,18 @@ export default function EventsCarousel() {
   );
   return (
     <div className="flex items-center justify-center">
-      <Carousel className="w-full max-w-md" plugins={[plugin.current]}>
+      {/* <Carousel className="w-full max-w-md" plugins={[plugin.current]}> */}
+      <Carousel className="w-full" plugins={[plugin.current]}>
         <CarouselContent>
           {links.map((link) => {
             return (
-              <CarouselItem key={link.name}>
+              <CarouselItem
+                key={link.name}
+                className="lg:basis-1/2 xl:basis-1/3"
+              >
                 <div className="rounded-xl p-1">
-                  <Card className="overflow-hidden border-4">
-                    <CardContent className="flex items-center justify-center p-0 h-[600px]">
+                  <Card className="overflow-hidden border-2">
+                    <CardContent className="flex items-center justify-center p-0 h-[600px] lg:h-[550px]">
                       <div
                         style={{ backgroundImage: `url(${link.image_url})` }}
                         className="relative bg-cover bg-center w-full h-full flex items-center justify-center"

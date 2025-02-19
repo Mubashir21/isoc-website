@@ -22,8 +22,8 @@ export default function AnnouncementCard({
         <CardHeader className="">
           <CardTitle>{announcement.title}</CardTitle>
           <CardDescription className="flex justify-between">
-            <div>{formatTimeTo24Hour(announcement.updated_at)}</div>
-            <div>{formatDateToLocal(announcement.updated_at)}</div>
+            <span>{formatTimeTo24Hour(announcement.updated_at)}</span>
+            <span>{formatDateToLocal(announcement.updated_at)}</span>
           </CardDescription>
         </CardHeader>
         <CardContent>

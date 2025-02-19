@@ -27,25 +27,25 @@ import Image from "next/image";
 const links = [
   {
     name: "Home",
-    href: "/home",
+    href: ["/home"],
     icon: HomeIcon,
     selectedIcon: HomeOutlinedIcon,
   },
   {
     name: "Prayer Times",
-    href: "/prayertimes",
+    href: ["/prayertimes"],
     icon: MosqueIcon,
     selectedIcon: MosqueOutlinedIcon,
   },
   {
     name: "Events",
-    href: "/events/future",
+    href: ["/events/future", "/events/past"],
     icon: EventIcon,
     selectedIcon: EventOutlinedIcon,
   },
   {
     name: "Announcements",
-    href: "/announcements",
+    href: ["/announcements"],
     icon: CampaignIcon,
     selectedIcon: CampaignOutlinedIcon,
   },
@@ -56,16 +56,16 @@ export function UserNavLinks() {
   return (
     <>
       {links.map((link) => {
-        const isActive = pathname === link.href;
+        const isActive = link.href.some((href) => pathname.startsWith(href));
         const LinkIcon = isActive ? link.icon : link.selectedIcon;
         return (
           <Link
             key={link.name}
-            href={link.href}
+            href={link.href[0]} // Use the first href as the main link
             className={clsx(
               "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                "bg-sky-100 text-blue-600": pathname === link.href,
+                "bg-sky-100 text-blue-600": isActive,
               },
             )}
           >

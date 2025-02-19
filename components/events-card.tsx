@@ -14,7 +14,10 @@ export function EventsCard({
 }: { event: EventCard } & CardProps) {
   return (
     <Card
-      className={cn("w-full h-[600px] overflow-hidden", className)}
+      className={cn(
+        "w-full max-w-[600px] max-h-[700px] h-auto overflow-hidden",
+        className,
+      )}
       {...props}
     >
       <div className="flex flex-col h-[600px] overflow-hidden">

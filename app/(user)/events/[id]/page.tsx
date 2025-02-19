@@ -34,7 +34,9 @@ export default async function Page({ params }: { params: { id: string } }) {
       </Breadcrumb>
 
       <EventDetails event={event} />
-      <EventPictures id={id} />
+
+      {new Date(event.datetime) <
+        new Date(Date.now() - 24 * 60 * 60 * 1000) && <EventPictures id={id} />}
     </main>
   );
 }

@@ -20,12 +20,14 @@ export default async function PrayerTimes() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="flex flex-col h-full justify-center  gap-5">
-        <PrayerCard />
-        <div>
-          <p className="text-muted-foreground text-sm ml-2">
-            Note: The UNM Islamic Center adheres to the above prayertimes.
-          </p>
+      <div className="flex flex-col h-full items-center justify-center gap-5 ">
+        <div className="flex flex-col gap-5">
+          <PrayerCard />
+          <div>
+            <p className="text-muted-foreground text-sm ml-2">
+              Note: The UNM Islamic Center adheres to the above prayer times.
+            </p>
+          </div>
         </div>
       </div>
     </main>

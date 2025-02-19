@@ -4,6 +4,7 @@ import {
   DeleteEvent,
   UpdateAnnouncement,
   DeleteAnnouncement,
+  AddPictures,
 } from "@/components/ui/events-edit";
 import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
 import { fetchFilteredAnnouncements, fetchFilteredEvents } from "@/lib/data";
@@ -51,6 +52,7 @@ export async function EventsTable({
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdateEvent id={event.id} />
+                    <AddPictures id={event.id} />
                     <DeleteEvent id={event.id} pic_url={event.pic_url} />
                   </div>
                 </div>
@@ -125,6 +127,7 @@ export async function EventsTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateEvent id={event.id} />
+                      <AddPictures id={event.id} />
                       <DeleteEvent id={event.id} pic_url={event.pic_url} />
                     </div>
                   </td>

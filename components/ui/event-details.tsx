@@ -6,7 +6,7 @@ import Status from "@/components/ui/event-status";
 export default function EventDetails({ event }: { event: EventCard }) {
   return (
     <div>
-      <div className="bg-gray-200 rounded-xl p-7 mb-6 md:mb-12 my-3 hidden lg:block">
+      <div className="bg-gray-200 rounded-xl p-7 mb-6 md:mb-12 my-3 hidden xl:block">
         <div className="flex flex-col-reverse md:flex-row gap-8">
           <div className="aspect-w-4 aspect-h-5 max-w-[50%]">
             <Image
@@ -62,7 +62,7 @@ export default function EventDetails({ event }: { event: EventCard }) {
           </div>
         </div>
       </div>
-      <div className="bg-gray-200 rounded-xl p-5 my-3 ">
+      <div className="bg-gray-200 rounded-xl p-5 my-3 xl:hidden">
         <div className="flex-1">
           <div className="flex flex-col">
             <div className="flex flex-col gap-8">
