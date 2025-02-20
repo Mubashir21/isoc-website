@@ -114,7 +114,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-gray-200 rounded-xl p-5 hidden 2xl:block border-2 xl:px-36 border-black">
+        <div className="bg-gray-200 rounded-xl p-5 hidden 2xl:block border-2 2xl:px-64 border-black">
           <div className="flex flex-col gap-8">
             <div className="flex 2xl:flex-row-reverse gap-8">
               <div className="flex-1">
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-blue-600 rounded-xl p-5 hidden 2xl:block xl:px-36 border-black">
+        <div className="bg-blue-600 rounded-xl p-5 hidden 2xl:block 2xl:px-64 border-black">
           <div className="flex 2xl:flex-row gap-8">
             <div className="flex-1">
               <Image
@@ -190,13 +190,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-200 border-2 border-black rounded-xl p-5 xl:px-36 lg:px-32 md:px-16">
+        <div className="bg-gray-200 border-2 border-black rounded-xl p-5 2xl:px-64 lg:px-32 md:px-16">
           <div className="flex flex-col gap-5">
             <h1 className="font-black text-4xl text-blue-600">What We Do</h1>
             <EventsCarousel />
           </div>
         </div>
-        <div className="bg-gray-700 rounded-xl p-5 xl:px-36 lg:px-28 md:px-16 ">
+        <div className="bg-gray-700 rounded-xl p-5 2xl:px-64 lg:px-28 md:px-16 ">
           <Footer />
         </div>
       </div>

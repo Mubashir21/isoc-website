@@ -11,7 +11,7 @@ import { PrayerCard } from "@/components/ui/prayercard";
 export default async function PrayerTimes() {
   const now = new Date();
   return (
-    <main className="h-full">
+    <main className="h-full lg:px-28 md:px-16 2xl:px-64">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbSeparator />

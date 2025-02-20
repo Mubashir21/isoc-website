@@ -15,7 +15,7 @@ const links = [
 export function EventsToggle() {
   const pathname = usePathname();
   return (
-    <div className="flex w-full p-2 bg-slate-300 gap-2 rounded-lg">
+    <div className="flex 2xl:w-1/4 p-2 bg-slate-300 gap-2 rounded-lg">
       {links.map((link) => (
         <Link
           key={link.name}

@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     eventDate < currentDate ? "/events/past" : "/events/future";
 
   return (
-    <main>
+    <main className="bg-gray-200 p-5 rounded-xl lg:px-28 md:px-16 2xl:px-64 flex flex-col gap-5">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -35,8 +35,8 @@ export default async function Page({ params }: { params: { id: string } }) {
 
       <EventDetails event={event} />
 
-      {new Date(event.datetime) <
-        new Date(Date.now() - 24 * 60 * 60 * 1000) && <EventPictures id={id} />}
+      {/* {new Date(event.datetime) <
+        new Date(Date.now() - 24 * 60 * 60 * 1000) && <EventPictures id={id} />} */}
     </main>
   );
 }
