@@ -1,18 +1,5 @@
 {
-    "01 Jan 2024": {
-        "prayerTimes": {
-            "Fajr": "06:06",
-            "Dhuhr": "13:19",
-            "Asr": "16:42",
-            "Maghrib": "19:16",
-            "Isha": "20:31"
-        },
-        "info": {
-            "hijri": "19 Jmd.II 1445",
-            "day": "Monday"
-        }
-    },
-    "02 Jan 2024": {
+    "01 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:07",
             "Dhuhr": "13:20",
@@ -21,11 +8,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "20 Jmd.II 1445",
-            "day": "Tuesday"
+            "hijri": "01 Rajb. 1446",
+            "day": "Wednesday"
         }
     },
-    "03 Jan 2024": {
+    "02 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:07",
             "Dhuhr": "13:20",
@@ -34,11 +21,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "21 Jmd.II 1445",
-            "day": "Wednesday"
+            "hijri": "02 Rajb. 1446",
+            "day": "Thursday"
         }
     },
-    "04 Jan 2024": {
+    "03 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:08",
             "Dhuhr": "13:21",
@@ -47,11 +34,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "22 Jmd.II 1445",
-            "day": "Thursday"
+            "hijri": "03 Rajb. 1446",
+            "day": "Friday"
         }
     },
-    "05 Jan 2024": {
+    "04 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:08",
             "Dhuhr": "13:21",
@@ -60,11 +47,24 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "23 Jmd.II 1445",
-            "day": "Friday"
+            "hijri": "04 Rajb. 1446",
+            "day": "Saturday"
         }
     },
-    "06 Jan 2024": {
+    "05 Jan 2025": {
+        "prayerTimes": {
+            "Fajr": "06:09",
+            "Dhuhr": "13:21",
+            "Asr": "16:44",
+            "Maghrib": "19:19",
+            "Isha": "20:33"
+        },
+        "info": {
+            "hijri": "05 Rajb. 1446",
+            "day": "Sunday"
+        }
+    },
+    "06 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:09",
             "Dhuhr": "13:22",
@@ -73,37 +73,24 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "24 Jmd.II 1445",
-            "day": "Saturday"
+            "hijri": "06 Rajb. 1446",
+            "day": "Monday"
         }
     },
-    "07 Jan 2024": {
+    "07 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:09",
             "Dhuhr": "13:22",
-            "Asr": "16:44",
-            "Maghrib": "19:19",
-            "Isha": "20:34"
-        },
-        "info": {
-            "hijri": "25 Jmd.II 1445",
-            "day": "Sunday"
-        }
-    },
-    "08 Jan 2024": {
-        "prayerTimes": {
-            "Fajr": "06:10",
-            "Dhuhr": "13:22",
             "Asr": "16:45",
             "Maghrib": "19:20",
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "26 Jmd.II 1445",
-            "day": "Monday"
+            "hijri": "07 Rajb. 1446",
+            "day": "Tuesday"
         }
     },
-    "09 Jan 2024": {
+    "08 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:10",
             "Dhuhr": "13:23",
@@ -112,24 +99,24 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "27 Jmd.II 1445",
-            "day": "Tuesday"
+            "hijri": "08 Rajb. 1446",
+            "day": "Wednesday"
         }
     },
-    "10 Jan 2024": {
+    "09 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:10",
             "Dhuhr": "13:23",
             "Asr": "16:46",
-            "Maghrib": "19:21",
+            "Maghrib": "19:20",
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "28 Jmd.II 1445",
-            "day": "Wednesday"
+            "hijri": "09 Rajb. 1446",
+            "day": "Thursday"
         }
     },
-    "11 Jan 2024": {
+    "10 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:11",
             "Dhuhr": "13:24",
@@ -138,11 +125,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "29 Jmd.II 1445",
-            "day": "Thursday"
+            "hijri": "10 Rajb. 1446",
+            "day": "Friday"
         }
     },
-    "12 Jan 2024": {
+    "11 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:11",
             "Dhuhr": "13:24",
@@ -151,11 +138,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "30 Jmd.II 1445",
-            "day": "Friday"
+            "hijri": "11 Rajb. 1446",
+            "day": "Saturday"
         }
     },
-    "13 Jan 2024": {
+    "12 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:12",
             "Dhuhr": "13:24",
@@ -164,11 +151,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "01 Rajb. 1445",
-            "day": "Saturday"
+            "hijri": "12 Rajb. 1446",
+            "day": "Sunday"
         }
     },
-    "14 Jan 2024": {
+    "13 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:12",
             "Dhuhr": "13:25",
@@ -177,24 +164,37 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "02 Rajb. 1445",
-            "day": "Sunday"
+            "hijri": "13 Rajb. 1446",
+            "day": "Monday"
         }
     },
-    "15 Jan 2024": {
+    "14 Jan 2025": {
         "prayerTimes": {
-            "Fajr": "06:13",
+            "Fajr": "06:12",
             "Dhuhr": "13:25",
             "Asr": "16:47",
             "Maghrib": "19:23",
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "03 Rajb. 1445",
-            "day": "Monday"
+            "hijri": "14 Rajb. 1446",
+            "day": "Tuesday"
         }
     },
-    "16 Jan 2024": {
+    "15 Jan 2025": {
+        "prayerTimes": {
+            "Fajr": "06:13",
+            "Dhuhr": "13:25",
+            "Asr": "16:48",
+            "Maghrib": "19:23",
+            "Isha": "20:37"
+        },
+        "info": {
+            "hijri": "15 Rajb. 1446",
+            "day": "Wednesday"
+        }
+    },
+    "16 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:13",
             "Dhuhr": "13:26",
@@ -203,24 +203,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "04 Rajb. 1445",
-            "day": "Tuesday"
+            "hijri": "16 Rajb. 1446",
+            "day": "Thursday"
         }
     },
-    "17 Jan 2024": {
-        "prayerTimes": {
-            "Fajr": "06:13",
-            "Dhuhr": "13:26",
-            "Asr": "16:48",
-            "Maghrib": "19:23",
-            "Isha": "20:37"
-        },
-        "info": {
-            "hijri": "05 Rajb. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "18 Jan 2024": {
+    "17 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:14",
             "Dhuhr": "13:26",
@@ -229,11 +216,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "06 Rajb. 1445",
-            "day": "Thursday"
+            "hijri": "17 Rajb. 1446",
+            "day": "Friday"
         }
     },
-    "19 Jan 2024": {
+    "18 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:14",
             "Dhuhr": "13:26",
@@ -242,11 +229,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "07 Rajb. 1445",
-            "day": "Friday"
+            "hijri": "18 Rajb. 1446",
+            "day": "Saturday"
         }
     },
-    "20 Jan 2024": {
+    "19 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:14",
             "Dhuhr": "13:27",
@@ -255,11 +242,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "08 Rajb. 1445",
-            "day": "Saturday"
+            "hijri": "19 Rajb. 1446",
+            "day": "Sunday"
         }
     },
-    "21 Jan 2024": {
+    "20 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:15",
             "Dhuhr": "13:27",
@@ -268,11 +255,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "09 Rajb. 1445",
-            "day": "Sunday"
+            "hijri": "20 Rajb. 1446",
+            "day": "Monday"
         }
     },
-    "22 Jan 2024": {
+    "21 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:15",
             "Dhuhr": "13:27",
@@ -281,11 +268,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "10 Rajb. 1445",
-            "day": "Monday"
+            "hijri": "21 Rajb. 1446",
+            "day": "Tuesday"
         }
     },
-    "23 Jan 2024": {
+    "22 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:15",
             "Dhuhr": "13:28",
@@ -294,11 +281,24 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "11 Rajb. 1445",
-            "day": "Tuesday"
+            "hijri": "22 Rajb. 1446",
+            "day": "Wednesday"
         }
     },
-    "24 Jan 2024": {
+    "23 Jan 2025": {
+        "prayerTimes": {
+            "Fajr": "06:16",
+            "Dhuhr": "13:28",
+            "Asr": "16:50",
+            "Maghrib": "19:26",
+            "Isha": "20:38"
+        },
+        "info": {
+            "hijri": "23 Rajb. 1446",
+            "day": "Thursday"
+        }
+    },
+    "24 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
             "Dhuhr": "13:28",
@@ -307,11 +307,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "12 Rajb. 1445",
-            "day": "Wednesday"
+            "hijri": "24 Rajb. 1446",
+            "day": "Friday"
         }
     },
-    "25 Jan 2024": {
+    "25 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
             "Dhuhr": "13:28",
@@ -320,63 +320,37 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "13 Rajb. 1445",
-            "day": "Thursday"
+            "hijri": "25 Rajb. 1446",
+            "day": "Saturday"
         }
     },
-    "26 Jan 2024": {
+    "26 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
-            "Dhuhr": "13:28",
-            "Asr": "16:50",
-            "Maghrib": "19:26",
-            "Isha": "20:39"
-        },
-        "info": {
-            "hijri": "14 Rajb. 1445",
-            "day": "Friday"
-        }
-    },
-    "27 Jan 2024": {
-        "prayerTimes": {
-            "Fajr": "06:17",
             "Dhuhr": "13:29",
             "Asr": "16:50",
             "Maghrib": "19:27",
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "15 Rajb. 1445",
-            "day": "Saturday"
-        }
-    },
-    "28 Jan 2024": {
-        "prayerTimes": {
-            "Fajr": "06:17",
-            "Dhuhr": "13:29",
-            "Asr": "16:50",
-            "Maghrib": "19:27",
-            "Isha": "20:39"
-        },
-        "info": {
-            "hijri": "16 Rajb. 1445",
+            "hijri": "26 Rajb. 1446",
             "day": "Sunday"
         }
     },
-    "29 Jan 2024": {
+    "27 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
-            "Asr": "16:51",
+            "Asr": "16:50",
             "Maghrib": "19:27",
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "17 Rajb. 1445",
+            "hijri": "27 Rajb. 1446",
             "day": "Monday"
         }
     },
-    "30 Jan 2024": {
+    "28 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
@@ -385,24 +359,37 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "18 Rajb. 1445",
+            "hijri": "28 Rajb. 1446",
             "day": "Tuesday"
         }
     },
-    "31 Jan 2024": {
+    "29 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
             "Asr": "16:51",
             "Maghrib": "19:27",
-            "Isha": "20:40"
+            "Isha": "20:39"
         },
         "info": {
-            "hijri": "19 Rajb. 1445",
+            "hijri": "29 Rajb. 1446",
             "day": "Wednesday"
         }
     },
-    "01 Feb 2024": {
+    "30 Jan 2025": {
+        "prayerTimes": {
+            "Fajr": "06:17",
+            "Dhuhr": "13:29",
+            "Asr": "16:51",
+            "Maghrib": "19:27",
+            "Isha": "20:39"
+        },
+        "info": {
+            "hijri": "30 Rajb. 1446",
+            "day": "Thursday"
+        }
+    },
+    "31 Jan 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:29",
@@ -411,24 +398,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "20 Rajb. 1445",
-            "day": "Thursday"
-        }
-    },
-    "02 Feb 2024": {
-        "prayerTimes": {
-            "Fajr": "06:18",
-            "Dhuhr": "13:30",
-            "Asr": "16:51",
-            "Maghrib": "19:28",
-            "Isha": "20:40"
-        },
-        "info": {
-            "hijri": "21 Rajb. 1445",
+            "hijri": "01 Shbn. 1446",
             "day": "Friday"
         }
     },
-    "03 Feb 2024": {
+    "01 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -437,11 +411,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "22 Rajb. 1445",
+            "hijri": "02 Shbn. 1446",
             "day": "Saturday"
         }
     },
-    "04 Feb 2024": {
+    "02 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -450,11 +424,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "23 Rajb. 1445",
+            "hijri": "03 Shbn. 1446",
             "day": "Sunday"
         }
     },
-    "05 Feb 2024": {
+    "03 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -463,24 +437,37 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "24 Rajb. 1445",
+            "hijri": "04 Shbn. 1446",
             "day": "Monday"
         }
     },
-    "06 Feb 2024": {
+    "04 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
             "Asr": "16:51",
-            "Maghrib": "19:29",
+            "Maghrib": "19:28",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "25 Rajb. 1445",
+            "hijri": "05 Shbn. 1446",
             "day": "Tuesday"
         }
     },
-    "07 Feb 2024": {
+    "05 Feb 2025": {
+        "prayerTimes": {
+            "Fajr": "06:18",
+            "Dhuhr": "13:30",
+            "Asr": "16:51",
+            "Maghrib": "19:28",
+            "Isha": "20:40"
+        },
+        "info": {
+            "hijri": "06 Shbn. 1446",
+            "day": "Wednesday"
+        }
+    },
+    "06 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -489,37 +476,24 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "26 Rajb. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "08 Feb 2024": {
-        "prayerTimes": {
-            "Fajr": "06:18",
-            "Dhuhr": "13:30",
-            "Asr": "16:50",
-            "Maghrib": "19:29",
-            "Isha": "20:40"
-        },
-        "info": {
-            "hijri": "27 Rajb. 1445",
+            "hijri": "07 Shbn. 1446",
             "day": "Thursday"
         }
     },
-    "09 Feb 2024": {
+    "07 Feb 2025": {
         "prayerTimes": {
-            "Fajr": "06:19",
+            "Fajr": "06:18",
             "Dhuhr": "13:30",
-            "Asr": "16:50",
+            "Asr": "16:51",
             "Maghrib": "19:29",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "28 Rajb. 1445",
+            "hijri": "08 Shbn. 1446",
             "day": "Friday"
         }
     },
-    "10 Feb 2024": {
+    "08 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
@@ -528,11 +502,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "29 Rajb. 1445",
+            "hijri": "09 Shbn. 1446",
             "day": "Saturday"
         }
     },
-    "11 Feb 2024": {
+    "09 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
@@ -541,11 +515,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "01 Shbn. 1445",
+            "hijri": "10 Shbn. 1446",
             "day": "Sunday"
         }
     },
-    "12 Feb 2024": {
+    "10 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
@@ -554,11 +528,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "02 Shbn. 1445",
+            "hijri": "11 Shbn. 1446",
             "day": "Monday"
         }
     },
-    "13 Feb 2024": {
+    "11 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
@@ -567,37 +541,37 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "03 Shbn. 1445",
+            "hijri": "12 Shbn. 1446",
             "day": "Tuesday"
         }
     },
-    "14 Feb 2024": {
+    "12 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
-            "Asr": "16:49",
+            "Asr": "16:50",
             "Maghrib": "19:29",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "04 Shbn. 1445",
+            "hijri": "13 Shbn. 1446",
             "day": "Wednesday"
         }
     },
-    "15 Feb 2024": {
+    "13 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
-            "Asr": "16:49",
+            "Asr": "16:50",
             "Maghrib": "19:29",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "05 Shbn. 1445",
+            "hijri": "14 Shbn. 1446",
             "day": "Thursday"
         }
     },
-    "16 Feb 2024": {
+    "14 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:19",
             "Dhuhr": "13:30",
@@ -606,11 +580,24 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "06 Shbn. 1445",
+            "hijri": "15 Shbn. 1446",
             "day": "Friday"
         }
     },
-    "17 Feb 2024": {
+    "15 Feb 2025": {
+        "prayerTimes": {
+            "Fajr": "06:19",
+            "Dhuhr": "13:30",
+            "Asr": "16:49",
+            "Maghrib": "19:29",
+            "Isha": "20:40"
+        },
+        "info": {
+            "hijri": "16 Shbn. 1446",
+            "day": "Saturday"
+        }
+    },
+    "16 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -619,11 +606,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "07 Shbn. 1445",
-            "day": "Saturday"
+            "hijri": "17 Shbn. 1446",
+            "day": "Sunday"
         }
     },
-    "18 Feb 2024": {
+    "17 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -632,24 +619,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "08 Shbn. 1445",
-            "day": "Sunday"
-        }
-    },
-    "19 Feb 2024": {
-        "prayerTimes": {
-            "Fajr": "06:18",
-            "Dhuhr": "13:30",
-            "Asr": "16:48",
-            "Maghrib": "19:29",
-            "Isha": "20:39"
-        },
-        "info": {
-            "hijri": "09 Shbn. 1445",
+            "hijri": "18 Shbn. 1446",
             "day": "Monday"
         }
     },
-    "20 Feb 2024": {
+    "18 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -658,24 +632,24 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "10 Shbn. 1445",
+            "hijri": "19 Shbn. 1446",
             "day": "Tuesday"
         }
     },
-    "21 Feb 2024": {
+    "19 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
-            "Asr": "16:47",
+            "Asr": "16:48",
             "Maghrib": "19:29",
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "11 Shbn. 1445",
+            "hijri": "20 Shbn. 1446",
             "day": "Wednesday"
         }
     },
-    "22 Feb 2024": {
+    "20 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:30",
@@ -684,11 +658,24 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "12 Shbn. 1445",
+            "hijri": "21 Shbn. 1446",
             "day": "Thursday"
         }
     },
-    "23 Feb 2024": {
+    "21 Feb 2025": {
+        "prayerTimes": {
+            "Fajr": "06:18",
+            "Dhuhr": "13:30",
+            "Asr": "16:47",
+            "Maghrib": "19:29",
+            "Isha": "20:39"
+        },
+        "info": {
+            "hijri": "22 Shbn. 1446",
+            "day": "Friday"
+        }
+    },
+    "22 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:29",
@@ -697,11 +684,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "13 Shbn. 1445",
-            "day": "Friday"
+            "hijri": "23 Shbn. 1446",
+            "day": "Saturday"
         }
     },
-    "24 Feb 2024": {
+    "23 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:29",
@@ -710,11 +697,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "14 Shbn. 1445",
-            "day": "Saturday"
+            "hijri": "24 Shbn. 1446",
+            "day": "Sunday"
         }
     },
-    "25 Feb 2024": {
+    "24 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:18",
             "Dhuhr": "13:29",
@@ -723,11 +710,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "15 Shbn. 1445",
-            "day": "Sunday"
+            "hijri": "25 Shbn. 1446",
+            "day": "Monday"
         }
     },
-    "26 Feb 2024": {
+    "25 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
@@ -736,11 +723,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "16 Shbn. 1445",
-            "day": "Monday"
+            "hijri": "26 Shbn. 1446",
+            "day": "Tuesday"
         }
     },
-    "27 Feb 2024": {
+    "26 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
@@ -749,11 +736,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "17 Shbn. 1445",
-            "day": "Tuesday"
+            "hijri": "27 Shbn. 1446",
+            "day": "Wednesday"
         }
     },
-    "28 Feb 2024": {
+    "27 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
             "Dhuhr": "13:29",
@@ -762,24 +749,37 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "18 Shbn. 1445",
-            "day": "Wednesday"
+            "hijri": "28 Shbn. 1446",
+            "day": "Thursday"
         }
     },
-    "29 Feb 2024": {
+    "28 Feb 2025": {
         "prayerTimes": {
             "Fajr": "06:17",
-            "Dhuhr": "13:28",
+            "Dhuhr": "13:29",
             "Asr": "16:44",
             "Maghrib": "19:29",
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "19 Shbn. 1445",
-            "day": "Thursday"
+            "hijri": "29 Shbn. 1446",
+            "day": "Friday"
         }
     },
-    "01 Mar 2024": {
+    "01 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:17",
+            "Dhuhr": "13:28",
+            "Asr": "16:43",
+            "Maghrib": "19:29",
+            "Isha": "20:38"
+        },
+        "info": {
+            "hijri": "30 Shbn. 1446",
+            "day": "Saturday"
+        }
+    },
+    "02 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
             "Dhuhr": "13:28",
@@ -788,24 +788,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "20 Shbn. 1445",
-            "day": "Friday"
+            "hijri": "01 Rmdn. 1446",
+            "day": "Sunday"
         }
     },
-    "02 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:16",
-            "Dhuhr": "13:28",
-            "Asr": "16:42",
-            "Maghrib": "19:29",
-            "Isha": "20:38"
-        },
-        "info": {
-            "hijri": "21 Shbn. 1445",
-            "day": "Saturday"
-        }
-    },
-    "03 Mar 2024": {
+    "03 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
             "Dhuhr": "13:28",
@@ -814,37 +801,37 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "22 Shbn. 1445",
-            "day": "Sunday"
+            "hijri": "02 Rmdn. 1446",
+            "day": "Monday"
         }
     },
-    "04 Mar 2024": {
+    "04 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:16",
             "Dhuhr": "13:28",
             "Asr": "16:41",
             "Maghrib": "19:28",
-            "Isha": "20:37"
+            "Isha": "20:38"
         },
         "info": {
-            "hijri": "23 Shbn. 1445",
-            "day": "Monday"
+            "hijri": "03 Rmdn. 1446",
+            "day": "Tuesday"
         }
     },
-    "05 Mar 2024": {
+    "05 Mar 2025": {
         "prayerTimes": {
-            "Fajr": "06:15",
+            "Fajr": "06:16",
             "Dhuhr": "13:27",
             "Asr": "16:41",
             "Maghrib": "19:28",
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "24 Shbn. 1445",
-            "day": "Tuesday"
+            "hijri": "04 Rmdn. 1446",
+            "day": "Wednesday"
         }
     },
-    "06 Mar 2024": {
+    "06 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:15",
             "Dhuhr": "13:27",
@@ -853,24 +840,24 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "25 Shbn. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "07 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:15",
-            "Dhuhr": "13:27",
-            "Asr": "16:39",
-            "Maghrib": "19:28",
-            "Isha": "20:37"
-        },
-        "info": {
-            "hijri": "26 Shbn. 1445",
+            "hijri": "05 Rmdn. 1446",
             "day": "Thursday"
         }
     },
-    "08 Mar 2024": {
+    "07 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:15",
+            "Dhuhr": "13:27",
+            "Asr": "16:40",
+            "Maghrib": "19:28",
+            "Isha": "20:37"
+        },
+        "info": {
+            "hijri": "06 Rmdn. 1446",
+            "day": "Friday"
+        }
+    },
+    "08 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:15",
             "Dhuhr": "13:27",
@@ -879,24 +866,37 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "27 Shbn. 1445",
-            "day": "Friday"
+            "hijri": "07 Rmdn. 1446",
+            "day": "Saturday"
         }
     },
-    "09 Mar 2024": {
+    "09 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:14",
-            "Dhuhr": "13:26",
+            "Dhuhr": "13:27",
             "Asr": "16:38",
             "Maghrib": "19:28",
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "28 Shbn. 1445",
-            "day": "Saturday"
+            "hijri": "08 Rmdn. 1446",
+            "day": "Sunday"
         }
     },
-    "10 Mar 2024": {
+    "10 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:14",
+            "Dhuhr": "13:26",
+            "Asr": "16:37",
+            "Maghrib": "19:28",
+            "Isha": "20:36"
+        },
+        "info": {
+            "hijri": "09 Rmdn. 1446",
+            "day": "Monday"
+        }
+    },
+    "11 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:14",
             "Dhuhr": "13:26",
@@ -905,24 +905,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "29 Shbn. 1445",
-            "day": "Sunday"
+            "hijri": "10 Rmdn. 1446",
+            "day": "Tuesday"
         }
     },
-    "11 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:14",
-            "Dhuhr": "13:26",
-            "Asr": "16:36",
-            "Maghrib": "19:27",
-            "Isha": "20:36"
-        },
-        "info": {
-            "hijri": "30 Shbn. 1445",
-            "day": "Monday"
-        }
-    },
-    "12 Mar 2024": {
+    "12 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:13",
             "Dhuhr": "13:26",
@@ -931,11 +918,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "01 Rmdn. 1445",
-            "day": "Tuesday"
+            "hijri": "11 Rmdn. 1446",
+            "day": "Wednesday"
         }
     },
-    "13 Mar 2024": {
+    "13 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:13",
             "Dhuhr": "13:25",
@@ -944,11 +931,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "02 Rmdn. 1445",
-            "day": "Wednesday"
+            "hijri": "12 Rmdn. 1446",
+            "day": "Thursday"
         }
     },
-    "14 Mar 2024": {
+    "14 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:13",
             "Dhuhr": "13:25",
@@ -957,11 +944,24 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "03 Rmdn. 1445",
-            "day": "Thursday"
+            "hijri": "13 Rmdn. 1446",
+            "day": "Friday"
         }
     },
-    "15 Mar 2024": {
+    "15 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:12",
+            "Dhuhr": "13:25",
+            "Asr": "16:34",
+            "Maghrib": "19:27",
+            "Isha": "20:36"
+        },
+        "info": {
+            "hijri": "14 Rmdn. 1446",
+            "day": "Saturday"
+        }
+    },
+    "16 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:12",
             "Dhuhr": "13:25",
@@ -970,24 +970,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "04 Rmdn. 1445",
-            "day": "Friday"
+            "hijri": "15 Rmdn. 1446",
+            "day": "Sunday"
         }
     },
-    "16 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:12",
-            "Dhuhr": "13:25",
-            "Asr": "16:32",
-            "Maghrib": "19:26",
-            "Isha": "20:35"
-        },
-        "info": {
-            "hijri": "05 Rmdn. 1445",
-            "day": "Saturday"
-        }
-    },
-    "17 Mar 2024": {
+    "17 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:11",
             "Dhuhr": "13:24",
@@ -996,11 +983,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "06 Rmdn. 1445",
-            "day": "Sunday"
+            "hijri": "16 Rmdn. 1446",
+            "day": "Monday"
         }
     },
-    "18 Mar 2024": {
+    "18 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:11",
             "Dhuhr": "13:24",
@@ -1009,11 +996,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "07 Rmdn. 1445",
-            "day": "Monday"
+            "hijri": "17 Rmdn. 1446",
+            "day": "Tuesday"
         }
     },
-    "19 Mar 2024": {
+    "19 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:11",
             "Dhuhr": "13:24",
@@ -1022,11 +1009,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "08 Rmdn. 1445",
-            "day": "Tuesday"
+            "hijri": "18 Rmdn. 1446",
+            "day": "Wednesday"
         }
     },
-    "20 Mar 2024": {
+    "20 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:10",
             "Dhuhr": "13:23",
@@ -1035,11 +1022,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "09 Rmdn. 1445",
-            "day": "Wednesday"
+            "hijri": "19 Rmdn. 1446",
+            "day": "Thursday"
         }
     },
-    "21 Mar 2024": {
+    "21 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:10",
             "Dhuhr": "13:23",
@@ -1048,11 +1035,11 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "10 Rmdn. 1445",
-            "day": "Thursday"
+            "hijri": "20 Rmdn. 1446",
+            "day": "Friday"
         }
     },
-    "22 Mar 2024": {
+    "22 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:09",
             "Dhuhr": "13:23",
@@ -1061,11 +1048,11 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "11 Rmdn. 1445",
-            "day": "Friday"
+            "hijri": "21 Rmdn. 1446",
+            "day": "Saturday"
         }
     },
-    "23 Mar 2024": {
+    "23 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:09",
             "Dhuhr": "13:23",
@@ -1074,11 +1061,11 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "12 Rmdn. 1445",
-            "day": "Saturday"
+            "hijri": "22 Rmdn. 1446",
+            "day": "Sunday"
         }
     },
-    "24 Mar 2024": {
+    "24 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:09",
             "Dhuhr": "13:22",
@@ -1087,37 +1074,50 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "13 Rmdn. 1445",
-            "day": "Sunday"
+            "hijri": "23 Rmdn. 1446",
+            "day": "Monday"
         }
     },
-    "25 Mar 2024": {
+    "25 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:08",
+            "Dhuhr": "13:22",
+            "Asr": "16:25",
+            "Maghrib": "19:25",
+            "Isha": "20:34"
+        },
+        "info": {
+            "hijri": "24 Rmdn. 1446",
+            "day": "Tuesday"
+        }
+    },
+    "26 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:08",
             "Dhuhr": "13:22",
             "Asr": "16:24",
             "Maghrib": "19:25",
-            "Isha": "20:34"
-        },
-        "info": {
-            "hijri": "14 Rmdn. 1445",
-            "day": "Monday"
-        }
-    },
-    "26 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:08",
-            "Dhuhr": "13:22",
-            "Asr": "16:23",
-            "Maghrib": "19:25",
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "15 Rmdn. 1445",
-            "day": "Tuesday"
+            "hijri": "25 Rmdn. 1446",
+            "day": "Wednesday"
         }
     },
-    "27 Mar 2024": {
+    "27 Mar 2025": {
+        "prayerTimes": {
+            "Fajr": "06:07",
+            "Dhuhr": "13:21",
+            "Asr": "16:23",
+            "Maghrib": "19:24",
+            "Isha": "20:33"
+        },
+        "info": {
+            "hijri": "26 Rmdn. 1446",
+            "day": "Thursday"
+        }
+    },
+    "28 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:07",
             "Dhuhr": "13:21",
@@ -1126,24 +1126,11 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "16 Rmdn. 1445",
-            "day": "Wednesday"
+            "hijri": "27 Rmdn. 1446",
+            "day": "Friday"
         }
     },
-    "28 Mar 2024": {
-        "prayerTimes": {
-            "Fajr": "06:07",
-            "Dhuhr": "13:21",
-            "Asr": "16:21",
-            "Maghrib": "19:24",
-            "Isha": "20:33"
-        },
-        "info": {
-            "hijri": "17 Rmdn. 1445",
-            "day": "Thursday"
-        }
-    },
-    "29 Mar 2024": {
+    "29 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:06",
             "Dhuhr": "13:21",
@@ -1152,11 +1139,11 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "18 Rmdn. 1445",
-            "day": "Friday"
+            "hijri": "28 Rmdn. 1446",
+            "day": "Saturday"
         }
     },
-    "30 Mar 2024": {
+    "30 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:06",
             "Dhuhr": "13:20",
@@ -1165,11 +1152,11 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "19 Rmdn. 1445",
-            "day": "Saturday"
+            "hijri": "29 Rmdn. 1446",
+            "day": "Sunday"
         }
     },
-    "31 Mar 2024": {
+    "31 Mar 2025": {
         "prayerTimes": {
             "Fajr": "06:06",
             "Dhuhr": "13:20",
@@ -1178,24 +1165,24 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "20 Rmdn. 1445",
-            "day": "Sunday"
+            "hijri": "01 Shwl. 1446",
+            "day": "Monday"
         }
     },
-    "01 Apr 2024": {
+    "01 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:05",
             "Dhuhr": "13:20",
             "Asr": "16:22",
             "Maghrib": "19:23",
-            "Isha": "20:32"
+            "Isha": "20:33"
         },
         "info": {
-            "hijri": "21 Rmdn. 1445",
-            "day": "Monday"
+            "hijri": "02 Shwl. 1446",
+            "day": "Tuesday"
         }
     },
-    "02 Apr 2024": {
+    "02 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:05",
             "Dhuhr": "13:20",
@@ -1204,11 +1191,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "22 Rmdn. 1445",
-            "day": "Tuesday"
+            "hijri": "03 Shwl. 1446",
+            "day": "Wednesday"
         }
     },
-    "03 Apr 2024": {
+    "03 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:04",
             "Dhuhr": "13:19",
@@ -1217,11 +1204,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "23 Rmdn. 1445",
-            "day": "Wednesday"
+            "hijri": "04 Shwl. 1446",
+            "day": "Thursday"
         }
     },
-    "04 Apr 2024": {
+    "04 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:04",
             "Dhuhr": "13:19",
@@ -1230,11 +1217,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "24 Rmdn. 1445",
-            "day": "Thursday"
+            "hijri": "05 Shwl. 1446",
+            "day": "Friday"
         }
     },
-    "05 Apr 2024": {
+    "05 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:03",
             "Dhuhr": "13:19",
@@ -1243,11 +1230,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "25 Rmdn. 1445",
-            "day": "Friday"
+            "hijri": "06 Shwl. 1446",
+            "day": "Saturday"
         }
     },
-    "06 Apr 2024": {
+    "06 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:03",
             "Dhuhr": "13:18",
@@ -1256,11 +1243,24 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "26 Rmdn. 1445",
-            "day": "Saturday"
+            "hijri": "07 Shwl. 1446",
+            "day": "Sunday"
         }
     },
-    "07 Apr 2024": {
+    "07 Apr 2025": {
+        "prayerTimes": {
+            "Fajr": "06:03",
+            "Dhuhr": "13:18",
+            "Asr": "16:24",
+            "Maghrib": "19:22",
+            "Isha": "20:32"
+        },
+        "info": {
+            "hijri": "08 Shwl. 1446",
+            "day": "Monday"
+        }
+    },
+    "08 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:02",
             "Dhuhr": "13:18",
@@ -1269,11 +1269,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "27 Rmdn. 1445",
-            "day": "Sunday"
+            "hijri": "09 Shwl. 1446",
+            "day": "Tuesday"
         }
     },
-    "08 Apr 2024": {
+    "09 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:02",
             "Dhuhr": "13:18",
@@ -1282,24 +1282,24 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "28 Rmdn. 1445",
-            "day": "Monday"
+            "hijri": "10 Shwl. 1446",
+            "day": "Wednesday"
         }
     },
-    "09 Apr 2024": {
+    "10 Apr 2025": {
         "prayerTimes": {
-            "Fajr": "06:02",
-            "Dhuhr": "13:18",
+            "Fajr": "06:01",
+            "Dhuhr": "13:17",
             "Asr": "16:25",
             "Maghrib": "19:22",
-            "Isha": "20:32"
+            "Isha": "20:31"
         },
         "info": {
-            "hijri": "29 Rmdn. 1445",
-            "day": "Tuesday"
+            "hijri": "11 Shwl. 1446",
+            "day": "Thursday"
         }
     },
-    "10 Apr 2024": {
+    "11 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:17",
@@ -1308,24 +1308,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "01 Shwl. 1445",
-            "day": "Wednesday"
+            "hijri": "12 Shwl. 1446",
+            "day": "Friday"
         }
     },
-    "11 Apr 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:17",
-            "Asr": "16:26",
-            "Maghrib": "19:22",
-            "Isha": "20:31"
-        },
-        "info": {
-            "hijri": "02 Shwl. 1445",
-            "day": "Thursday"
-        }
-    },
-    "12 Apr 2024": {
+    "12 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:17",
@@ -1334,37 +1321,24 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "03 Shwl. 1445",
-            "day": "Friday"
+            "hijri": "13 Shwl. 1446",
+            "day": "Saturday"
         }
     },
-    "13 Apr 2024": {
+    "13 Apr 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
-            "Dhuhr": "13:16",
+            "Dhuhr": "13:17",
             "Asr": "16:26",
             "Maghrib": "19:21",
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "04 Shwl. 1445",
-            "day": "Saturday"
-        }
-    },
-    "14 Apr 2024": {
-        "prayerTimes": {
-            "Fajr": "05:59",
-            "Dhuhr": "13:16",
-            "Asr": "16:27",
-            "Maghrib": "19:21",
-            "Isha": "20:31"
-        },
-        "info": {
-            "hijri": "05 Shwl. 1445",
+            "hijri": "14 Shwl. 1446",
             "day": "Sunday"
         }
     },
-    "15 Apr 2024": {
+    "14 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:16",
@@ -1373,11 +1347,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "06 Shwl. 1445",
+            "hijri": "15 Shwl. 1446",
             "day": "Monday"
         }
     },
-    "16 Apr 2024": {
+    "15 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:16",
@@ -1386,24 +1360,37 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "07 Shwl. 1445",
+            "hijri": "16 Shwl. 1446",
             "day": "Tuesday"
         }
     },
-    "17 Apr 2024": {
+    "16 Apr 2025": {
+        "prayerTimes": {
+            "Fajr": "05:59",
+            "Dhuhr": "13:16",
+            "Asr": "16:27",
+            "Maghrib": "19:21",
+            "Isha": "20:31"
+        },
+        "info": {
+            "hijri": "17 Shwl. 1446",
+            "day": "Wednesday"
+        }
+    },
+    "17 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:16",
-            "Asr": "16:28",
+            "Asr": "16:27",
             "Maghrib": "19:21",
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "08 Shwl. 1445",
-            "day": "Wednesday"
+            "hijri": "18 Shwl. 1446",
+            "day": "Thursday"
         }
     },
-    "18 Apr 2024": {
+    "18 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:15",
@@ -1412,11 +1399,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "09 Shwl. 1445",
-            "day": "Thursday"
+            "hijri": "19 Shwl. 1446",
+            "day": "Friday"
         }
     },
-    "19 Apr 2024": {
+    "19 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:15",
@@ -1425,11 +1412,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "10 Shwl. 1445",
-            "day": "Friday"
+            "hijri": "20 Shwl. 1446",
+            "day": "Saturday"
         }
     },
-    "20 Apr 2024": {
+    "20 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:15",
@@ -1438,24 +1425,37 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "11 Shwl. 1445",
-            "day": "Saturday"
+            "hijri": "21 Shwl. 1446",
+            "day": "Sunday"
         }
     },
-    "21 Apr 2024": {
+    "21 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
+            "Dhuhr": "13:15",
+            "Asr": "16:28",
+            "Maghrib": "19:20",
+            "Isha": "20:31"
+        },
+        "info": {
+            "hijri": "22 Shwl. 1446",
+            "day": "Monday"
+        }
+    },
+    "22 Apr 2025": {
+        "prayerTimes": {
+            "Fajr": "05:56",
             "Dhuhr": "13:15",
             "Asr": "16:29",
             "Maghrib": "19:20",
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "12 Shwl. 1445",
-            "day": "Sunday"
+            "hijri": "23 Shwl. 1446",
+            "day": "Tuesday"
         }
     },
-    "22 Apr 2024": {
+    "23 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:14",
@@ -1464,11 +1464,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "13 Shwl. 1445",
-            "day": "Monday"
+            "hijri": "24 Shwl. 1446",
+            "day": "Wednesday"
         }
     },
-    "23 Apr 2024": {
+    "24 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:14",
@@ -1477,24 +1477,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "14 Shwl. 1445",
-            "day": "Tuesday"
+            "hijri": "25 Shwl. 1446",
+            "day": "Thursday"
         }
     },
-    "24 Apr 2024": {
-        "prayerTimes": {
-            "Fajr": "05:56",
-            "Dhuhr": "13:14",
-            "Asr": "16:29",
-            "Maghrib": "19:20",
-            "Isha": "20:31"
-        },
-        "info": {
-            "hijri": "15 Shwl. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "25 Apr 2024": {
+    "25 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:14",
@@ -1503,11 +1490,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "16 Shwl. 1445",
-            "day": "Thursday"
+            "hijri": "26 Shwl. 1446",
+            "day": "Friday"
         }
     },
-    "26 Apr 2024": {
+    "26 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:14",
@@ -1516,11 +1503,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "17 Shwl. 1445",
-            "day": "Friday"
+            "hijri": "27 Shwl. 1446",
+            "day": "Saturday"
         }
     },
-    "27 Apr 2024": {
+    "27 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:14",
@@ -1529,24 +1516,24 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "18 Shwl. 1445",
-            "day": "Saturday"
+            "hijri": "28 Shwl. 1446",
+            "day": "Sunday"
         }
     },
-    "28 Apr 2024": {
+    "28 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
-            "Dhuhr": "13:13",
+            "Dhuhr": "13:14",
             "Asr": "16:30",
             "Maghrib": "19:20",
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "19 Shwl. 1445",
-            "day": "Sunday"
+            "hijri": "29 Shwl. 1446",
+            "day": "Monday"
         }
     },
-    "29 Apr 2024": {
+    "29 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:13",
@@ -1555,11 +1542,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "20 Shwl. 1445",
-            "day": "Monday"
+            "hijri": "01 Dhu'l Q. 1446",
+            "day": "Tuesday"
         }
     },
-    "30 Apr 2024": {
+    "30 Apr 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:13",
@@ -1568,11 +1555,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "21 Shwl. 1445",
-            "day": "Tuesday"
+            "hijri": "02 Dhu'l Q. 1446",
+            "day": "Wednesday"
         }
     },
-    "01 May 2024": {
+    "01 May 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:13",
@@ -1581,11 +1568,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "22 Shwl. 1445",
-            "day": "Wednesday"
+            "hijri": "03 Dhu'l Q. 1446",
+            "day": "Thursday"
         }
     },
-    "02 May 2024": {
+    "02 May 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:13",
@@ -1594,11 +1581,11 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "23 Shwl. 1445",
-            "day": "Thursday"
+            "hijri": "04 Dhu'l Q. 1446",
+            "day": "Friday"
         }
     },
-    "03 May 2024": {
+    "03 May 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:13",
@@ -1607,37 +1594,24 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "24 Shwl. 1445",
-            "day": "Friday"
-        }
-    },
-    "04 May 2024": {
-        "prayerTimes": {
-            "Fajr": "05:52",
-            "Dhuhr": "13:13",
-            "Asr": "16:32",
-            "Maghrib": "19:20",
-            "Isha": "20:32"
-        },
-        "info": {
-            "hijri": "25 Shwl. 1445",
+            "hijri": "05 Dhu'l Q. 1446",
             "day": "Saturday"
         }
     },
-    "05 May 2024": {
+    "04 May 2025": {
         "prayerTimes": {
-            "Fajr": "05:52",
+            "Fajr": "05:53",
             "Dhuhr": "13:13",
             "Asr": "16:32",
             "Maghrib": "19:20",
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "26 Shwl. 1445",
+            "hijri": "06 Dhu'l Q. 1446",
             "day": "Sunday"
         }
     },
-    "06 May 2024": {
+    "05 May 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:13",
@@ -1646,24 +1620,37 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "27 Shwl. 1445",
+            "hijri": "07 Dhu'l Q. 1446",
             "day": "Monday"
         }
     },
-    "07 May 2024": {
+    "06 May 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:13",
-            "Asr": "16:33",
+            "Asr": "16:32",
             "Maghrib": "19:20",
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "28 Shwl. 1445",
+            "hijri": "08 Dhu'l Q. 1446",
             "day": "Tuesday"
         }
     },
-    "08 May 2024": {
+    "07 May 2025": {
+        "prayerTimes": {
+            "Fajr": "05:52",
+            "Dhuhr": "13:13",
+            "Asr": "16:32",
+            "Maghrib": "19:20",
+            "Isha": "20:32"
+        },
+        "info": {
+            "hijri": "09 Dhu'l Q. 1446",
+            "day": "Wednesday"
+        }
+    },
+    "08 May 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:13",
@@ -1672,24 +1659,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "29 Shwl. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "09 May 2024": {
-        "prayerTimes": {
-            "Fajr": "05:51",
-            "Dhuhr": "13:12",
-            "Asr": "16:33",
-            "Maghrib": "19:20",
-            "Isha": "20:32"
-        },
-        "info": {
-            "hijri": "30 Shwl. 1445",
+            "hijri": "10 Dhu'l Q. 1446",
             "day": "Thursday"
         }
     },
-    "10 May 2024": {
+    "09 May 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:12",
@@ -1698,11 +1672,24 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "01 Dhu'l Q. 1445",
+            "hijri": "11 Dhu'l Q. 1446",
             "day": "Friday"
         }
     },
-    "11 May 2024": {
+    "10 May 2025": {
+        "prayerTimes": {
+            "Fajr": "05:51",
+            "Dhuhr": "13:12",
+            "Asr": "16:33",
+            "Maghrib": "19:20",
+            "Isha": "20:32"
+        },
+        "info": {
+            "hijri": "12 Dhu'l Q. 1446",
+            "day": "Saturday"
+        }
+    },
+    "11 May 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:12",
@@ -1711,24 +1698,11 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "02 Dhu'l Q. 1445",
-            "day": "Saturday"
-        }
-    },
-    "12 May 2024": {
-        "prayerTimes": {
-            "Fajr": "05:51",
-            "Dhuhr": "13:12",
-            "Asr": "16:34",
-            "Maghrib": "19:20",
-            "Isha": "20:33"
-        },
-        "info": {
-            "hijri": "03 Dhu'l Q. 1445",
+            "hijri": "13 Dhu'l Q. 1446",
             "day": "Sunday"
         }
     },
-    "13 May 2024": {
+    "12 May 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:12",
@@ -1737,24 +1711,24 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "04 Dhu'l Q. 1445",
+            "hijri": "14 Dhu'l Q. 1446",
             "day": "Monday"
         }
     },
-    "14 May 2024": {
+    "13 May 2025": {
         "prayerTimes": {
-            "Fajr": "05:50",
+            "Fajr": "05:51",
             "Dhuhr": "13:12",
             "Asr": "16:34",
             "Maghrib": "19:20",
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "05 Dhu'l Q. 1445",
+            "hijri": "15 Dhu'l Q. 1446",
             "day": "Tuesday"
         }
     },
-    "15 May 2024": {
+    "14 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:12",
@@ -1763,37 +1737,37 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "06 Dhu'l Q. 1445",
+            "hijri": "16 Dhu'l Q. 1446",
             "day": "Wednesday"
         }
     },
-    "16 May 2024": {
+    "15 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:12",
-            "Asr": "16:35",
+            "Asr": "16:34",
             "Maghrib": "19:20",
-            "Isha": "20:34"
+            "Isha": "20:33"
         },
         "info": {
-            "hijri": "07 Dhu'l Q. 1445",
+            "hijri": "17 Dhu'l Q. 1446",
             "day": "Thursday"
         }
     },
-    "17 May 2024": {
+    "16 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:12",
             "Asr": "16:35",
             "Maghrib": "19:20",
-            "Isha": "20:34"
+            "Isha": "20:33"
         },
         "info": {
-            "hijri": "08 Dhu'l Q. 1445",
+            "hijri": "18 Dhu'l Q. 1446",
             "day": "Friday"
         }
     },
-    "18 May 2024": {
+    "17 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:12",
@@ -1802,24 +1776,37 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "09 Dhu'l Q. 1445",
+            "hijri": "19 Dhu'l Q. 1446",
             "day": "Saturday"
         }
     },
-    "19 May 2024": {
+    "18 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
-            "Dhuhr": "13:13",
+            "Dhuhr": "13:12",
             "Asr": "16:35",
             "Maghrib": "19:20",
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "10 Dhu'l Q. 1445",
+            "hijri": "20 Dhu'l Q. 1446",
             "day": "Sunday"
         }
     },
-    "20 May 2024": {
+    "19 May 2025": {
+        "prayerTimes": {
+            "Fajr": "05:50",
+            "Dhuhr": "13:12",
+            "Asr": "16:35",
+            "Maghrib": "19:20",
+            "Isha": "20:34"
+        },
+        "info": {
+            "hijri": "21 Dhu'l Q. 1446",
+            "day": "Monday"
+        }
+    },
+    "20 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:13",
@@ -1828,11 +1815,11 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "11 Dhu'l Q. 1445",
-            "day": "Monday"
+            "hijri": "22 Dhu'l Q. 1446",
+            "day": "Tuesday"
         }
     },
-    "21 May 2024": {
+    "21 May 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:13",
@@ -1841,11 +1828,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "12 Dhu'l Q. 1445",
-            "day": "Tuesday"
+            "hijri": "23 Dhu'l Q. 1446",
+            "day": "Wednesday"
         }
     },
-    "22 May 2024": {
+    "22 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1854,11 +1841,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "13 Dhu'l Q. 1445",
-            "day": "Wednesday"
+            "hijri": "24 Dhu'l Q. 1446",
+            "day": "Thursday"
         }
     },
-    "23 May 2024": {
+    "23 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1867,11 +1854,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "14 Dhu'l Q. 1445",
-            "day": "Thursday"
+            "hijri": "25 Dhu'l Q. 1446",
+            "day": "Friday"
         }
     },
-    "24 May 2024": {
+    "24 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1880,24 +1867,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "15 Dhu'l Q. 1445",
-            "day": "Friday"
-        }
-    },
-    "25 May 2024": {
-        "prayerTimes": {
-            "Fajr": "05:49",
-            "Dhuhr": "13:13",
-            "Asr": "16:37",
-            "Maghrib": "19:21",
-            "Isha": "20:36"
-        },
-        "info": {
-            "hijri": "16 Dhu'l Q. 1445",
+            "hijri": "26 Dhu'l Q. 1446",
             "day": "Saturday"
         }
     },
-    "26 May 2024": {
+    "25 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1906,11 +1880,24 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "17 Dhu'l Q. 1445",
+            "hijri": "27 Dhu'l Q. 1446",
             "day": "Sunday"
         }
     },
-    "27 May 2024": {
+    "26 May 2025": {
+        "prayerTimes": {
+            "Fajr": "05:49",
+            "Dhuhr": "13:13",
+            "Asr": "16:37",
+            "Maghrib": "19:21",
+            "Isha": "20:36"
+        },
+        "info": {
+            "hijri": "28 Dhu'l Q. 1446",
+            "day": "Monday"
+        }
+    },
+    "27 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1919,11 +1906,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "18 Dhu'l Q. 1445",
-            "day": "Monday"
+            "hijri": "29 Dhu'l Q. 1446",
+            "day": "Tuesday"
         }
     },
-    "28 May 2024": {
+    "28 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1932,11 +1919,11 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "19 Dhu'l Q. 1445",
-            "day": "Tuesday"
+            "hijri": "30 Dhu'l Q. 1446",
+            "day": "Wednesday"
         }
     },
-    "29 May 2024": {
+    "29 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:13",
@@ -1945,11 +1932,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "20 Dhu'l Q. 1445",
-            "day": "Wednesday"
+            "hijri": "01 Dhu'l H. 1446",
+            "day": "Thursday"
         }
     },
-    "30 May 2024": {
+    "30 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:14",
@@ -1958,11 +1945,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "21 Dhu'l Q. 1445",
-            "day": "Thursday"
+            "hijri": "02 Dhu'l H. 1446",
+            "day": "Friday"
         }
     },
-    "31 May 2024": {
+    "31 May 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:14",
@@ -1971,24 +1958,24 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "22 Dhu'l Q. 1445",
-            "day": "Friday"
+            "hijri": "03 Dhu'l H. 1446",
+            "day": "Saturday"
         }
     },
-    "01 Jun 2024": {
+    "01 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:14",
             "Asr": "16:39",
-            "Maghrib": "19:23",
+            "Maghrib": "19:22",
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "23 Dhu'l Q. 1445",
-            "day": "Saturday"
+            "hijri": "04 Dhu'l H. 1446",
+            "day": "Sunday"
         }
     },
-    "02 Jun 2024": {
+    "02 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:14",
@@ -1997,11 +1984,11 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "24 Dhu'l Q. 1445",
-            "day": "Sunday"
+            "hijri": "05 Dhu'l H. 1446",
+            "day": "Monday"
         }
     },
-    "03 Jun 2024": {
+    "03 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:14",
@@ -2010,24 +1997,24 @@
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "25 Dhu'l Q. 1445",
-            "day": "Monday"
+            "hijri": "06 Dhu'l H. 1446",
+            "day": "Tuesday"
         }
     },
-    "04 Jun 2024": {
+    "04 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:14",
-            "Asr": "16:40",
+            "Asr": "16:39",
             "Maghrib": "19:23",
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "26 Dhu'l Q. 1445",
-            "day": "Tuesday"
+            "hijri": "07 Dhu'l H. 1446",
+            "day": "Wednesday"
         }
     },
-    "05 Jun 2024": {
+    "05 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:15",
@@ -2036,11 +2023,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "27 Dhu'l Q. 1445",
-            "day": "Wednesday"
+            "hijri": "08 Dhu'l H. 1446",
+            "day": "Thursday"
         }
     },
-    "06 Jun 2024": {
+    "06 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:15",
@@ -2049,11 +2036,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "28 Dhu'l Q. 1445",
-            "day": "Thursday"
+            "hijri": "09 Dhu'l H. 1446",
+            "day": "Friday"
         }
     },
-    "07 Jun 2024": {
+    "07 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:15",
@@ -2062,11 +2049,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "29 Dhu'l Q. 1445",
-            "day": "Friday"
+            "hijri": "10 Dhu'l H. 1446",
+            "day": "Saturday"
         }
     },
-    "08 Jun 2024": {
+    "08 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:15",
@@ -2075,11 +2062,11 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "01 Dhu'l H. 1445",
-            "day": "Saturday"
+            "hijri": "11 Dhu'l H. 1446",
+            "day": "Sunday"
         }
     },
-    "09 Jun 2024": {
+    "09 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:15",
@@ -2088,24 +2075,24 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "02 Dhu'l H. 1445",
-            "day": "Sunday"
+            "hijri": "12 Dhu'l H. 1446",
+            "day": "Monday"
         }
     },
-    "10 Jun 2024": {
+    "10 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
-            "Dhuhr": "13:16",
+            "Dhuhr": "13:15",
             "Asr": "16:41",
             "Maghrib": "19:24",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "03 Dhu'l H. 1445",
-            "day": "Monday"
+            "hijri": "13 Dhu'l H. 1446",
+            "day": "Tuesday"
         }
     },
-    "11 Jun 2024": {
+    "11 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:16",
@@ -2114,24 +2101,24 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "04 Dhu'l H. 1445",
-            "day": "Tuesday"
+            "hijri": "14 Dhu'l H. 1446",
+            "day": "Wednesday"
         }
     },
-    "12 Jun 2024": {
+    "12 Jun 2025": {
         "prayerTimes": {
-            "Fajr": "05:51",
+            "Fajr": "05:50",
             "Dhuhr": "13:16",
             "Asr": "16:42",
             "Maghrib": "19:25",
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "05 Dhu'l H. 1445",
-            "day": "Wednesday"
+            "hijri": "15 Dhu'l H. 1446",
+            "day": "Thursday"
         }
     },
-    "13 Jun 2024": {
+    "13 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:16",
@@ -2140,11 +2127,11 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "06 Dhu'l H. 1445",
-            "day": "Thursday"
+            "hijri": "16 Dhu'l H. 1446",
+            "day": "Friday"
         }
     },
-    "14 Jun 2024": {
+    "14 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:16",
@@ -2153,11 +2140,11 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "07 Dhu'l H. 1445",
-            "day": "Friday"
+            "hijri": "17 Dhu'l H. 1446",
+            "day": "Saturday"
         }
     },
-    "15 Jun 2024": {
+    "15 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:17",
@@ -2166,11 +2153,24 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "08 Dhu'l H. 1445",
-            "day": "Saturday"
+            "hijri": "18 Dhu'l H. 1446",
+            "day": "Sunday"
         }
     },
-    "16 Jun 2024": {
+    "16 Jun 2025": {
+        "prayerTimes": {
+            "Fajr": "05:51",
+            "Dhuhr": "13:17",
+            "Asr": "16:43",
+            "Maghrib": "19:26",
+            "Isha": "20:41"
+        },
+        "info": {
+            "hijri": "19 Dhu'l H. 1446",
+            "day": "Monday"
+        }
+    },
+    "17 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:17",
@@ -2179,24 +2179,11 @@
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "09 Dhu'l H. 1445",
-            "day": "Sunday"
+            "hijri": "20 Dhu'l H. 1446",
+            "day": "Tuesday"
         }
     },
-    "17 Jun 2024": {
-        "prayerTimes": {
-            "Fajr": "05:51",
-            "Dhuhr": "13:17",
-            "Asr": "16:43",
-            "Maghrib": "19:26",
-            "Isha": "20:42"
-        },
-        "info": {
-            "hijri": "10 Dhu'l H. 1445",
-            "day": "Monday"
-        }
-    },
-    "18 Jun 2024": {
+    "18 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:17",
@@ -2205,50 +2192,37 @@
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "11 Dhu'l H. 1445",
-            "day": "Tuesday"
+            "hijri": "21 Dhu'l H. 1446",
+            "day": "Wednesday"
         }
     },
-    "19 Jun 2024": {
+    "19 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:17",
             "Asr": "16:43",
-            "Maghrib": "19:27",
+            "Maghrib": "19:26",
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "12 Dhu'l H. 1445",
-            "day": "Wednesday"
-        }
-    },
-    "20 Jun 2024": {
-        "prayerTimes": {
-            "Fajr": "05:52",
-            "Dhuhr": "13:18",
-            "Asr": "16:44",
-            "Maghrib": "19:27",
-            "Isha": "20:42"
-        },
-        "info": {
-            "hijri": "13 Dhu'l H. 1445",
+            "hijri": "22 Dhu'l H. 1446",
             "day": "Thursday"
         }
     },
-    "21 Jun 2024": {
+    "20 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:18",
-            "Asr": "16:44",
+            "Asr": "16:43",
             "Maghrib": "19:27",
-            "Isha": "20:43"
+            "Isha": "20:42"
         },
         "info": {
-            "hijri": "14 Dhu'l H. 1445",
+            "hijri": "23 Dhu'l H. 1446",
             "day": "Friday"
         }
     },
-    "22 Jun 2024": {
+    "21 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:18",
@@ -2257,11 +2231,24 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "15 Dhu'l H. 1445",
+            "hijri": "24 Dhu'l H. 1446",
             "day": "Saturday"
         }
     },
-    "23 Jun 2024": {
+    "22 Jun 2025": {
+        "prayerTimes": {
+            "Fajr": "05:52",
+            "Dhuhr": "13:18",
+            "Asr": "16:44",
+            "Maghrib": "19:27",
+            "Isha": "20:43"
+        },
+        "info": {
+            "hijri": "25 Dhu'l H. 1446",
+            "day": "Sunday"
+        }
+    },
+    "23 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:18",
@@ -2270,24 +2257,24 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "16 Dhu'l H. 1445",
-            "day": "Sunday"
+            "hijri": "26 Dhu'l H. 1446",
+            "day": "Monday"
         }
     },
-    "24 Jun 2024": {
+    "24 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
-            "Dhuhr": "13:19",
+            "Dhuhr": "13:18",
             "Asr": "16:44",
             "Maghrib": "19:28",
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "17 Dhu'l H. 1445",
-            "day": "Monday"
+            "hijri": "27 Dhu'l H. 1446",
+            "day": "Tuesday"
         }
     },
-    "25 Jun 2024": {
+    "25 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:19",
@@ -2296,11 +2283,11 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "18 Dhu'l H. 1445",
-            "day": "Tuesday"
+            "hijri": "28 Dhu'l H. 1446",
+            "day": "Wednesday"
         }
     },
-    "26 Jun 2024": {
+    "26 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:19",
@@ -2309,11 +2296,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "19 Dhu'l H. 1445",
-            "day": "Wednesday"
+            "hijri": "29 Dhu'l H. 1446",
+            "day": "Thursday"
         }
     },
-    "27 Jun 2024": {
+    "27 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:19",
@@ -2322,11 +2309,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "20 Dhu'l H. 1445",
-            "day": "Thursday"
+            "hijri": "01 Mhrm 1447",
+            "day": "Friday"
         }
     },
-    "28 Jun 2024": {
+    "28 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:19",
@@ -2335,11 +2322,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "21 Dhu'l H. 1445",
-            "day": "Friday"
+            "hijri": "02 Mhrm 1447",
+            "day": "Saturday"
         }
     },
-    "29 Jun 2024": {
+    "29 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:20",
@@ -2348,11 +2335,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "22 Dhu'l H. 1445",
-            "day": "Saturday"
+            "hijri": "03 Mhrm 1447",
+            "day": "Sunday"
         }
     },
-    "30 Jun 2024": {
+    "30 Jun 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:20",
@@ -2361,11 +2348,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "23 Dhu'l H. 1445",
-            "day": "Sunday"
+            "hijri": "04 Mhrm 1447",
+            "day": "Monday"
         }
     },
-    "01 Jul 2024": {
+    "01 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:20",
@@ -2374,11 +2361,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "24 Dhu'l H. 1445",
-            "day": "Monday"
+            "hijri": "05 Mhrm 1447",
+            "day": "Tuesday"
         }
     },
-    "02 Jul 2024": {
+    "02 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:20",
@@ -2387,11 +2374,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "25 Dhu'l H. 1445",
-            "day": "Tuesday"
+            "hijri": "06 Mhrm 1447",
+            "day": "Wednesday"
         }
     },
-    "03 Jul 2024": {
+    "03 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:20",
@@ -2400,50 +2387,37 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "26 Dhu'l H. 1445",
-            "day": "Wednesday"
+            "hijri": "07 Mhrm 1447",
+            "day": "Thursday"
         }
     },
-    "04 Jul 2024": {
+    "04 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
+            "Dhuhr": "13:20",
+            "Asr": "16:46",
+            "Maghrib": "19:29",
+            "Isha": "20:45"
+        },
+        "info": {
+            "hijri": "08 Mhrm 1447",
+            "day": "Friday"
+        }
+    },
+    "05 Jul 2025": {
+        "prayerTimes": {
+            "Fajr": "05:56",
             "Dhuhr": "13:21",
             "Asr": "16:46",
             "Maghrib": "19:29",
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "27 Dhu'l H. 1445",
-            "day": "Thursday"
-        }
-    },
-    "05 Jul 2024": {
-        "prayerTimes": {
-            "Fajr": "05:56",
-            "Dhuhr": "13:21",
-            "Asr": "16:46",
-            "Maghrib": "19:30",
-            "Isha": "20:45"
-        },
-        "info": {
-            "hijri": "28 Dhu'l H. 1445",
-            "day": "Friday"
-        }
-    },
-    "06 Jul 2024": {
-        "prayerTimes": {
-            "Fajr": "05:56",
-            "Dhuhr": "13:21",
-            "Asr": "16:46",
-            "Maghrib": "19:30",
-            "Isha": "20:45"
-        },
-        "info": {
-            "hijri": "29 Dhu'l H. 1445",
+            "hijri": "09 Mhrm 1447",
             "day": "Saturday"
         }
     },
-    "07 Jul 2024": {
+    "06 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:21",
@@ -2452,11 +2426,11 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "01 Mhrm 1446",
+            "hijri": "10 Mhrm 1447",
             "day": "Sunday"
         }
     },
-    "08 Jul 2024": {
+    "07 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:21",
@@ -2465,24 +2439,24 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "02 Mhrm 1446",
+            "hijri": "11 Mhrm 1447",
             "day": "Monday"
         }
     },
-    "09 Jul 2024": {
+    "08 Jul 2025": {
         "prayerTimes": {
-            "Fajr": "05:57",
+            "Fajr": "05:56",
             "Dhuhr": "13:21",
             "Asr": "16:46",
             "Maghrib": "19:30",
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "03 Mhrm 1446",
+            "hijri": "12 Mhrm 1447",
             "day": "Tuesday"
         }
     },
-    "10 Jul 2024": {
+    "09 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:21",
@@ -2491,24 +2465,24 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "04 Mhrm 1446",
+            "hijri": "13 Mhrm 1447",
             "day": "Wednesday"
         }
     },
-    "11 Jul 2024": {
+    "10 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
-            "Dhuhr": "13:22",
+            "Dhuhr": "13:21",
             "Asr": "16:46",
             "Maghrib": "19:30",
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "05 Mhrm 1446",
+            "hijri": "14 Mhrm 1447",
             "day": "Thursday"
         }
     },
-    "12 Jul 2024": {
+    "11 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:22",
@@ -2517,37 +2491,37 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "06 Mhrm 1446",
+            "hijri": "15 Mhrm 1447",
             "day": "Friday"
         }
     },
-    "13 Jul 2024": {
+    "12 Jul 2025": {
         "prayerTimes": {
-            "Fajr": "05:58",
+            "Fajr": "05:57",
             "Dhuhr": "13:22",
             "Asr": "16:46",
             "Maghrib": "19:30",
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "07 Mhrm 1446",
+            "hijri": "16 Mhrm 1447",
             "day": "Saturday"
         }
     },
-    "14 Jul 2024": {
+    "13 Jul 2025": {
         "prayerTimes": {
-            "Fajr": "05:58",
+            "Fajr": "05:57",
             "Dhuhr": "13:22",
             "Asr": "16:46",
             "Maghrib": "19:30",
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "08 Mhrm 1446",
+            "hijri": "17 Mhrm 1447",
             "day": "Sunday"
         }
     },
-    "15 Jul 2024": {
+    "14 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:22",
@@ -2556,11 +2530,11 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "09 Mhrm 1446",
+            "hijri": "18 Mhrm 1447",
             "day": "Monday"
         }
     },
-    "16 Jul 2024": {
+    "15 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:22",
@@ -2569,11 +2543,24 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "10 Mhrm 1446",
+            "hijri": "19 Mhrm 1447",
             "day": "Tuesday"
         }
     },
-    "17 Jul 2024": {
+    "16 Jul 2025": {
+        "prayerTimes": {
+            "Fajr": "05:58",
+            "Dhuhr": "13:22",
+            "Asr": "16:46",
+            "Maghrib": "19:30",
+            "Isha": "20:45"
+        },
+        "info": {
+            "hijri": "20 Mhrm 1447",
+            "day": "Wednesday"
+        }
+    },
+    "17 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:22",
@@ -2582,24 +2569,11 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "11 Mhrm 1446",
-            "day": "Wednesday"
-        }
-    },
-    "18 Jul 2024": {
-        "prayerTimes": {
-            "Fajr": "05:59",
-            "Dhuhr": "13:22",
-            "Asr": "16:46",
-            "Maghrib": "19:31",
-            "Isha": "20:45"
-        },
-        "info": {
-            "hijri": "12 Mhrm 1446",
+            "hijri": "21 Mhrm 1447",
             "day": "Thursday"
         }
     },
-    "19 Jul 2024": {
+    "18 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:22",
@@ -2608,11 +2582,11 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "13 Mhrm 1446",
+            "hijri": "22 Mhrm 1447",
             "day": "Friday"
         }
     },
-    "20 Jul 2024": {
+    "19 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:22",
@@ -2621,11 +2595,24 @@
             "Isha": "20:45"
         },
         "info": {
-            "hijri": "14 Mhrm 1446",
+            "hijri": "23 Mhrm 1447",
             "day": "Saturday"
         }
     },
-    "21 Jul 2024": {
+    "20 Jul 2025": {
+        "prayerTimes": {
+            "Fajr": "05:59",
+            "Dhuhr": "13:22",
+            "Asr": "16:46",
+            "Maghrib": "19:31",
+            "Isha": "20:45"
+        },
+        "info": {
+            "hijri": "24 Mhrm 1447",
+            "day": "Sunday"
+        }
+    },
+    "21 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:22",
@@ -2634,24 +2621,24 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "15 Mhrm 1446",
-            "day": "Sunday"
+            "hijri": "25 Mhrm 1447",
+            "day": "Monday"
         }
     },
-    "22 Jul 2024": {
+    "22 Jul 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:23",
             "Asr": "16:46",
-            "Maghrib": "19:30",
+            "Maghrib": "19:31",
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "16 Mhrm 1446",
-            "day": "Monday"
+            "hijri": "26 Mhrm 1447",
+            "day": "Tuesday"
         }
     },
-    "23 Jul 2024": {
+    "23 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:23",
@@ -2660,11 +2647,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "17 Mhrm 1446",
-            "day": "Tuesday"
+            "hijri": "27 Mhrm 1447",
+            "day": "Wednesday"
         }
     },
-    "24 Jul 2024": {
+    "24 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:23",
@@ -2673,24 +2660,11 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "18 Mhrm 1446",
-            "day": "Wednesday"
-        }
-    },
-    "25 Jul 2024": {
-        "prayerTimes": {
-            "Fajr": "06:00",
-            "Dhuhr": "13:23",
-            "Asr": "16:45",
-            "Maghrib": "19:30",
-            "Isha": "20:44"
-        },
-        "info": {
-            "hijri": "19 Mhrm 1446",
+            "hijri": "28 Mhrm 1447",
             "day": "Thursday"
         }
     },
-    "26 Jul 2024": {
+    "25 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:23",
@@ -2699,11 +2673,37 @@
             "Isha": "20:44"
         },
         "info": {
-            "hijri": "20 Mhrm 1446",
+            "hijri": "29 Mhrm 1447",
             "day": "Friday"
         }
     },
-    "27 Jul 2024": {
+    "26 Jul 2025": {
+        "prayerTimes": {
+            "Fajr": "06:00",
+            "Dhuhr": "13:23",
+            "Asr": "16:45",
+            "Maghrib": "19:30",
+            "Isha": "20:44"
+        },
+        "info": {
+            "hijri": "01 Safr. 1447",
+            "day": "Saturday"
+        }
+    },
+    "27 Jul 2025": {
+        "prayerTimes": {
+            "Fajr": "06:00",
+            "Dhuhr": "13:23",
+            "Asr": "16:45",
+            "Maghrib": "19:30",
+            "Isha": "20:44"
+        },
+        "info": {
+            "hijri": "02 Safr. 1447",
+            "day": "Sunday"
+        }
+    },
+    "28 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:23",
@@ -2712,11 +2712,11 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "21 Mhrm 1446",
-            "day": "Saturday"
+            "hijri": "03 Safr. 1447",
+            "day": "Monday"
         }
     },
-    "28 Jul 2024": {
+    "29 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:23",
@@ -2725,24 +2725,24 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "22 Mhrm 1446",
-            "day": "Sunday"
+            "hijri": "04 Safr. 1447",
+            "day": "Tuesday"
         }
     },
-    "29 Jul 2024": {
+    "30 Jul 2025": {
         "prayerTimes": {
-            "Fajr": "06:00",
+            "Fajr": "06:01",
             "Dhuhr": "13:23",
             "Asr": "16:44",
             "Maghrib": "19:30",
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "23 Mhrm 1446",
-            "day": "Monday"
+            "hijri": "05 Safr. 1447",
+            "day": "Wednesday"
         }
     },
-    "30 Jul 2024": {
+    "31 Jul 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2751,24 +2751,11 @@
             "Isha": "20:43"
         },
         "info": {
-            "hijri": "24 Mhrm 1446",
-            "day": "Tuesday"
+            "hijri": "06 Safr. 1447",
+            "day": "Thursday"
         }
     },
-    "31 Jul 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:22",
-            "Asr": "16:44",
-            "Maghrib": "19:30",
-            "Isha": "20:43"
-        },
-        "info": {
-            "hijri": "25 Mhrm 1446",
-            "day": "Wednesday"
-        }
-    },
-    "01 Aug 2024": {
+    "01 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2777,24 +2764,24 @@
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "26 Mhrm 1446",
-            "day": "Thursday"
-        }
-    },
-    "02 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:22",
-            "Asr": "16:43",
-            "Maghrib": "19:29",
-            "Isha": "20:42"
-        },
-        "info": {
-            "hijri": "27 Mhrm 1446",
+            "hijri": "07 Safr. 1447",
             "day": "Friday"
         }
     },
-    "03 Aug 2024": {
+    "02 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:01",
+            "Dhuhr": "13:22",
+            "Asr": "16:43",
+            "Maghrib": "19:30",
+            "Isha": "20:42"
+        },
+        "info": {
+            "hijri": "08 Safr. 1447",
+            "day": "Saturday"
+        }
+    },
+    "03 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2803,11 +2790,11 @@
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "28 Mhrm 1446",
-            "day": "Saturday"
+            "hijri": "09 Safr. 1447",
+            "day": "Sunday"
         }
     },
-    "04 Aug 2024": {
+    "04 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2816,11 +2803,11 @@
             "Isha": "20:42"
         },
         "info": {
-            "hijri": "29 Mhrm 1446",
-            "day": "Sunday"
+            "hijri": "10 Safr. 1447",
+            "day": "Monday"
         }
     },
-    "05 Aug 2024": {
+    "05 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2829,11 +2816,11 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "30 Mhrm 1446",
-            "day": "Monday"
+            "hijri": "11 Safr. 1447",
+            "day": "Tuesday"
         }
     },
-    "06 Aug 2024": {
+    "06 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2842,11 +2829,11 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "01 Safr. 1446",
-            "day": "Tuesday"
+            "hijri": "12 Safr. 1447",
+            "day": "Wednesday"
         }
     },
-    "07 Aug 2024": {
+    "07 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2855,24 +2842,24 @@
             "Isha": "20:41"
         },
         "info": {
-            "hijri": "02 Safr. 1446",
-            "day": "Wednesday"
-        }
-    },
-    "08 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:22",
-            "Asr": "16:40",
-            "Maghrib": "19:28",
-            "Isha": "20:40"
-        },
-        "info": {
-            "hijri": "03 Safr. 1446",
+            "hijri": "13 Safr. 1447",
             "day": "Thursday"
         }
     },
-    "09 Aug 2024": {
+    "08 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:01",
+            "Dhuhr": "13:22",
+            "Asr": "16:41",
+            "Maghrib": "19:28",
+            "Isha": "20:40"
+        },
+        "info": {
+            "hijri": "14 Safr. 1447",
+            "day": "Friday"
+        }
+    },
+    "09 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:22",
@@ -2881,11 +2868,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "04 Safr. 1446",
-            "day": "Friday"
+            "hijri": "15 Safr. 1447",
+            "day": "Saturday"
         }
     },
-    "10 Aug 2024": {
+    "10 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:21",
@@ -2894,11 +2881,11 @@
             "Isha": "20:40"
         },
         "info": {
-            "hijri": "05 Safr. 1446",
-            "day": "Saturday"
+            "hijri": "16 Safr. 1447",
+            "day": "Sunday"
         }
     },
-    "11 Aug 2024": {
+    "11 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:21",
@@ -2907,11 +2894,24 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "06 Safr. 1446",
-            "day": "Sunday"
+            "hijri": "17 Safr. 1447",
+            "day": "Monday"
         }
     },
-    "12 Aug 2024": {
+    "12 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:01",
+            "Dhuhr": "13:21",
+            "Asr": "16:39",
+            "Maghrib": "19:27",
+            "Isha": "20:39"
+        },
+        "info": {
+            "hijri": "18 Safr. 1447",
+            "day": "Tuesday"
+        }
+    },
+    "13 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:21",
@@ -2920,50 +2920,37 @@
             "Isha": "20:39"
         },
         "info": {
-            "hijri": "07 Safr. 1446",
-            "day": "Monday"
-        }
-    },
-    "13 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:21",
-            "Asr": "16:38",
-            "Maghrib": "19:27",
-            "Isha": "20:38"
-        },
-        "info": {
-            "hijri": "08 Safr. 1446",
-            "day": "Tuesday"
-        }
-    },
-    "14 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:21",
-            "Asr": "16:37",
-            "Maghrib": "19:27",
-            "Isha": "20:38"
-        },
-        "info": {
-            "hijri": "09 Safr. 1446",
+            "hijri": "19 Safr. 1447",
             "day": "Wednesday"
         }
     },
-    "15 Aug 2024": {
+    "14 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
-            "Dhuhr": "13:20",
+            "Dhuhr": "13:21",
             "Asr": "16:37",
             "Maghrib": "19:27",
             "Isha": "20:38"
         },
         "info": {
-            "hijri": "10 Safr. 1446",
+            "hijri": "20 Safr. 1447",
             "day": "Thursday"
         }
     },
-    "16 Aug 2024": {
+    "15 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:01",
+            "Dhuhr": "13:21",
+            "Asr": "16:37",
+            "Maghrib": "19:27",
+            "Isha": "20:38"
+        },
+        "info": {
+            "hijri": "21 Safr. 1447",
+            "day": "Friday"
+        }
+    },
+    "16 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:20",
@@ -2972,11 +2959,24 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "11 Safr. 1446",
-            "day": "Friday"
+            "hijri": "22 Safr. 1447",
+            "day": "Saturday"
         }
     },
-    "17 Aug 2024": {
+    "17 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:01",
+            "Dhuhr": "13:20",
+            "Asr": "16:36",
+            "Maghrib": "19:26",
+            "Isha": "20:37"
+        },
+        "info": {
+            "hijri": "23 Safr. 1447",
+            "day": "Sunday"
+        }
+    },
+    "18 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:20",
@@ -2985,24 +2985,11 @@
             "Isha": "20:37"
         },
         "info": {
-            "hijri": "12 Safr. 1446",
-            "day": "Saturday"
+            "hijri": "24 Safr. 1447",
+            "day": "Monday"
         }
     },
-    "18 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:01",
-            "Dhuhr": "13:20",
-            "Asr": "16:35",
-            "Maghrib": "19:26",
-            "Isha": "20:36"
-        },
-        "info": {
-            "hijri": "13 Safr. 1446",
-            "day": "Sunday"
-        }
-    },
-    "19 Aug 2024": {
+    "19 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:20",
@@ -3011,24 +2998,24 @@
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "14 Safr. 1446",
-            "day": "Monday"
+            "hijri": "25 Safr. 1447",
+            "day": "Tuesday"
         }
     },
-    "20 Aug 2024": {
+    "20 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:19",
-            "Asr": "16:33",
+            "Asr": "16:34",
             "Maghrib": "19:25",
             "Isha": "20:36"
         },
         "info": {
-            "hijri": "15 Safr. 1446",
-            "day": "Tuesday"
+            "hijri": "26 Safr. 1447",
+            "day": "Wednesday"
         }
     },
-    "21 Aug 2024": {
+    "21 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:19",
@@ -3037,11 +3024,11 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "16 Safr. 1446",
-            "day": "Wednesday"
+            "hijri": "27 Safr. 1447",
+            "day": "Thursday"
         }
     },
-    "22 Aug 2024": {
+    "22 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:19",
@@ -3050,24 +3037,24 @@
             "Isha": "20:35"
         },
         "info": {
-            "hijri": "17 Safr. 1446",
-            "day": "Thursday"
+            "hijri": "28 Safr. 1447",
+            "day": "Friday"
         }
     },
-    "23 Aug 2024": {
+    "23 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:19",
-            "Asr": "16:31",
+            "Asr": "16:32",
             "Maghrib": "19:24",
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "18 Safr. 1446",
-            "day": "Friday"
+            "hijri": "29 Safr. 1447",
+            "day": "Saturday"
         }
     },
-    "24 Aug 2024": {
+    "24 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:18",
@@ -3076,11 +3063,11 @@
             "Isha": "20:34"
         },
         "info": {
-            "hijri": "19 Safr. 1446",
-            "day": "Saturday"
+            "hijri": "30 Safr. 1447",
+            "day": "Sunday"
         }
     },
-    "25 Aug 2024": {
+    "25 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:18",
@@ -3089,11 +3076,11 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "20 Safr. 1446",
-            "day": "Sunday"
+            "hijri": "01 Rab.I 1447",
+            "day": "Monday"
         }
     },
-    "26 Aug 2024": {
+    "26 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:18",
@@ -3102,11 +3089,24 @@
             "Isha": "20:33"
         },
         "info": {
-            "hijri": "21 Safr. 1446",
-            "day": "Monday"
+            "hijri": "02 Rab.I 1447",
+            "day": "Tuesday"
         }
     },
-    "27 Aug 2024": {
+    "27 Aug 2025": {
+        "prayerTimes": {
+            "Fajr": "06:00",
+            "Dhuhr": "13:18",
+            "Asr": "16:29",
+            "Maghrib": "19:23",
+            "Isha": "20:33"
+        },
+        "info": {
+            "hijri": "03 Rab.I 1447",
+            "day": "Wednesday"
+        }
+    },
+    "28 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:17",
@@ -3115,11 +3115,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "22 Safr. 1446",
-            "day": "Tuesday"
+            "hijri": "04 Rab.I 1447",
+            "day": "Thursday"
         }
     },
-    "28 Aug 2024": {
+    "29 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:17",
@@ -3128,24 +3128,11 @@
             "Isha": "20:32"
         },
         "info": {
-            "hijri": "23 Safr. 1446",
-            "day": "Wednesday"
+            "hijri": "05 Rab.I 1447",
+            "day": "Friday"
         }
     },
-    "29 Aug 2024": {
-        "prayerTimes": {
-            "Fajr": "06:00",
-            "Dhuhr": "13:17",
-            "Asr": "16:27",
-            "Maghrib": "19:22",
-            "Isha": "20:31"
-        },
-        "info": {
-            "hijri": "24 Safr. 1446",
-            "day": "Thursday"
-        }
-    },
-    "30 Aug 2024": {
+    "30 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:17",
@@ -3154,37 +3141,37 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "25 Safr. 1446",
-            "day": "Friday"
+            "hijri": "06 Rab.I 1447",
+            "day": "Saturday"
         }
     },
-    "31 Aug 2024": {
+    "31 Aug 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:16",
             "Asr": "16:25",
             "Maghrib": "19:21",
-            "Isha": "20:30"
+            "Isha": "20:31"
         },
         "info": {
-            "hijri": "26 Safr. 1446",
-            "day": "Saturday"
+            "hijri": "07 Rab.I 1447",
+            "day": "Sunday"
         }
     },
-    "01 Sep 2024": {
+    "01 Sep 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:16",
             "Asr": "16:24",
-            "Maghrib": "19:20",
+            "Maghrib": "19:21",
             "Isha": "20:30"
         },
         "info": {
-            "hijri": "27 Safr. 1446",
-            "day": "Sunday"
+            "hijri": "08 Rab.I 1447",
+            "day": "Monday"
         }
     },
-    "02 Sep 2024": {
+    "02 Sep 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:16",
@@ -3193,11 +3180,11 @@
             "Isha": "20:30"
         },
         "info": {
-            "hijri": "28 Safr. 1446",
-            "day": "Monday"
+            "hijri": "09 Rab.I 1447",
+            "day": "Tuesday"
         }
     },
-    "03 Sep 2024": {
+    "03 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:15",
@@ -3206,102 +3193,102 @@
             "Isha": "20:29"
         },
         "info": {
-            "hijri": "29 Safr. 1446",
-            "day": "Tuesday"
+            "hijri": "10 Rab.I 1447",
+            "day": "Wednesday"
         }
     },
-    "04 Sep 2024": {
+    "04 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:15",
-            "Asr": "16:21",
+            "Asr": "16:22",
             "Maghrib": "19:19",
             "Isha": "20:29"
         },
         "info": {
-            "hijri": "30 Safr. 1446",
-            "day": "Wednesday"
+            "hijri": "11 Rab.I 1447",
+            "day": "Thursday"
         }
     },
-    "05 Sep 2024": {
+    "05 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:15",
-            "Asr": "16:20",
+            "Asr": "16:21",
             "Maghrib": "19:19",
             "Isha": "20:28"
         },
         "info": {
-            "hijri": "01 Rab.I 1446",
-            "day": "Thursday"
+            "hijri": "12 Rab.I 1447",
+            "day": "Friday"
         }
     },
-    "06 Sep 2024": {
+    "06 Sep 2025": {
+        "prayerTimes": {
+            "Fajr": "05:59",
+            "Dhuhr": "13:14",
+            "Asr": "16:20",
+            "Maghrib": "19:18",
+            "Isha": "20:28"
+        },
+        "info": {
+            "hijri": "13 Rab.I 1447",
+            "day": "Saturday"
+        }
+    },
+    "07 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:14",
             "Asr": "16:19",
             "Maghrib": "19:18",
-            "Isha": "20:28"
+            "Isha": "20:27"
         },
         "info": {
-            "hijri": "02 Rab.I 1446",
-            "day": "Friday"
+            "hijri": "14 Rab.I 1447",
+            "day": "Sunday"
         }
     },
-    "07 Sep 2024": {
+    "08 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:14",
             "Asr": "16:18",
-            "Maghrib": "19:18",
-            "Isha": "20:27"
-        },
-        "info": {
-            "hijri": "03 Rab.I 1446",
-            "day": "Saturday"
-        }
-    },
-    "08 Sep 2024": {
-        "prayerTimes": {
-            "Fajr": "05:58",
-            "Dhuhr": "13:14",
-            "Asr": "16:17",
             "Maghrib": "19:17",
             "Isha": "20:27"
         },
         "info": {
-            "hijri": "04 Rab.I 1446",
-            "day": "Sunday"
+            "hijri": "15 Rab.I 1447",
+            "day": "Monday"
         }
     },
-    "09 Sep 2024": {
+    "09 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:13",
-            "Asr": "16:16",
+            "Asr": "16:17",
             "Maghrib": "19:17",
             "Isha": "20:26"
         },
         "info": {
-            "hijri": "05 Rab.I 1446",
-            "day": "Monday"
+            "hijri": "16 Rab.I 1447",
+            "day": "Tuesday"
         }
     },
-    "10 Sep 2024": {
+    "10 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:13",
             "Asr": "16:15",
-            "Maghrib": "19:16",
+            "Maghrib": "19:17",
             "Isha": "20:26"
         },
         "info": {
-            "hijri": "06 Rab.I 1446",
-            "day": "Tuesday"
+            "hijri": "17 Rab.I 1447",
+            "day": "Wednesday"
         }
     },
-    "11 Sep 2024": {
+    "11 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:13",
@@ -3310,11 +3297,11 @@
             "Isha": "20:25"
         },
         "info": {
-            "hijri": "07 Rab.I 1446",
-            "day": "Wednesday"
+            "hijri": "18 Rab.I 1447",
+            "day": "Thursday"
         }
     },
-    "12 Sep 2024": {
+    "12 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:12",
@@ -3323,11 +3310,24 @@
             "Isha": "20:25"
         },
         "info": {
-            "hijri": "08 Rab.I 1446",
-            "day": "Thursday"
+            "hijri": "19 Rab.I 1447",
+            "day": "Friday"
         }
     },
-    "13 Sep 2024": {
+    "13 Sep 2025": {
+        "prayerTimes": {
+            "Fajr": "05:58",
+            "Dhuhr": "13:12",
+            "Asr": "16:12",
+            "Maghrib": "19:15",
+            "Isha": "20:24"
+        },
+        "info": {
+            "hijri": "20 Rab.I 1447",
+            "day": "Saturday"
+        }
+    },
+    "14 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:12",
@@ -3336,24 +3336,11 @@
             "Isha": "20:24"
         },
         "info": {
-            "hijri": "09 Rab.I 1446",
-            "day": "Friday"
+            "hijri": "21 Rab.I 1447",
+            "day": "Sunday"
         }
     },
-    "14 Sep 2024": {
-        "prayerTimes": {
-            "Fajr": "05:57",
-            "Dhuhr": "13:12",
-            "Asr": "16:12",
-            "Maghrib": "19:15",
-            "Isha": "20:24"
-        },
-        "info": {
-            "hijri": "10 Rab.I 1446",
-            "day": "Saturday"
-        }
-    },
-    "15 Sep 2024": {
+    "15 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:11",
@@ -3362,11 +3349,11 @@
             "Isha": "20:23"
         },
         "info": {
-            "hijri": "11 Rab.I 1446",
-            "day": "Sunday"
+            "hijri": "22 Rab.I 1447",
+            "day": "Monday"
         }
     },
-    "16 Sep 2024": {
+    "16 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:11",
@@ -3375,24 +3362,24 @@
             "Isha": "20:23"
         },
         "info": {
-            "hijri": "12 Rab.I 1446",
-            "day": "Monday"
+            "hijri": "23 Rab.I 1447",
+            "day": "Tuesday"
         }
     },
-    "17 Sep 2024": {
+    "17 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
-            "Dhuhr": "13:10",
+            "Dhuhr": "13:11",
             "Asr": "16:13",
             "Maghrib": "19:13",
             "Isha": "20:22"
         },
         "info": {
-            "hijri": "13 Rab.I 1446",
-            "day": "Tuesday"
+            "hijri": "24 Rab.I 1447",
+            "day": "Wednesday"
         }
     },
-    "18 Sep 2024": {
+    "18 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:10",
@@ -3401,11 +3388,11 @@
             "Isha": "20:22"
         },
         "info": {
-            "hijri": "14 Rab.I 1446",
-            "day": "Wednesday"
+            "hijri": "25 Rab.I 1447",
+            "day": "Thursday"
         }
     },
-    "19 Sep 2024": {
+    "19 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:10",
@@ -3414,11 +3401,11 @@
             "Isha": "20:21"
         },
         "info": {
-            "hijri": "15 Rab.I 1446",
-            "day": "Thursday"
+            "hijri": "26 Rab.I 1447",
+            "day": "Friday"
         }
     },
-    "20 Sep 2024": {
+    "20 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:09",
@@ -3427,24 +3414,24 @@
             "Isha": "20:21"
         },
         "info": {
-            "hijri": "16 Rab.I 1446",
-            "day": "Friday"
+            "hijri": "27 Rab.I 1447",
+            "day": "Saturday"
         }
     },
-    "21 Sep 2024": {
+    "21 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:09",
             "Asr": "16:14",
-            "Maghrib": "19:11",
+            "Maghrib": "19:12",
             "Isha": "20:20"
         },
         "info": {
-            "hijri": "17 Rab.I 1446",
-            "day": "Saturday"
+            "hijri": "28 Rab.I 1447",
+            "day": "Sunday"
         }
     },
-    "22 Sep 2024": {
+    "22 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:09",
@@ -3453,50 +3440,50 @@
             "Isha": "20:20"
         },
         "info": {
-            "hijri": "18 Rab.I 1446",
-            "day": "Sunday"
+            "hijri": "29 Rab.I 1447",
+            "day": "Monday"
         }
     },
-    "23 Sep 2024": {
+    "23 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:08",
             "Asr": "16:14",
-            "Maghrib": "19:10",
+            "Maghrib": "19:11",
             "Isha": "20:19"
         },
         "info": {
-            "hijri": "19 Rab.I 1446",
-            "day": "Monday"
-        }
-    },
-    "24 Sep 2024": {
-        "prayerTimes": {
-            "Fajr": "05:55",
-            "Dhuhr": "13:08",
-            "Asr": "16:15",
-            "Maghrib": "19:10",
-            "Isha": "20:19"
-        },
-        "info": {
-            "hijri": "20 Rab.I 1446",
+            "hijri": "01 Rab.II 1447",
             "day": "Tuesday"
         }
     },
-    "25 Sep 2024": {
+    "24 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:08",
             "Asr": "16:15",
             "Maghrib": "19:10",
-            "Isha": "20:18"
+            "Isha": "20:19"
         },
         "info": {
-            "hijri": "21 Rab.I 1446",
+            "hijri": "02 Rab.II 1447",
             "day": "Wednesday"
         }
     },
-    "26 Sep 2024": {
+    "25 Sep 2025": {
+        "prayerTimes": {
+            "Fajr": "05:55",
+            "Dhuhr": "13:08",
+            "Asr": "16:15",
+            "Maghrib": "19:10",
+            "Isha": "20:19"
+        },
+        "info": {
+            "hijri": "03 Rab.II 1447",
+            "day": "Thursday"
+        }
+    },
+    "26 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:07",
@@ -3505,11 +3492,11 @@
             "Isha": "20:18"
         },
         "info": {
-            "hijri": "22 Rab.I 1446",
-            "day": "Thursday"
+            "hijri": "04 Rab.II 1447",
+            "day": "Friday"
         }
     },
-    "27 Sep 2024": {
+    "27 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:07",
@@ -3518,11 +3505,11 @@
             "Isha": "20:18"
         },
         "info": {
-            "hijri": "23 Rab.I 1446",
-            "day": "Friday"
+            "hijri": "05 Rab.II 1447",
+            "day": "Saturday"
         }
     },
-    "28 Sep 2024": {
+    "28 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:07",
@@ -3531,11 +3518,11 @@
             "Isha": "20:17"
         },
         "info": {
-            "hijri": "24 Rab.I 1446",
-            "day": "Saturday"
+            "hijri": "06 Rab.II 1447",
+            "day": "Sunday"
         }
     },
-    "29 Sep 2024": {
+    "29 Sep 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:06",
@@ -3544,11 +3531,24 @@
             "Isha": "20:17"
         },
         "info": {
-            "hijri": "25 Rab.I 1446",
-            "day": "Sunday"
+            "hijri": "07 Rab.II 1447",
+            "day": "Monday"
         }
     },
-    "30 Sep 2024": {
+    "30 Sep 2025": {
+        "prayerTimes": {
+            "Fajr": "05:53",
+            "Dhuhr": "13:06",
+            "Asr": "16:16",
+            "Maghrib": "19:08",
+            "Isha": "20:16"
+        },
+        "info": {
+            "hijri": "08 Rab.II 1447",
+            "day": "Tuesday"
+        }
+    },
+    "01 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:06",
@@ -3557,37 +3557,24 @@
             "Isha": "20:16"
         },
         "info": {
-            "hijri": "26 Rab.I 1446",
-            "day": "Monday"
+            "hijri": "09 Rab.II 1447",
+            "day": "Wednesday"
         }
     },
-    "01 Oct 2024": {
+    "02 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
-            "Dhuhr": "13:06",
+            "Dhuhr": "13:05",
             "Asr": "16:16",
             "Maghrib": "19:07",
             "Isha": "20:16"
         },
         "info": {
-            "hijri": "27 Rab.I 1446",
-            "day": "Tuesday"
+            "hijri": "10 Rab.II 1447",
+            "day": "Thursday"
         }
     },
-    "02 Oct 2024": {
-        "prayerTimes": {
-            "Fajr": "05:53",
-            "Dhuhr": "13:05",
-            "Asr": "16:16",
-            "Maghrib": "19:07",
-            "Isha": "20:15"
-        },
-        "info": {
-            "hijri": "28 Rab.I 1446",
-            "day": "Wednesday"
-        }
-    },
-    "03 Oct 2024": {
+    "03 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:05",
@@ -3596,37 +3583,24 @@
             "Isha": "20:15"
         },
         "info": {
-            "hijri": "29 Rab.I 1446",
-            "day": "Thursday"
+            "hijri": "11 Rab.II 1447",
+            "day": "Friday"
         }
     },
-    "04 Oct 2024": {
+    "04 Oct 2025": {
         "prayerTimes": {
-            "Fajr": "05:52",
+            "Fajr": "05:53",
             "Dhuhr": "13:05",
             "Asr": "16:17",
             "Maghrib": "19:06",
             "Isha": "20:15"
         },
         "info": {
-            "hijri": "01 Rab.II 1446",
-            "day": "Friday"
-        }
-    },
-    "05 Oct 2024": {
-        "prayerTimes": {
-            "Fajr": "05:52",
-            "Dhuhr": "13:04",
-            "Asr": "16:17",
-            "Maghrib": "19:05",
-            "Isha": "20:14"
-        },
-        "info": {
-            "hijri": "02 Rab.II 1446",
+            "hijri": "12 Rab.II 1447",
             "day": "Saturday"
         }
     },
-    "06 Oct 2024": {
+    "05 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:04",
@@ -3635,11 +3609,11 @@
             "Isha": "20:14"
         },
         "info": {
-            "hijri": "03 Rab.II 1446",
+            "hijri": "13 Rab.II 1447",
             "day": "Sunday"
         }
     },
-    "07 Oct 2024": {
+    "06 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:04",
@@ -3648,11 +3622,24 @@
             "Isha": "20:14"
         },
         "info": {
-            "hijri": "04 Rab.II 1446",
+            "hijri": "14 Rab.II 1447",
             "day": "Monday"
         }
     },
-    "08 Oct 2024": {
+    "07 Oct 2025": {
+        "prayerTimes": {
+            "Fajr": "05:52",
+            "Dhuhr": "13:04",
+            "Asr": "16:17",
+            "Maghrib": "19:05",
+            "Isha": "20:14"
+        },
+        "info": {
+            "hijri": "15 Rab.II 1447",
+            "day": "Tuesday"
+        }
+    },
+    "08 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:04",
@@ -3661,11 +3648,11 @@
             "Isha": "20:13"
         },
         "info": {
-            "hijri": "05 Rab.II 1446",
-            "day": "Tuesday"
+            "hijri": "16 Rab.II 1447",
+            "day": "Wednesday"
         }
     },
-    "09 Oct 2024": {
+    "09 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:03",
@@ -3674,24 +3661,37 @@
             "Isha": "20:13"
         },
         "info": {
-            "hijri": "06 Rab.II 1446",
-            "day": "Wednesday"
+            "hijri": "17 Rab.II 1447",
+            "day": "Thursday"
         }
     },
-    "10 Oct 2024": {
+    "10 Oct 2025": {
+        "prayerTimes": {
+            "Fajr": "05:51",
+            "Dhuhr": "13:03",
+            "Asr": "16:17",
+            "Maghrib": "19:04",
+            "Isha": "20:13"
+        },
+        "info": {
+            "hijri": "18 Rab.II 1447",
+            "day": "Friday"
+        }
+    },
+    "11 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:03",
             "Asr": "16:17",
             "Maghrib": "19:03",
-            "Isha": "20:13"
+            "Isha": "20:12"
         },
         "info": {
-            "hijri": "07 Rab.II 1446",
-            "day": "Thursday"
+            "hijri": "19 Rab.II 1447",
+            "day": "Saturday"
         }
     },
-    "11 Oct 2024": {
+    "12 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:03",
@@ -3700,24 +3700,24 @@
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "08 Rab.II 1446",
-            "day": "Friday"
+            "hijri": "20 Rab.II 1447",
+            "day": "Sunday"
         }
     },
-    "12 Oct 2024": {
+    "13 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:02",
-            "Asr": "16:17",
-            "Maghrib": "19:03",
+            "Asr": "16:18",
+            "Maghrib": "19:02",
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "09 Rab.II 1446",
-            "day": "Saturday"
+            "hijri": "21 Rab.II 1447",
+            "day": "Monday"
         }
     },
-    "13 Oct 2024": {
+    "14 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
@@ -3726,24 +3726,11 @@
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "10 Rab.II 1446",
-            "day": "Sunday"
+            "hijri": "22 Rab.II 1447",
+            "day": "Tuesday"
         }
     },
-    "14 Oct 2024": {
-        "prayerTimes": {
-            "Fajr": "05:50",
-            "Dhuhr": "13:02",
-            "Asr": "16:18",
-            "Maghrib": "19:02",
-            "Isha": "20:12"
-        },
-        "info": {
-            "hijri": "11 Rab.II 1446",
-            "day": "Monday"
-        }
-    },
-    "15 Oct 2024": {
+    "15 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
@@ -3752,24 +3739,24 @@
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "12 Rab.II 1446",
-            "day": "Tuesday"
+            "hijri": "23 Rab.II 1447",
+            "day": "Wednesday"
         }
     },
-    "16 Oct 2024": {
+    "16 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
             "Asr": "16:18",
-            "Maghrib": "19:01",
+            "Maghrib": "19:02",
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "13 Rab.II 1446",
-            "day": "Wednesday"
+            "hijri": "24 Rab.II 1447",
+            "day": "Thursday"
         }
     },
-    "17 Oct 2024": {
+    "17 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:01",
@@ -3778,11 +3765,11 @@
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "14 Rab.II 1446",
-            "day": "Thursday"
+            "hijri": "25 Rab.II 1447",
+            "day": "Friday"
         }
     },
-    "18 Oct 2024": {
+    "18 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:01",
@@ -3791,11 +3778,11 @@
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "15 Rab.II 1446",
-            "day": "Friday"
+            "hijri": "26 Rab.II 1447",
+            "day": "Saturday"
         }
     },
-    "19 Oct 2024": {
+    "19 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -3804,11 +3791,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "16 Rab.II 1446",
-            "day": "Saturday"
+            "hijri": "27 Rab.II 1447",
+            "day": "Sunday"
         }
     },
-    "20 Oct 2024": {
+    "20 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -3817,11 +3804,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "17 Rab.II 1446",
-            "day": "Sunday"
+            "hijri": "28 Rab.II 1447",
+            "day": "Monday"
         }
     },
-    "21 Oct 2024": {
+    "21 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -3830,24 +3817,24 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "18 Rab.II 1446",
-            "day": "Monday"
+            "hijri": "29 Rab.II 1447",
+            "day": "Tuesday"
         }
     },
-    "22 Oct 2024": {
+    "22 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
-            "Dhuhr": "13:00",
+            "Dhuhr": "13:01",
             "Asr": "16:18",
             "Maghrib": "19:00",
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "19 Rab.II 1446",
-            "day": "Tuesday"
+            "hijri": "30 Rab.II 1447",
+            "day": "Wednesday"
         }
     },
-    "23 Oct 2024": {
+    "23 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:00",
@@ -3856,11 +3843,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "20 Rab.II 1446",
-            "day": "Wednesday"
+            "hijri": "01 Jmd.I 1447",
+            "day": "Thursday"
         }
     },
-    "24 Oct 2024": {
+    "24 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:00",
@@ -3869,37 +3856,24 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "21 Rab.II 1446",
-            "day": "Thursday"
+            "hijri": "02 Jmd.I 1447",
+            "day": "Friday"
         }
     },
-    "25 Oct 2024": {
+    "25 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:00",
             "Asr": "16:19",
             "Maghrib": "18:59",
-            "Isha": "20:09"
+            "Isha": "20:10"
         },
         "info": {
-            "hijri": "22 Rab.II 1446",
-            "day": "Friday"
-        }
-    },
-    "26 Oct 2024": {
-        "prayerTimes": {
-            "Fajr": "05:48",
-            "Dhuhr": "13:00",
-            "Asr": "16:19",
-            "Maghrib": "18:59",
-            "Isha": "20:09"
-        },
-        "info": {
-            "hijri": "23 Rab.II 1446",
+            "hijri": "03 Jmd.I 1447",
             "day": "Saturday"
         }
     },
-    "27 Oct 2024": {
+    "26 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3908,11 +3882,11 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "24 Rab.II 1446",
+            "hijri": "04 Jmd.I 1447",
             "day": "Sunday"
         }
     },
-    "28 Oct 2024": {
+    "27 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3921,11 +3895,11 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "25 Rab.II 1446",
+            "hijri": "05 Jmd.I 1447",
             "day": "Monday"
         }
     },
-    "29 Oct 2024": {
+    "28 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3934,37 +3908,37 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "26 Rab.II 1446",
+            "hijri": "06 Jmd.I 1447",
             "day": "Tuesday"
         }
     },
-    "30 Oct 2024": {
+    "29 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
             "Asr": "16:19",
-            "Maghrib": "18:58",
+            "Maghrib": "18:59",
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "27 Rab.II 1446",
+            "hijri": "07 Jmd.I 1447",
             "day": "Wednesday"
         }
     },
-    "31 Oct 2024": {
+    "30 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
-            "Asr": "16:20",
-            "Maghrib": "18:58",
+            "Asr": "16:19",
+            "Maghrib": "18:59",
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "28 Rab.II 1446",
+            "hijri": "08 Jmd.I 1447",
             "day": "Thursday"
         }
     },
-    "01 Nov 2024": {
+    "31 Oct 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3973,11 +3947,11 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "29 Rab.II 1446",
+            "hijri": "09 Jmd.I 1447",
             "day": "Friday"
         }
     },
-    "02 Nov 2024": {
+    "01 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3986,11 +3960,11 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "30 Rab.II 1446",
+            "hijri": "10 Jmd.I 1447",
             "day": "Saturday"
         }
     },
-    "03 Nov 2024": {
+    "02 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -3999,11 +3973,11 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "01 Jmd.I 1446",
+            "hijri": "11 Jmd.I 1447",
             "day": "Sunday"
         }
     },
-    "04 Nov 2024": {
+    "03 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4012,24 +3986,24 @@
             "Isha": "20:09"
         },
         "info": {
-            "hijri": "02 Jmd.I 1446",
+            "hijri": "12 Jmd.I 1447",
             "day": "Monday"
         }
     },
-    "05 Nov 2024": {
+    "04 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
             "Asr": "16:20",
             "Maghrib": "18:58",
-            "Isha": "20:10"
+            "Isha": "20:09"
         },
         "info": {
-            "hijri": "03 Jmd.I 1446",
+            "hijri": "13 Jmd.I 1447",
             "day": "Tuesday"
         }
     },
-    "06 Nov 2024": {
+    "05 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4038,24 +4012,24 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "04 Jmd.I 1446",
+            "hijri": "14 Jmd.I 1447",
             "day": "Wednesday"
         }
     },
-    "07 Nov 2024": {
+    "06 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
-            "Asr": "16:21",
+            "Asr": "16:20",
             "Maghrib": "18:58",
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "05 Jmd.I 1446",
+            "hijri": "15 Jmd.I 1447",
             "day": "Thursday"
         }
     },
-    "08 Nov 2024": {
+    "07 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4064,11 +4038,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "06 Jmd.I 1446",
+            "hijri": "16 Jmd.I 1447",
             "day": "Friday"
         }
     },
-    "09 Nov 2024": {
+    "08 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4077,11 +4051,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "07 Jmd.I 1446",
+            "hijri": "17 Jmd.I 1447",
             "day": "Saturday"
         }
     },
-    "10 Nov 2024": {
+    "09 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4090,11 +4064,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "08 Jmd.I 1446",
+            "hijri": "18 Jmd.I 1447",
             "day": "Sunday"
         }
     },
-    "11 Nov 2024": {
+    "10 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4103,11 +4077,24 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "09 Jmd.I 1446",
+            "hijri": "19 Jmd.I 1447",
             "day": "Monday"
         }
     },
-    "12 Nov 2024": {
+    "11 Nov 2025": {
+        "prayerTimes": {
+            "Fajr": "05:48",
+            "Dhuhr": "13:00",
+            "Asr": "16:21",
+            "Maghrib": "18:58",
+            "Isha": "20:10"
+        },
+        "info": {
+            "hijri": "20 Jmd.I 1447",
+            "day": "Tuesday"
+        }
+    },
+    "12 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4116,24 +4103,11 @@
             "Isha": "20:10"
         },
         "info": {
-            "hijri": "10 Jmd.I 1446",
-            "day": "Tuesday"
-        }
-    },
-    "13 Nov 2024": {
-        "prayerTimes": {
-            "Fajr": "05:48",
-            "Dhuhr": "13:00",
-            "Asr": "16:22",
-            "Maghrib": "18:58",
-            "Isha": "20:11"
-        },
-        "info": {
-            "hijri": "11 Jmd.I 1446",
+            "hijri": "21 Jmd.I 1447",
             "day": "Wednesday"
         }
     },
-    "14 Nov 2024": {
+    "13 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:48",
             "Dhuhr": "13:00",
@@ -4142,11 +4116,24 @@
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "12 Jmd.I 1446",
+            "hijri": "22 Jmd.I 1447",
             "day": "Thursday"
         }
     },
-    "15 Nov 2024": {
+    "14 Nov 2025": {
+        "prayerTimes": {
+            "Fajr": "05:48",
+            "Dhuhr": "13:00",
+            "Asr": "16:22",
+            "Maghrib": "18:58",
+            "Isha": "20:11"
+        },
+        "info": {
+            "hijri": "23 Jmd.I 1447",
+            "day": "Friday"
+        }
+    },
+    "15 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -4155,37 +4142,24 @@
             "Isha": "20:11"
         },
         "info": {
-            "hijri": "13 Jmd.I 1446",
-            "day": "Friday"
-        }
-    },
-    "16 Nov 2024": {
-        "prayerTimes": {
-            "Fajr": "05:49",
-            "Dhuhr": "13:01",
-            "Asr": "16:23",
-            "Maghrib": "18:59",
-            "Isha": "20:11"
-        },
-        "info": {
-            "hijri": "14 Jmd.I 1446",
+            "hijri": "24 Jmd.I 1447",
             "day": "Saturday"
         }
     },
-    "17 Nov 2024": {
+    "16 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
             "Asr": "16:23",
             "Maghrib": "18:59",
-            "Isha": "20:12"
+            "Isha": "20:11"
         },
         "info": {
-            "hijri": "15 Jmd.I 1446",
+            "hijri": "25 Jmd.I 1447",
             "day": "Sunday"
         }
     },
-    "18 Nov 2024": {
+    "17 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -4194,11 +4168,11 @@
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "16 Jmd.I 1446",
+            "hijri": "26 Jmd.I 1447",
             "day": "Monday"
         }
     },
-    "19 Nov 2024": {
+    "18 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:01",
@@ -4207,11 +4181,24 @@
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "17 Jmd.I 1446",
+            "hijri": "27 Jmd.I 1447",
             "day": "Tuesday"
         }
     },
-    "20 Nov 2024": {
+    "19 Nov 2025": {
+        "prayerTimes": {
+            "Fajr": "05:49",
+            "Dhuhr": "13:01",
+            "Asr": "16:23",
+            "Maghrib": "18:59",
+            "Isha": "20:12"
+        },
+        "info": {
+            "hijri": "28 Jmd.I 1447",
+            "day": "Wednesday"
+        }
+    },
+    "20 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:49",
             "Dhuhr": "13:02",
@@ -4220,11 +4207,11 @@
             "Isha": "20:12"
         },
         "info": {
-            "hijri": "18 Jmd.I 1446",
-            "day": "Wednesday"
+            "hijri": "29 Jmd.I 1447",
+            "day": "Thursday"
         }
     },
-    "21 Nov 2024": {
+    "21 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
@@ -4233,11 +4220,11 @@
             "Isha": "20:13"
         },
         "info": {
-            "hijri": "19 Jmd.I 1446",
-            "day": "Thursday"
+            "hijri": "30 Jmd.I 1447",
+            "day": "Friday"
         }
     },
-    "22 Nov 2024": {
+    "22 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
@@ -4246,11 +4233,11 @@
             "Isha": "20:13"
         },
         "info": {
-            "hijri": "20 Jmd.I 1446",
-            "day": "Friday"
+            "hijri": "01 Jmd.II 1447",
+            "day": "Saturday"
         }
     },
-    "23 Nov 2024": {
+    "23 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:02",
@@ -4259,11 +4246,11 @@
             "Isha": "20:13"
         },
         "info": {
-            "hijri": "21 Jmd.I 1446",
-            "day": "Saturday"
+            "hijri": "02 Jmd.II 1447",
+            "day": "Sunday"
         }
     },
-    "24 Nov 2024": {
+    "24 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:50",
             "Dhuhr": "13:03",
@@ -4272,11 +4259,11 @@
             "Isha": "20:14"
         },
         "info": {
-            "hijri": "22 Jmd.I 1446",
-            "day": "Sunday"
+            "hijri": "03 Jmd.II 1447",
+            "day": "Monday"
         }
     },
-    "25 Nov 2024": {
+    "25 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:03",
@@ -4285,37 +4272,24 @@
             "Isha": "20:14"
         },
         "info": {
-            "hijri": "23 Jmd.I 1446",
-            "day": "Monday"
+            "hijri": "04 Jmd.II 1447",
+            "day": "Tuesday"
         }
     },
-    "26 Nov 2024": {
+    "26 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:03",
             "Asr": "16:26",
             "Maghrib": "19:01",
-            "Isha": "20:15"
+            "Isha": "20:14"
         },
         "info": {
-            "hijri": "24 Jmd.I 1446",
-            "day": "Tuesday"
-        }
-    },
-    "27 Nov 2024": {
-        "prayerTimes": {
-            "Fajr": "05:51",
-            "Dhuhr": "13:04",
-            "Asr": "16:26",
-            "Maghrib": "19:01",
-            "Isha": "20:15"
-        },
-        "info": {
-            "hijri": "25 Jmd.I 1446",
+            "hijri": "05 Jmd.II 1447",
             "day": "Wednesday"
         }
     },
-    "28 Nov 2024": {
+    "27 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:51",
             "Dhuhr": "13:04",
@@ -4324,11 +4298,24 @@
             "Isha": "20:15"
         },
         "info": {
-            "hijri": "26 Jmd.I 1446",
+            "hijri": "06 Jmd.II 1447",
             "day": "Thursday"
         }
     },
-    "29 Nov 2024": {
+    "28 Nov 2025": {
+        "prayerTimes": {
+            "Fajr": "05:51",
+            "Dhuhr": "13:04",
+            "Asr": "16:26",
+            "Maghrib": "19:01",
+            "Isha": "20:15"
+        },
+        "info": {
+            "hijri": "07 Jmd.II 1447",
+            "day": "Friday"
+        }
+    },
+    "29 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:04",
@@ -4337,11 +4324,11 @@
             "Isha": "20:16"
         },
         "info": {
-            "hijri": "27 Jmd.I 1446",
-            "day": "Friday"
+            "hijri": "08 Jmd.II 1447",
+            "day": "Saturday"
         }
     },
-    "30 Nov 2024": {
+    "30 Nov 2025": {
         "prayerTimes": {
             "Fajr": "05:52",
             "Dhuhr": "13:05",
@@ -4350,24 +4337,24 @@
             "Isha": "20:16"
         },
         "info": {
-            "hijri": "28 Jmd.I 1446",
-            "day": "Saturday"
-        }
-    },
-    "01 Dec 2024": {
-        "prayerTimes": {
-            "Fajr": "05:52",
-            "Dhuhr": "13:05",
-            "Asr": "16:28",
-            "Maghrib": "19:02",
-            "Isha": "20:17"
-        },
-        "info": {
-            "hijri": "29 Jmd.I 1446",
+            "hijri": "09 Jmd.II 1447",
             "day": "Sunday"
         }
     },
-    "02 Dec 2024": {
+    "01 Dec 2025": {
+        "prayerTimes": {
+            "Fajr": "05:52",
+            "Dhuhr": "13:05",
+            "Asr": "16:27",
+            "Maghrib": "19:02",
+            "Isha": "20:16"
+        },
+        "info": {
+            "hijri": "10 Jmd.II 1447",
+            "day": "Monday"
+        }
+    },
+    "02 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:05",
@@ -4376,11 +4363,11 @@
             "Isha": "20:17"
         },
         "info": {
-            "hijri": "30 Jmd.I 1446",
-            "day": "Monday"
+            "hijri": "11 Jmd.II 1447",
+            "day": "Tuesday"
         }
     },
-    "03 Dec 2024": {
+    "03 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:06",
@@ -4389,24 +4376,24 @@
             "Isha": "20:17"
         },
         "info": {
-            "hijri": "01 Jmd.II 1446",
-            "day": "Tuesday"
+            "hijri": "12 Jmd.II 1447",
+            "day": "Wednesday"
         }
     },
-    "04 Dec 2024": {
+    "04 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:53",
             "Dhuhr": "13:06",
             "Asr": "16:29",
-            "Maghrib": "19:04",
+            "Maghrib": "19:03",
             "Isha": "20:18"
         },
         "info": {
-            "hijri": "02 Jmd.II 1446",
-            "day": "Wednesday"
+            "hijri": "13 Jmd.II 1447",
+            "day": "Thursday"
         }
     },
-    "05 Dec 2024": {
+    "05 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:07",
@@ -4415,11 +4402,11 @@
             "Isha": "20:18"
         },
         "info": {
-            "hijri": "03 Jmd.II 1446",
-            "day": "Thursday"
+            "hijri": "14 Jmd.II 1447",
+            "day": "Friday"
         }
     },
-    "06 Dec 2024": {
+    "06 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:54",
             "Dhuhr": "13:07",
@@ -4428,37 +4415,37 @@
             "Isha": "20:19"
         },
         "info": {
-            "hijri": "04 Jmd.II 1446",
-            "day": "Friday"
+            "hijri": "15 Jmd.II 1447",
+            "day": "Saturday"
         }
     },
-    "07 Dec 2024": {
+    "07 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
-            "Dhuhr": "13:08",
+            "Dhuhr": "13:07",
             "Asr": "16:30",
             "Maghrib": "19:05",
             "Isha": "20:19"
         },
         "info": {
-            "hijri": "05 Jmd.II 1446",
-            "day": "Saturday"
+            "hijri": "16 Jmd.II 1447",
+            "day": "Sunday"
         }
     },
-    "08 Dec 2024": {
+    "08 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:08",
-            "Asr": "16:31",
+            "Asr": "16:30",
             "Maghrib": "19:05",
             "Isha": "20:20"
         },
         "info": {
-            "hijri": "06 Jmd.II 1446",
-            "day": "Sunday"
+            "hijri": "17 Jmd.II 1447",
+            "day": "Monday"
         }
     },
-    "09 Dec 2024": {
+    "09 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:55",
             "Dhuhr": "13:08",
@@ -4467,11 +4454,11 @@
             "Isha": "20:20"
         },
         "info": {
-            "hijri": "07 Jmd.II 1446",
-            "day": "Monday"
+            "hijri": "18 Jmd.II 1447",
+            "day": "Tuesday"
         }
     },
-    "10 Dec 2024": {
+    "10 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:09",
@@ -4480,11 +4467,11 @@
             "Isha": "20:21"
         },
         "info": {
-            "hijri": "08 Jmd.II 1446",
-            "day": "Tuesday"
+            "hijri": "19 Jmd.II 1447",
+            "day": "Wednesday"
         }
     },
-    "11 Dec 2024": {
+    "11 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:56",
             "Dhuhr": "13:09",
@@ -4493,11 +4480,11 @@
             "Isha": "20:21"
         },
         "info": {
-            "hijri": "09 Jmd.II 1446",
-            "day": "Wednesday"
+            "hijri": "20 Jmd.II 1447",
+            "day": "Thursday"
         }
     },
-    "12 Dec 2024": {
+    "12 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:10",
@@ -4506,11 +4493,11 @@
             "Isha": "20:22"
         },
         "info": {
-            "hijri": "10 Jmd.II 1446",
-            "day": "Thursday"
+            "hijri": "21 Jmd.II 1447",
+            "day": "Friday"
         }
     },
-    "13 Dec 2024": {
+    "13 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:57",
             "Dhuhr": "13:10",
@@ -4519,11 +4506,11 @@
             "Isha": "20:22"
         },
         "info": {
-            "hijri": "11 Jmd.II 1446",
-            "day": "Friday"
+            "hijri": "22 Jmd.II 1447",
+            "day": "Saturday"
         }
     },
-    "14 Dec 2024": {
+    "14 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:11",
@@ -4532,11 +4519,11 @@
             "Isha": "20:23"
         },
         "info": {
-            "hijri": "12 Jmd.II 1446",
-            "day": "Saturday"
+            "hijri": "23 Jmd.II 1447",
+            "day": "Sunday"
         }
     },
-    "15 Dec 2024": {
+    "15 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:58",
             "Dhuhr": "13:11",
@@ -4545,11 +4532,11 @@
             "Isha": "20:23"
         },
         "info": {
-            "hijri": "13 Jmd.II 1446",
-            "day": "Sunday"
+            "hijri": "24 Jmd.II 1447",
+            "day": "Monday"
         }
     },
-    "16 Dec 2024": {
+    "16 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:12",
@@ -4558,11 +4545,11 @@
             "Isha": "20:24"
         },
         "info": {
-            "hijri": "14 Jmd.II 1446",
-            "day": "Monday"
+            "hijri": "25 Jmd.II 1447",
+            "day": "Tuesday"
         }
     },
-    "17 Dec 2024": {
+    "17 Dec 2025": {
         "prayerTimes": {
             "Fajr": "05:59",
             "Dhuhr": "13:12",
@@ -4571,24 +4558,24 @@
             "Isha": "20:24"
         },
         "info": {
-            "hijri": "15 Jmd.II 1446",
-            "day": "Tuesday"
+            "hijri": "26 Jmd.II 1447",
+            "day": "Wednesday"
         }
     },
-    "18 Dec 2024": {
+    "18 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:00",
+            "Fajr": "05:59",
             "Dhuhr": "13:13",
             "Asr": "16:35",
             "Maghrib": "19:10",
             "Isha": "20:25"
         },
         "info": {
-            "hijri": "16 Jmd.II 1446",
-            "day": "Wednesday"
+            "hijri": "27 Jmd.II 1447",
+            "day": "Thursday"
         }
     },
-    "19 Dec 2024": {
+    "19 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:00",
             "Dhuhr": "13:13",
@@ -4597,24 +4584,24 @@
             "Isha": "20:25"
         },
         "info": {
-            "hijri": "17 Jmd.II 1446",
-            "day": "Thursday"
+            "hijri": "28 Jmd.II 1447",
+            "day": "Friday"
         }
     },
-    "20 Dec 2024": {
+    "20 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:01",
+            "Fajr": "06:00",
             "Dhuhr": "13:14",
             "Asr": "16:36",
             "Maghrib": "19:11",
             "Isha": "20:26"
         },
         "info": {
-            "hijri": "18 Jmd.II 1446",
-            "day": "Friday"
+            "hijri": "29 Jmd.II 1447",
+            "day": "Saturday"
         }
     },
-    "21 Dec 2024": {
+    "21 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:01",
             "Dhuhr": "13:14",
@@ -4623,24 +4610,24 @@
             "Isha": "20:26"
         },
         "info": {
-            "hijri": "19 Jmd.II 1446",
-            "day": "Saturday"
+            "hijri": "30 Jmd.II 1447",
+            "day": "Sunday"
         }
     },
-    "22 Dec 2024": {
+    "22 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:02",
+            "Fajr": "06:01",
             "Dhuhr": "13:15",
             "Asr": "16:37",
             "Maghrib": "19:12",
             "Isha": "20:27"
         },
         "info": {
-            "hijri": "20 Jmd.II 1446",
-            "day": "Sunday"
+            "hijri": "01 Rajb. 1447",
+            "day": "Monday"
         }
     },
-    "23 Dec 2024": {
+    "23 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:02",
             "Dhuhr": "13:15",
@@ -4649,24 +4636,24 @@
             "Isha": "20:27"
         },
         "info": {
-            "hijri": "21 Jmd.II 1446",
-            "day": "Monday"
+            "hijri": "02 Rajb. 1447",
+            "day": "Tuesday"
         }
     },
-    "24 Dec 2024": {
+    "24 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:03",
+            "Fajr": "06:02",
             "Dhuhr": "13:16",
             "Asr": "16:38",
             "Maghrib": "19:13",
             "Isha": "20:28"
         },
         "info": {
-            "hijri": "22 Jmd.II 1446",
-            "day": "Tuesday"
+            "hijri": "03 Rajb. 1447",
+            "day": "Wednesday"
         }
     },
-    "25 Dec 2024": {
+    "25 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:03",
             "Dhuhr": "13:16",
@@ -4675,24 +4662,24 @@
             "Isha": "20:28"
         },
         "info": {
-            "hijri": "23 Jmd.II 1446",
-            "day": "Wednesday"
+            "hijri": "04 Rajb. 1447",
+            "day": "Thursday"
         }
     },
-    "26 Dec 2024": {
+    "26 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:04",
+            "Fajr": "06:03",
             "Dhuhr": "13:17",
             "Asr": "16:39",
             "Maghrib": "19:14",
             "Isha": "20:29"
         },
         "info": {
-            "hijri": "24 Jmd.II 1446",
-            "day": "Thursday"
+            "hijri": "05 Rajb. 1447",
+            "day": "Friday"
         }
     },
-    "27 Dec 2024": {
+    "27 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:04",
             "Dhuhr": "13:17",
@@ -4701,24 +4688,24 @@
             "Isha": "20:29"
         },
         "info": {
-            "hijri": "25 Jmd.II 1446",
-            "day": "Friday"
+            "hijri": "06 Rajb. 1447",
+            "day": "Saturday"
         }
     },
-    "28 Dec 2024": {
+    "28 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:05",
+            "Fajr": "06:04",
             "Dhuhr": "13:18",
             "Asr": "16:40",
             "Maghrib": "19:15",
-            "Isha": "20:30"
+            "Isha": "20:29"
         },
         "info": {
-            "hijri": "26 Jmd.II 1446",
-            "day": "Saturday"
+            "hijri": "07 Rajb. 1447",
+            "day": "Sunday"
         }
     },
-    "29 Dec 2024": {
+    "29 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:05",
             "Dhuhr": "13:18",
@@ -4727,24 +4714,24 @@
             "Isha": "20:30"
         },
         "info": {
-            "hijri": "27 Jmd.II 1446",
-            "day": "Sunday"
+            "hijri": "08 Rajb. 1447",
+            "day": "Monday"
         }
     },
-    "30 Dec 2024": {
+    "30 Dec 2025": {
         "prayerTimes": {
-            "Fajr": "06:06",
+            "Fajr": "06:05",
             "Dhuhr": "13:19",
             "Asr": "16:41",
             "Maghrib": "19:16",
             "Isha": "20:30"
         },
         "info": {
-            "hijri": "28 Jmd.II 1446",
-            "day": "Monday"
+            "hijri": "09 Rajb. 1447",
+            "day": "Tuesday"
         }
     },
-    "31 Dec 2024": {
+    "31 Dec 2025": {
         "prayerTimes": {
             "Fajr": "06:06",
             "Dhuhr": "13:19",
@@ -4753,8 +4740,8 @@
             "Isha": "20:31"
         },
         "info": {
-            "hijri": "29 Jmd.II 1446",
-            "day": "Tuesday"
+            "hijri": "10 Rajb. 1447",
+            "day": "Wednesday"
         }
     }
 }

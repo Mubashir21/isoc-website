@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ISOC Website
+
+Welcome to the ISOC Website repository. This project is a web application built using Next.js, designed to provide information and resources related to ISOC.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **Responsive Design**: Ensures optimal viewing experience across various devices.
+- **Dynamic Content**: Utilizes Next.js's capabilities for server-side rendering and dynamic routing.
+- **Styling**: Incorporates Tailwind CSS for efficient and customizable styling.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/): A React framework for server-side rendering and static site generation.
+- [TypeScript](https://www.typescriptlang.org/): A statically typed programming language that builds on JavaScript.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapid UI development.
 
 ## Getting Started
 
-First, run the development server:
+To set up the project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/Mubashir21/isoc-website.git
+   cd isoc-website
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Install dependencies**:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   Depending on your package manager of choice, run one of the following commands:
 
-## Learn More
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Start the development server**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   The application will be available at [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project's structure is organized as follows:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `app/`: Contains the main application components and pages.
+- `components/`: Reusable React components used throughout the application.
+- `lib/`: Utility functions and libraries.
+- `public/`: Static assets like images and fonts.
+- `styles/`: Global and component-specific styles.
+
+## Contributing
+
+We welcome contributions to enhance the project. To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes with clear and descriptive messages.
+4. Push your changes to your forked repository.
+5. Open a pull request to the `dev` branch of the main repository.
+
+Please ensure that your contributions align with the project's coding standards and conventions.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

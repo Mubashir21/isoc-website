@@ -15,7 +15,7 @@ type CardProps = React.ComponentProps<typeof Card>;
 
 export function PrayerCard({ className, ...props }: CardProps) {
   return (
-    <Card className={cn("w-[380px]", className)} {...props}>
+    <Card className={cn("w-full", className)} {...props}>
       <CardHeader className="bg-gray-200 rounded-t-lg">
         <div className="flex justify-between items-center">
           <CardTitle className="text-3xl">Prayer Times</CardTitle>

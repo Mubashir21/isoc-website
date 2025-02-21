@@ -1,18 +1,12 @@
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
-import SideNav from "@/components/sidenav";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const fontSans = FontSans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "ISOC Website",
-  description: "Serving the deen of Allah",
-};
 
 export default function RootLayout({
   children,
@@ -20,20 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          "flex h-screen flex-col md:flex-row md:overflow-hidden bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-      >
-        <div className="w-full flex-none md:w-64">
-          <SideNav />
-        </div>
-        <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
+    <ClerkProvider>
+      <html lang="en" className={inter.className}>
+        <body
+          className={cn("min-h-screen bg-background font-sans antialiased")}
+        >
           {children}
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

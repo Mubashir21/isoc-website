@@ -18,3 +18,71 @@ export type PrayerTimes = {
   Maghrib: string;
   Isha: string;
 };
+
+export type EventsTable = {
+  id: string;
+  created_by: string;
+  title: string;
+  datetime: string;
+  pic_url: string;
+  location: string;
+  speaker: string;
+  updated_at: string;
+  description: string;
+};
+
+export type AnnouncementsTable = {
+  id: string;
+  created_by: string;
+  title: string;
+  content: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type EventsForm = {
+  id: string;
+  created_by: string;
+  title: string;
+  datetime: string;
+  location: string;
+  speaker: string;
+  pic_url: string;
+  description: string;
+};
+
+export type AnnouncementsForm = {
+  id: string;
+  created_by: string;
+  title: string;
+  content: string;
+};
+
+export type EventCard = {
+  id: string;
+  title: string;
+  speaker: string;
+  location: string;
+  datetime: string;
+  pic_url: string;
+  description: string;
+};
+
+export type AnnouncementInfo = {
+  id: string;
+  title: string;
+  content: string;
+  updated_at: string;
+};
+
+export type AdminField = {
+  id: string;
+  name: string;
+};
+
+export type Admin = {
+  id: string;
+  name: string;
+  username: string;
+  password: string;
+};
