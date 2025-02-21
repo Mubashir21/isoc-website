@@ -25,14 +25,14 @@ const links = [
       "https://res.cloudinary.com/daukkeshg/image/upload/v1737724898/003_nwasnj.jpg",
   },
   {
-    name: "Charity Tournament",
+    name: "Island Trip",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1737725037/006_ycptyr.jpg",
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1740127554/DSC_0679_u7yqv4.jpg",
   },
   {
-    name: "Workshops",
+    name: "Annual Dinner",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1737724898/003_nwasnj.jpg",
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1740127925/DSC_8267_sv1leq.jpg",
   },
 ];
 
