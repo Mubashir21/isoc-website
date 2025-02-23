@@ -34,6 +34,16 @@ const links = [
     image_url:
       "https://res.cloudinary.com/daukkeshg/image/upload/v1740127925/DSC_8267_sv1leq.jpg",
   },
+  {
+    name: "Gaming Nights",
+    image_url:
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1740282719/007_afeunm.jpg",
+  },
+  {
+    name: "And More!",
+    image_url:
+      "https://res.cloudinary.com/daukkeshg/image/upload/v1740283032/004_oysigi.jpg",
+  },
 ];
 
 export default function EventsCarousel() {
@@ -53,14 +63,14 @@ export default function EventsCarousel() {
               >
                 <div className="rounded-xl p-1">
                   <Card className="overflow-hidden border-2">
-                    <CardContent className="flex items-center justify-center p-0 h-[600px] lg:h-[550px]">
+                    <CardContent className="flex items-center justify-center p-0 h-[550px]">
                       <div
                         style={{ backgroundImage: `url(${link.image_url})` }}
                         className="relative bg-cover bg-center w-full h-full flex items-center justify-center"
                       >
                         <div className="absolute inset-0 bg-black opacity-50"></div>
                         <div className="relative z-10">
-                          <span className=" text-4xl font-bold text-white ">
+                          <span className="text-3xl md:text-4xl font-bold text-white ">
                             {link.name}
                           </span>
                         </div>

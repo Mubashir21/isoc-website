@@ -7,6 +7,49 @@ import EventsCarousel from "@/components/ui/events-carousel";
 import Footer from "@/components/ui/footer";
 import { HOME_URLS } from "@/lib/images";
 
+const info = {
+  about: (
+    <>
+      Established in 2006, the Islamic Society at the University of Nottingham
+      Malaysia is a vibrant and welcoming community dedicated to fostering
+      brotherhood and sisterhood among students. We strive to create a space
+      where both Muslims and non-Muslims can learn about and engage with the
+      beauty of Islam. <br />
+      <br /> Balancing faith and academics can be challenging, and our society
+      provides an avenue for students to stay connected to their religion while
+      navigating university life. Through a diverse range of events—including
+      talks, sports activities, island trips, and sisters-only events such as
+      away days visiting Islamic museums—we aim to cater to different interests
+      and ensure there’s something for everyone. <br />
+      <br /> Whether you're looking to deepen your understanding of Islam, find
+      a supportive community, or simply relieve stress, ISOC is here for you.
+    </>
+  ),
+  masjid: (
+    <>
+      The masjid on campus, officially known as the Islamic Center, is more than
+      just a place of prayer—it is the heart of our ISOC and a sanctuary for all
+      students. As our base, it serves as a hub for our activities, from
+      congregational prayers and study circles to community gatherings and
+      spiritual discussions. Above all, the masjid is the House of Allah, a
+      place of worship, peace, and reflection.
+      <br />
+      <br />
+      Beyond ISOC, the masjid also hosts its own activities and events, with
+      both brothers and sisters leading initiatives such as Tajweed classes,
+      Tafseer sessions, and short masjid reminders. It is also a space for
+      students to unwind and build friendships through fun and engaging
+      activities—whether it's gaming nights for the brothers, chai nights for
+      the sisters, or just a place to relax. <br />
+      <br />
+      The masjid is more than a building—it is a refuge, a source of strength,
+      and a home away from home. Whether you seek knowledge, companionship, or a
+      moment of stillness in the presence of Allah, the masjid welcomes you with
+      open doors.
+    </>
+  ),
+};
+
 export default function Home() {
   return (
     <main>
@@ -57,22 +100,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-justify text-slate-700 text-sm md:text-base">
-                  We are a vibrant and welcoming community of students brought
-                  together by a shared faith and a commitment to fostering
-                  unity, growth, and understanding on campus. The ISOC is a
-                  space for Muslims at the University of Nottingham Malaysia to
-                  connect, support one another, and grow both spiritually and
-                  socially. At the same time, we aim to build bridges of
-                  understanding and collaboration with the wider university
-                  community. Through engaging events, insightful discussions,
-                  and meaningful initiatives, we strive to create an inclusive
-                  environment where students can strengthen their faith, develop
-                  leadership skills, and form lasting friendships. <br /> <br />
-                  Whether through weekly prayers, charity drives, educational
-                  workshops, or social gatherings, ISOC serves as a hub for both
-                  personal and collective development. No matter where you are
-                  on your journey, you are welcome here. Join us in fostering a
-                  campus community built on faith, compassion, and unity.
+                  {info.about}
                 </p>
               </div>
             </div>
@@ -94,22 +122,7 @@ export default function Home() {
             </div>
 
             <p className="text-justify text-slate-200 text-sm md:text-base">
-              We are a vibrant and welcoming community of students brought
-              together by a shared faith and a commitment to fostering unity,
-              growth, and understanding on campus. The ISOC is a space for
-              Muslims at the University of Nottingham Malaysia to connect,
-              support one another, and grow both spiritually and socially. At
-              the same time, we aim to build bridges of understanding and
-              collaboration with the wider university community. Through
-              engaging events, insightful discussions, and meaningful
-              initiatives, we strive to create an inclusive environment where
-              students can strengthen their faith, develop leadership skills,
-              and form lasting friendships. <br /> <br />
-              Whether through weekly prayers, charity drives, educational
-              workshops, or social gatherings, ISOC serves as a hub for both
-              personal and collective development. No matter where you are on
-              your journey, you are welcome here. Join us in fostering a campus
-              community built on faith, compassion, and unity.
+              {info.masjid}
             </p>
           </div>
         </div>
@@ -132,22 +145,7 @@ export default function Home() {
                   Who Are We
                 </h1>
                 <p className="text-justify text-slate-700 text-sm md:text-base">
-                  We are a vibrant and welcoming community of students brought
-                  together by a shared faith and a commitment to fostering
-                  unity, growth, and understanding on campus. The ISOC is a
-                  space for Muslims at the University of Nottingham Malaysia to
-                  connect, support one another, and grow both spiritually and
-                  socially. At the same time, we aim to build bridges of
-                  understanding and collaboration with the wider university
-                  community. Through engaging events, insightful discussions,
-                  and meaningful initiatives, we strive to create an inclusive
-                  environment where students can strengthen their faith, develop
-                  leadership skills, and form lasting friendships. <br /> <br />
-                  Whether through weekly prayers, charity drives, educational
-                  workshops, or social gatherings, ISOC serves as a hub for both
-                  personal and collective development. No matter where you are
-                  on your journey, you are welcome here. Join us in fostering a
-                  campus community built on faith, compassion, and unity.
+                  {info.about}
                 </p>
               </div>
             </div>
@@ -170,22 +168,7 @@ export default function Home() {
                 Our Headquarters
               </h1>
               <p className="text-justify text-slate-200 text-sm md:text-base">
-                We are a vibrant and welcoming community of students brought
-                together by a shared faith and a commitment to fostering unity,
-                growth, and understanding on campus. The ISOC is a space for
-                Muslims at the University of Nottingham Malaysia to connect,
-                support one another, and grow both spiritually and socially. At
-                the same time, we aim to build bridges of understanding and
-                collaboration with the wider university community. Through
-                engaging events, insightful discussions, and meaningful
-                initiatives, we strive to create an inclusive environment where
-                students can strengthen their faith, develop leadership skills,
-                and form lasting friendships. <br /> <br />
-                Whether through weekly prayers, charity drives, educational
-                workshops, or social gatherings, ISOC serves as a hub for both
-                personal and collective development. No matter where you are on
-                your journey, you are welcome here. Join us in fostering a
-                campus community built on faith, compassion, and unity.
+                {info.masjid}
               </p>
             </div>
           </div>

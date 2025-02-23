@@ -3,8 +3,18 @@ import SideNav from "@/components/sidenav";
 import Footer from "@/components/ui/footer";
 
 export const metadata: Metadata = {
-  title: "ISOC Website",
-  description: "Serving the deen of Allah",
+  title: "Islamic Society UNM",
+  description:
+    "Established in 2006, the Islamic Society at the University of Nottingham Malaysia is a welcoming community fostering brotherhood, faith, and knowledge through engaging events and activities.",
+  keywords: [
+    "Islamic Society",
+    "University of Nottingham Malaysia",
+    "ISOC",
+    "Muslim students",
+    "Faith and academics",
+    "Islamic events",
+    "Brotherhood and sisterhood",
+  ],
 };
 
 // export default function Layout({ children }: { children: React.ReactNode }) {
