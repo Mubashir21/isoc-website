@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "./card";
 import { AnnouncementInfo } from "@/lib/definitions";
-import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
+import { LocalDateDisplay, LocalTimeDisplay } from "../date-time-display";
 
 type CardProps = React.ComponentProps<typeof Card>;
 
@@ -22,8 +22,12 @@ export default function AnnouncementCard({
         <CardHeader className="">
           <CardTitle>{announcement.title}</CardTitle>
           <CardDescription className="flex justify-between">
-            <span>{formatTimeTo24Hour(announcement.updated_at)}</span>
-            <span>{formatDateToLocal(announcement.updated_at)}</span>
+            <span>
+              <LocalTimeDisplay datetime={announcement.updated_at} />
+            </span>
+            <span>
+              <LocalDateDisplay datetime={announcement.updated_at} />
+            </span>
           </CardDescription>
         </CardHeader>
         <CardContent>
