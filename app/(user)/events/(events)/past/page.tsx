@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { EventsCard } from "@/components/events-card";
 import { fetchPastEvents } from "@/lib/data";
 import {
