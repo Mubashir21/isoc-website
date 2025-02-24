@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardTitle, CardDescription } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { EventCard } from "@/lib/definitions";
-import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
+import { LocalDateDisplay, LocalTimeDisplay } from "./date-time-display";
 import Title from "./ui/event-detail-link";
 
 type CardProps = React.ComponentProps<typeof Card>;
@@ -41,8 +41,12 @@ export function EventsCard({
           </div>
           <div className="flex justify-between text-sm font-semibold text-blue-600">
             <p>{event.location}</p>
-            <p>{formatTimeTo24Hour(event.datetime)}</p>
-            <p>{formatDateToLocal(event.datetime)}</p>
+            <p>
+              <LocalTimeDisplay datetime={event.datetime} />
+            </p>
+            <p>
+              <LocalDateDisplay datetime={event.datetime} />
+            </p>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import {
   AddPictures,
 } from "@/components/ui/events-edit";
 import { formatDateToLocal, formatTimeTo24Hour } from "@/lib/utils";
+import { LocalTimeDisplay, LocalDateDisplay } from "../date-time-display";
 import { fetchFilteredAnnouncements, fetchFilteredEvents } from "@/lib/data";
 
 export async function EventsTable({
@@ -46,8 +47,12 @@ export async function EventsTable({
                 <div className="flex w-full items-center justify-between pt-4">
                   <div>
                     <p className="text-xl font-medium">{event.location}</p>
-                    <p>{formatDateToLocal(event.datetime)}</p>
-                    <p>{formatTimeTo24Hour(event.datetime)}</p>
+                    <p>
+                      <LocalDateDisplay datetime={event.datetime} />
+                    </p>
+                    <p>
+                      <LocalTimeDisplay datetime={event.datetime} />
+                    </p>
                     <p>{event.created_by}</p>
                   </div>
                   <div className="flex justify-end gap-2">
@@ -113,16 +118,16 @@ export async function EventsTable({
                     {event.location}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatTimeTo24Hour(event.datetime)}
+                    <LocalTimeDisplay datetime={event.datetime} />
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(event.datetime)}
+                    <LocalDateDisplay datetime={event.datetime} />
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {event.created_by}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(event.updated_at)}
+                    <LocalDateDisplay datetime={event.updated_at} />
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
@@ -173,8 +178,12 @@ export async function AnnouncementsTable({
                 <div className="flex w-full items-center justify-between pt-4">
                   <div>
                     <p className="text-lg mb-5">{announcement.content}</p>
-                    <p>{formatDateToLocal(announcement.updated_at)}</p>
-                    <p>{formatTimeTo24Hour(announcement.updated_at)}</p>
+                    <p>
+                      <LocalDateDisplay datetime={announcement.updated_at} />
+                    </p>
+                    <p>
+                      <LocalTimeDisplay datetime={announcement.updated_at} />
+                    </p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdateAnnouncement id={announcement.id} />
@@ -197,10 +206,10 @@ export async function AnnouncementsTable({
                   Admin
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Last Updated
+                  Last Updated Date
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
-                  Created At
+                  Last Updated Time
                 </th>
                 <th scope="col" className="relative py-3 pl-6 pr-3">
                   <span className="sr-only">Edit</span>
@@ -219,19 +228,16 @@ export async function AnnouncementsTable({
                     </div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {announcement.title}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
                     {announcement.content}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {announcement.created_by}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(announcement.updated_at)}
+                    <LocalDateDisplay datetime={announcement.updated_at} />
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {formatDateToLocal(announcement.created_at)}
+                    <LocalTimeDisplay datetime={announcement.updated_at} />
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
