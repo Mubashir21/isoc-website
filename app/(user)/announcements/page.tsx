@@ -22,7 +22,7 @@ export default async function Announcements() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="bg-gray-200 p-5 rounded-xl">
+        <div className="bg-gray-200 p-3 md:p-5 rounded-xl">
           <p className="text-3xl font-bold text-blue-600 mb-5">Today</p>
           <div className="flex flex-col gap-3">
             {todayAnnouncements.length > 0 ? (
@@ -37,7 +37,7 @@ export default async function Announcements() {
             )}
           </div>
         </div>
-        <div className="bg-gray-200 p-5 rounded-xl">
+        <div className="bg-gray-200 p-3 md:p-5  rounded-xl">
           <p className="text-3xl font-bold text-blue-600 mb-5">Past</p>
           <div className="flex flex-col gap-3">
             {pastAnnouncements.length > 0 ? (
