@@ -12,8 +12,8 @@ export default async function Announcements() {
   const todayAnnouncements = await fetchTodayAnnouncements();
   const pastAnnouncements = await fetchPastAnnouncements();
   return (
-    <div className="lg:px-28 md:px-16 2xl:px-64">
-      <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
+      <div className="lg:px-28 md:px-16 2xl:px-64">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbSeparator />
@@ -22,7 +22,9 @@ export default async function Announcements() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="bg-gray-200 p-3 md:p-5 rounded-xl">
+      </div>
+      <div className="bg-gray-200 rounded-xl ">
+        <div className="lg:px-28 md:px-16 2xl:px-64 p-3 md:p-5 ">
           <p className="text-3xl font-bold text-blue-600 mb-5">Today</p>
           <div className="flex flex-col gap-3">
             {todayAnnouncements.length > 0 ? (
@@ -37,7 +39,9 @@ export default async function Announcements() {
             )}
           </div>
         </div>
-        <div className="bg-gray-200 p-3 md:p-5  rounded-xl">
+      </div>
+      <div className="bg-gray-200 rounded-xl ">
+        <div className="lg:px-28 md:px-16 2xl:px-64 p-3 md:p-5 ">
           <p className="text-3xl font-bold text-blue-600 mb-5">Past</p>
           <div className="flex flex-col gap-3">
             {pastAnnouncements.length > 0 ? (
