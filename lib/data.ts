@@ -8,6 +8,7 @@ import {
   AnnouncementsTable,
   AnnouncementsForm,
 } from "./definitions";
+import { unstable_noStore as noStore } from "next/cache";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -165,6 +166,7 @@ export async function fetchAnnouncementById(id: string) {
 export async function fetchTodayAnnouncements() {
   // const today = new Date().toISOString().split("T")[0];
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  noStore();
 
   try {
     const { rows } = await sql<AnnouncementInfo>`
@@ -189,6 +191,7 @@ export async function fetchTodayAnnouncements() {
 export async function fetchPastAnnouncements() {
   // const today = new Date().toISOString().split("T")[0];
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  noStore();
 
   try {
     const { rows } = await sql<AnnouncementInfo>`
