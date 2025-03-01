@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SideNav from "@/components/sidenav";
 import Footer from "@/components/ui/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Islamic Society UNM",
@@ -36,7 +37,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="w-full px-5 pt-5">
         <SideNav isAdmin={false} />
       </div>
-      <div className="flex-grow p-5">{children}</div>
+      <div className="flex-grow p-5">
+        {children} <Analytics />
+      </div>
     </div>
   );
 }
