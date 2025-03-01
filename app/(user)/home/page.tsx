@@ -82,7 +82,7 @@ export default function Home() {
             </div>
             <div className="text-center font-medium text-xl lg:text-3xl">
               <p>
-                Welcome to The University of Nottingham
+                Welcome to The University of Nottingham Malaysia
                 <span> Islamic Society</span>
               </p>
             </div>

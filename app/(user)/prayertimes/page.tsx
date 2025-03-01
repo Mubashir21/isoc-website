@@ -26,6 +26,10 @@ export default async function PrayerTimes() {
           <div>
             <p className="text-muted-foreground text-sm ml-2">
               Note: The UNM Islamic Center adheres to the above prayer times.
+              <br />
+              <span className="text-red-600">
+                Taraweeh will start immediately after a small break after Isha.
+              </span>
             </p>
           </div>
         </div>

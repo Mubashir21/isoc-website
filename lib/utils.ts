@@ -6,6 +6,7 @@ import {
   PrayerTimesData,
   PrayerTimes,
 } from "@/lib/definitions";
+import { StringDecoder } from "node:string_decoder";
 
 const typedPrayerTimes: PrayerTimesJSON = prayerTimes as PrayerTimesJSON;
 
@@ -13,7 +14,10 @@ export function fetchPrayerTimes(date: string): PrayerTimesJSON[string] {
   return typedPrayerTimes[date];
 }
 
-export function fetchIqamaTimes(adhanTimes: PrayerTimes): PrayerTimes {
+export function fetchIqamaTimes(
+  adhanTimes: PrayerTimes,
+  hijriMonth: string,
+): PrayerTimes {
   // Helper function to add minutes to a given time in "HH:mm" format
   const addMinutes = (time: string, minutes: number): string => {
     const [hours, mins] = time.split(":").map(Number);
@@ -25,12 +29,15 @@ export function fetchIqamaTimes(adhanTimes: PrayerTimes): PrayerTimes {
     return `${String(newHours).padStart(2, "0")}:${String(newMinutes).padStart(2, "0")}`;
   };
 
+  // Check if current month is Ramadan (accounting for different spellings/abbreviations)
+  const isRamadan = hijriMonth.toLowerCase().includes("rmdn");
+
   return {
     Fajr: addMinutes(adhanTimes.Fajr, 25),
     Dhuhr: addMinutes(adhanTimes.Dhuhr, 15),
     Asr: addMinutes(adhanTimes.Asr, 15),
     Maghrib: addMinutes(adhanTimes.Maghrib, 10),
-    Isha: addMinutes(adhanTimes.Isha, 15),
+    Isha: isRamadan ? "21:15" : addMinutes(adhanTimes.Isha, 15),
   };
 }
 

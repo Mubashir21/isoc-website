@@ -19,7 +19,7 @@ export default function PrayerTimesDisplay() {
   const [date, setDate] = useState(getDate(time));
   const [prayerTimes, setPrayerTimes] = useState(fetchPrayerTimes(date));
   const [iqamaTimes, setIqamaTimes] = useState(
-    fetchIqamaTimes(prayerTimes.prayerTimes),
+    fetchIqamaTimes(prayerTimes.prayerTimes, prayerTimes.info.hijri),
   );
   const [nextPrayerTime, setNextPrayerTime] = useState(
     getNextPrayerTime(time, prayerTimes),
