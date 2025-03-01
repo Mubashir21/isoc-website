@@ -10,12 +10,12 @@ import { linkSync } from "fs";
 const links = {
   socials: [
     {
-      name: "Brother's Instagram",
+      name: "Brothers' Instagram",
       icon: InstagramIcon,
       href: "https://www.instagram.com/unmisocbrothers/?hl=en",
     },
     {
-      name: "Sister's Instagram",
+      name: "Sisters' Instagram",
       icon: InstagramIcon,
       href: "https://www.instagram.com/unmisocsisters/?hl=en",
     },
