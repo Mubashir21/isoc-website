@@ -8,11 +8,27 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import AnnouncementCard from "@/components/ui/announcements-card";
-import { fetchPastAnnouncements, fetchTodayAnnouncements } from "@/lib/data";
+import {
+  fetchPastAnnouncementsPages,
+  fetchTodayAnnouncements,
+} from "@/lib/data";
+import Pagination from "@/components/ui/pagination";
+import { PastAnnouncements } from "@/components/ui/announcements";
 
-export default async function Announcements() {
+export default async function Announcements({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+  const query = searchParams?.query || "";
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const totalPages = await fetchPastAnnouncementsPages(query);
+
   const todayAnnouncements = await fetchTodayAnnouncements();
-  const pastAnnouncements = await fetchPastAnnouncements();
   return (
     <div className="flex flex-col gap-4">
       <div className="lg:px-28 md:px-16 2xl:px-64">
@@ -45,19 +61,9 @@ export default async function Announcements() {
       <div className="bg-gray-200 rounded-xl ">
         <div className="lg:px-28 md:px-16 2xl:px-64 p-3 md:p-5 ">
           <p className="text-3xl font-bold text-blue-600 mb-5">Past</p>
-          <div className="flex flex-col gap-3">
-            {pastAnnouncements.length > 0 ? (
-              pastAnnouncements.map((announcement) => (
-                <AnnouncementCard
-                  key={announcement.id}
-                  announcement={announcement}
-                />
-              ))
-            ) : (
-              <p className="text-muted-foreground">
-                No past announcements available.
-              </p>
-            )}
+          <PastAnnouncements query={query} currentPage={currentPage} />
+          <div className="flex mt-5 w-full justify-center">
+            <Pagination totalPages={totalPages} />
           </div>
         </div>
       </div>
