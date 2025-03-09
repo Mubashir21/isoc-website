@@ -114,6 +114,28 @@ export async function fetchAnnouncementsPages(query: string) {
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    console.log(totalPages);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of announcements.");
+  }
+}
+
+export async function fetchPastAnnouncementsPages(query: string) {
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  noStore();
+
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM announcements
+    JOIN users ON announcements.created_by = users.id
+    WHERE
+      DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
+  `;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    console.log(totalPages);
     return totalPages;
   } catch (error) {
     console.error("Database Error:", error);
@@ -188,8 +210,11 @@ export async function fetchTodayAnnouncements() {
   }
 }
 
-export async function fetchPastAnnouncements() {
-  // const today = new Date().toISOString().split("T")[0];
+export async function fetchPastAnnouncements(
+  query: string,
+  currentPage: number,
+) {
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   noStore();
 
@@ -204,6 +229,7 @@ export async function fetchPastAnnouncements() {
       WHERE 
         DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
         ORDER BY announcements.updated_at DESC  -- Order by upcoming events
+        LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
     return rows;
