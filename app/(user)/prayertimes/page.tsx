@@ -24,13 +24,14 @@ export default async function PrayerTimes() {
         <div className="flex flex-col gap-5">
           <PrayerCard />
           <div>
-            <p className="text-muted-foreground text-sm ml-2">
-              Note: The UNM Islamic Center adheres to the above prayer times.
-              <br />
-              <span className="text-red-600">
-                Taraweeh will start immediately after a small break after Isha.
-              </span>
-            </p>
+            <div className="text-muted-foreground text-sm mx-2 flex flex-col gap-2">
+              <p>
+                Note: The UNM Islamic Center adheres to the above prayer times.
+              </p>
+              <p className="text-emerald-600">
+                Taraweeh will begin shortly after a brief break following Isha.
+              </p>
+            </div>
           </div>
         </div>
       </div>

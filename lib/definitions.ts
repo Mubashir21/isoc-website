@@ -19,6 +19,10 @@ export type PrayerTimes = {
   Isha: string;
 };
 
+export type RamadanTahajjudTimes = PrayerTimes & {
+  Tahajjud: string;
+};
+
 export type EventsTable = {
   id: string;
   created_by: string;
