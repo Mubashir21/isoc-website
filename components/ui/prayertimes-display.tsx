@@ -6,6 +6,8 @@ import {
   getNextPrayerTime,
   fetchPrayerTimes,
   fetchIqamaTimes,
+  isRamadan,
+  fetchTahajjudTime,
 } from "@/lib/utils";
 import CountdownDisplay from "./countdown-timer";
 import DateDisplay from "./date-display";
@@ -26,6 +28,9 @@ export default function PrayerTimesDisplay() {
   );
   const [countdown, setCountdown] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isTahajjudPeriod, setIsTahajjudPeriod] = useState(
+    isRamadan(prayerTimes.info.hijri),
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,6 +44,7 @@ export default function PrayerTimesDisplay() {
           setNextPrayerTime(
             getNextPrayerTime(newTime, fetchPrayerTimes(newDate)),
           );
+          setIsTahajjudPeriod(isRamadan(prayerTimes.info.hijri));
         }
 
         return newTime;
@@ -109,6 +115,17 @@ export default function PrayerTimesDisplay() {
                 <p>{iqamaTimes[key as keyof PrayerTimes]}</p>
               </div>
             ),
+          )}
+          {isTahajjudPeriod && (
+            <>
+              <div className="mt-5 flex justify-between text-md leading-loose font-medium text-muted-foreground">
+                Ramadan
+              </div>
+              <div className="flex justify-between items-center text-md font-medium leading-loose text-emerald-600">
+                <p className="w-10">Tahajjud</p>
+                <p>{fetchTahajjudTime(date)}</p>
+              </div>
+            </>
           )}
         </div>
       </CardContent>

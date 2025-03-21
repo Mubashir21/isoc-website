@@ -165,3 +165,17 @@ export const formatDateTime = (datetime: string): string => {
   const date = new Date(datetime);
   return date.toISOString().slice(0, 16);
 };
+
+export function isRamadan(hijriDate: string): boolean {
+  const parts = hijriDate.split(" ");
+
+  const dayNumber = parseInt(parts[0], 10);
+
+  const monthAbbr = parts[1];
+
+  return monthAbbr === "Rmdn." && dayNumber >= 21;
+}
+
+export function fetchTahajjudTime(date: string): string {
+  return "02:30";
+}
