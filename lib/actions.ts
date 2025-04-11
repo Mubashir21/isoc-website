@@ -204,6 +204,8 @@ export async function createEvent(
     .replace("+00:00", "+00");
 
   let imageUrl: string | undefined;
+  let fileId: string | undefined;
+
   if (typeof pic_url === "object" && pic_url instanceof File) {
     // Handle file upload
     const imageFormData = new FormData();
@@ -216,8 +218,10 @@ export async function createEvent(
       });
 
       const uploadResult = await uploadResponse.json();
+
       if (uploadResponse.ok) {
         imageUrl = uploadResult.url;
+        fileId = uploadResult.fileId;
       } else {
         console.error("File Upload Error:", uploadResult.error);
         return {
@@ -233,19 +237,21 @@ export async function createEvent(
       };
     }
   } else {
-    imageUrl = pic_url as string; // In case it's already a URL
+    imageUrl = pic_url as string;
   }
 
   try {
     await sql`
-     INSERT INTO events (title, datetime, location, speaker, pic_url, description, created_by)
-    VALUES (${title}, ${formattedUtcDateTime}, ${location}, ${speaker}, ${imageUrl}, ${description}, ${created_by})
+      INSERT INTO events (
+        title, datetime, location, speaker, pic_url, pic_file_id, description, created_by
+      )
+      VALUES (
+        ${title}, ${formattedUtcDateTime}, ${location}, ${speaker}, ${imageUrl}, ${fileId}, ${description}, ${created_by}
+      )
     `;
 
-    // Revalidate the cache for the events page and redirect the user.
     revalidatePath("/admin/events");
 
-    // This line will never be reached due to the redirect, but it's necessary for TypeScript
     return { errors: {}, message: "Event created successfully" };
   } catch (error) {
     console.error("Database Error:", error);
@@ -268,6 +274,7 @@ const UpdateEvent = EventFormSchema.omit({
 export async function updateEvent(
   id: string,
   prev_pic_url: string,
+  prev_pic_file_id: string,
   prevState: EventState,
   formData: FormData,
 ): Promise<EventState> {
@@ -306,12 +313,15 @@ export async function updateEvent(
   const formattedUpdatedDateTime = dateTime
     .toFormat("yyyy-MM-dd HH:mm:ssZZ")
     .replace("+00:00", "+00");
+
   // Handle pic_url: if a new file is provided, upload it; otherwise, use the previous URL
   let pic_url = prev_pic_url;
+  let pic_file_id = prev_pic_file_id;
   const newPicFile = formData.get("pic_url") as File;
 
   if (newPicFile && newPicFile.size > 0) {
-    if (prev_pic_url) {
+    // Step 1: Delete the previous image using fileId
+    if (prev_pic_file_id) {
       try {
         const deleteResponse = await fetch(
           `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
@@ -320,7 +330,7 @@ export async function updateEvent(
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ url: prev_pic_url }),
+            body: JSON.stringify({ fileId: prev_pic_file_id }),
           },
         );
 
@@ -356,6 +366,7 @@ export async function updateEvent(
       const uploadResult = await uploadResponse.json();
       if (uploadResponse.ok) {
         pic_url = uploadResult.url;
+        pic_file_id = uploadResult.fileId;
       } else {
         console.error("File Upload Error:", uploadResult.error);
         return {
@@ -375,49 +386,62 @@ export async function updateEvent(
   try {
     await sql`
       UPDATE events
-      SET title = ${title}, datetime = ${formattedUtcDateTime}, location = ${location}, speaker = ${speaker}, pic_url = ${pic_url}, description = ${description}, created_by = ${created_by}, updated_at = ${formattedUpdatedDateTime}
+      SET 
+        title = ${title},
+        datetime = ${formattedUtcDateTime},
+        location = ${location},
+        speaker = ${speaker},
+        pic_url = ${pic_url},
+        pic_file_id = ${pic_file_id},
+        description = ${description},
+        created_by = ${created_by},
+        updated_at = ${formattedUpdatedDateTime}
       WHERE id = ${id}
     `;
 
     revalidatePath("/admin/events");
-
-    // This line will never be reached due to the redirect, but it's necessary for TypeScript
     return { errors: {}, message: "Event updated successfully" };
   } catch (error) {
+    console.error("Update Error:", error);
     return { errors: {}, message: "Database Error: Failed to Update Event." };
   }
 }
 
-export async function deleteEvent(id: string, pic_url: string) {
-  try {
-    const deleteResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+export async function deleteEvent(id: string, pic_file_id: string) {
+  // Delete image from ImageKit
+  if (pic_file_id) {
+    try {
+      const deleteResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ fileId: pic_file_id }),
         },
-        body: JSON.stringify({ url: pic_url }),
-      },
-    );
+      );
 
-    const deleteResult = await deleteResponse.json();
-    if (!deleteResponse.ok) {
-      console.error("File Deletion Error:", deleteResult.error);
-      return {
-        message: "File Deletion Error: Failed to delete old image.",
-      };
+      const deleteResult = await deleteResponse.json();
+      if (!deleteResponse.ok) {
+        console.error("File Deletion Error:", deleteResult.error);
+        return {
+          message: "File Deletion Error: Failed to delete image.",
+        };
+      }
+    } catch (error) {
+      console.error("Network Error:", error);
+      return { message: "File Deletion Error: Failed to delete image." };
     }
-  } catch (error) {
-    console.error("Network Error:", error);
-    return { message: "File Deletion Error: Failed to delete old image." };
   }
 
+  // Delete event from DB
   try {
     await sql`DELETE FROM events WHERE id = ${id}`;
     revalidatePath("/admin/events");
     return { message: "Deleted Event." };
   } catch (error) {
+    console.error("Database Deletion Error:", error);
     return { message: "Database Error: Failed to Delete Event." };
   }
 }

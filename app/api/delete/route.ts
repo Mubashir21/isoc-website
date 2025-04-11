@@ -1,51 +1,31 @@
-import { v2 as cloudinary } from "cloudinary";
+import ImageKit from "imagekit";
 import { NextRequest, NextResponse } from "next/server";
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME as string,
-  api_key: process.env.CLOUDINARY_API_KEY as string,
-  api_secret: process.env.CLOUDINARY_API_SECRET as string,
+const imagekit = new ImageKit({
+  publicKey: process.env.IMAGEKIT_PUBLIC_KEY as string,
+  privateKey: process.env.IMAGEKIT_PRIVATE_KEY as string,
+  urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT as string,
 });
 
 export async function POST(request: NextRequest) {
   try {
-    const { url } = await request.json();
+    const { fileId } = await request.json();
+    console.log("Received fileId:", fileId);
 
-    if (!url) {
-      return NextResponse.json({ error: "No URL provided" }, { status: 400 });
-    }
-
-    // Extract the public_id from the URL
-    const publicIdMatch = url.match(/\/v\d+\/(.+)\.[a-zA-Z]+$/);
-
-    if (!publicIdMatch) {
+    if (!fileId) {
       return NextResponse.json(
-        { error: "Invalid URL format" },
+        { error: "No fileId provided" },
         { status: 400 },
       );
     }
 
-    const public_id = publicIdMatch[1];
+    const result = await imagekit.deleteFile(fileId);
 
-    console.log("Attempting to delete image with public_id:", public_id);
-
-    // Delete the image from Cloudinary
-    const result = await cloudinary.uploader.destroy(public_id);
-
-    console.log("Cloudinary deletion result:", result);
-
-    if (result.result !== "ok") {
-      return NextResponse.json(
-        { error: "Failed to delete image", details: result },
-        { status: 500 },
-      );
-    }
-
-    return NextResponse.json({ message: "Image deleted successfully" });
+    return NextResponse.json({ message: "Image deleted successfully", result });
   } catch (error) {
-    console.error("Delete error:", error);
+    console.error("ImageKit delete error:", error);
     return NextResponse.json(
-      { error: "An error occurred during deletion", details: error },
+      { error: "Failed to delete image", details: error },
       { status: 500 },
     );
   }

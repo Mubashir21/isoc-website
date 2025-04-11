@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/daukkeshg/image/upload/**",
       },
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        port: "",
+        pathname: "/djga6bl1m/**",
+      },
     ],
   },
 };

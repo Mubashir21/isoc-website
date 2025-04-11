@@ -12,37 +12,37 @@ const links = [
   {
     name: "Islamic Talks",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1737725103/010_usqzsc.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/talk?updatedAt=1744298030546",
   },
   {
     name: "Charity Tournament",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1737725037/006_ycptyr.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/charity-tournament?updatedAt=1744297980463",
   },
   {
     name: "Workshops",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1737724898/003_nwasnj.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/workshop?updatedAt=1744297903912",
   },
   {
     name: "Island Trip",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1740127554/DSC_0679_u7yqv4.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/island-trip?updatedAt=1744298057265",
   },
   {
     name: "Annual Dinner",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1740127925/DSC_8267_sv1leq.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/annual-dinner?updatedAt=1744298076368",
   },
   {
     name: "Gaming Nights",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1740282719/007_afeunm.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/gaming-night?updatedAt=1744297931422",
   },
   {
     name: "And More!",
     image_url:
-      "https://res.cloudinary.com/daukkeshg/image/upload/v1740283032/004_oysigi.jpg",
+      "https://ik.imagekit.io/djga6bl1m/site-assets/and-more?updatedAt=1744298093861",
   },
 ];
 

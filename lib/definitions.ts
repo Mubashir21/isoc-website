@@ -33,6 +33,8 @@ export type EventsTable = {
   speaker: string;
   updated_at: string;
   description: string;
+  pic_file_id: string;
+  type: "major" | "lecture" | "masjid";
 };
 
 export type AnnouncementsTable = {
@@ -53,6 +55,8 @@ export type EventsForm = {
   speaker: string;
   pic_url: string;
   description: string;
+  pic_file_id: string;
+  type: "major" | "lecture" | "masjid";
 };
 
 export type AnnouncementsForm = {
@@ -70,6 +74,7 @@ export type EventCard = {
   datetime: string;
   pic_url: string;
   description: string;
+  type: "major" | "lecture" | "masjid";
 };
 
 export type AnnouncementInfo = {
