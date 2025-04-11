@@ -17,7 +17,12 @@ export default function EditEventForm({
   admins: AdminField[];
 }) {
   const initialState: EventState = { message: null, errors: {} };
-  const updateEventWithId = updateEvent.bind(null, event.id, event.pic_url);
+  const updateEventWithId = updateEvent.bind(
+    null,
+    event.id,
+    event.pic_url,
+    event.pic_file_id,
+  );
   const [state, formAction] = useFormState(updateEventWithId, initialState);
   const { pending } = useFormStatus();
   const [newImage, setNewImage] = useState<File | null>(null);

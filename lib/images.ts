@@ -1,11 +1,7 @@
 export const HOME_URLS = {
-  hero: "https://res.cloudinary.com/daukkeshg/image/upload/v1739948380/crowd_ul3rlw.jpg",
+  hero: "https://ik.imagekit.io/djga6bl1m/site-assets/crowd.jpg?updatedAt=1744297890743",
   crowd:
-    "https://res.cloudinary.com/daukkeshg/image/upload/v1739948379/talk_u5m3xi.jpg",
+    "https://ik.imagekit.io/djga6bl1m/site-assets/talk-audience?updatedAt=1744298014163",
   masjid:
-    "https://res.cloudinary.com/daukkeshg/image/upload/v1739950911/masjid_rdegcf.jpg",
-  island:
-    "https://res.cloudinary.com/daukkeshg/image/upload/v1740127554/DSC_0679_u7yqv4.jpg",
-  dinner:
-    "https://res.cloudinary.com/daukkeshg/image/upload/v1740127925/DSC_8267_sv1leq.jpg",
+    "https://ik.imagekit.io/djga6bl1m/site-assets/masjid.jpg?updatedAt=1744297885694",
 } as const;

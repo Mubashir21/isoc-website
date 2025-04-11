@@ -25,6 +25,7 @@ export async function fetchFilteredEvents(query: string, currentPage: number) {
         events.pic_url,
         events.speaker,
         events.updated_at,
+        events.pic_file_id,
         users.name AS created_by
       FROM events
       JOIN users ON events.created_by = users.id
@@ -153,7 +154,8 @@ export async function fetchEventById(id: string) {
         events.location,
         events.speaker,
         events.pic_url,
-        events.description
+        events.description,
+        events.pic_file_id
       FROM events
       WHERE events.id = ${id};
     `;

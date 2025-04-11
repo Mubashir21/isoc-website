@@ -58,7 +58,10 @@ export async function EventsTable({
                   <div className="flex justify-end gap-2">
                     <UpdateEvent id={event.id} />
                     <AddPictures id={event.id} />
-                    <DeleteEvent id={event.id} pic_url={event.pic_url} />
+                    <DeleteEvent
+                      id={event.id}
+                      pic_file_id={event.pic_file_id}
+                    />
                   </div>
                 </div>
               </div>
@@ -133,7 +136,10 @@ export async function EventsTable({
                     <div className="flex justify-end gap-3">
                       <UpdateEvent id={event.id} />
                       <AddPictures id={event.id} />
-                      <DeleteEvent id={event.id} pic_url={event.pic_url} />
+                      <DeleteEvent
+                        id={event.id}
+                        pic_file_id={event.pic_file_id}
+                      />
                     </div>
                   </td>
                 </tr>

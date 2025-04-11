@@ -1,13 +1,14 @@
-import { v2 as cloudinary, UploadApiResponse } from "cloudinary";
 import { NextRequest, NextResponse } from "next/server";
+import ImageKit from "imagekit";
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME as string,
-  api_key: process.env.CLOUDINARY_API_KEY as string,
-  api_secret: process.env.CLOUDINARY_API_SECRET as string,
+// Configure ImageKit with environment variables
+const imagekit = new ImageKit({
+  publicKey: process.env.IMAGEKIT_PUBLIC_KEY as string,
+  privateKey: process.env.IMAGEKIT_PRIVATE_KEY as string,
+  urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT as string,
 });
 
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 5MB
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_FILE_TYPES = ["image/jpeg", "image/png", "image/gif"];
 
 export async function POST(request: NextRequest) {
@@ -33,22 +34,21 @@ export async function POST(request: NextRequest) {
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
-    const result = await new Promise<UploadApiResponse>((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: "society_events" },
-        (error, result) => {
-          if (error) reject(error);
-          else resolve(result as UploadApiResponse);
-        },
-      );
+    // Generate a unique fileName using original name and timestamp
+    const fileName = `${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
 
-      uploadStream.end(buffer);
+    const result = await imagekit.upload({
+      file: buffer, // Binary file data
+      fileName: fileName,
+      folder: "events", // Same folder structure as in Cloudinary
+      useUniqueFileName: true, // ImageKit will ensure filename uniqueness
     });
 
     return NextResponse.json({
       message: "Upload successful",
-      url: result.secure_url,
-      public_id: result.public_id,
+      url: result.url, // The full URL to the uploaded image
+      fileId: result.fileId, // ImageKit's unique file identifier
+      filePath: result.filePath, // Path of the file in ImageKit
     });
   } catch (error) {
     console.error("Upload error:", error);

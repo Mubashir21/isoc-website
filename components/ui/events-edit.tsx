@@ -77,8 +77,14 @@ export function AddPictures({ id }: { id: string }) {
   );
 }
 
-export function DeleteEvent({ id, pic_url }: { id: string; pic_url: string }) {
-  const deleteEventeWithId = deleteEvent.bind(null, id, pic_url);
+export function DeleteEvent({
+  id,
+  pic_file_id,
+}: {
+  id: string;
+  pic_file_id: string;
+}) {
+  const deleteEventeWithId = deleteEvent.bind(null, id, pic_file_id);
 
   return (
     <form action={deleteEventeWithId}>
