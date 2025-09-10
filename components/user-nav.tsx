@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { UserNavLinks } from "@/components/ui/user-nav-links";
 import Image from "next/image";
 import ISOCLogoBlack from "../public/isoc-logo.svg";
-import ISOCLogoWhite from "../public/isoc-logo-white.png"; // Add white logo import
+import ISOCLogoWhite from "../public/ISoc-logo-white.png"; // Add white logo import
 
 export default function UserNav() {
   return (
