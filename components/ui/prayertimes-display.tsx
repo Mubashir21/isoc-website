@@ -1,140 +1,82 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import {
-  getDate,
-  getNextPrayerTime,
-  fetchPrayerTimes,
-  fetchIqamaTimes,
-  isRamadan,
-  fetchTahajjudTime,
-} from "@/lib/utils";
-import CountdownDisplay from "./countdown-timer";
-import DateDisplay from "./date-display";
 import { CardContent, CardFooter } from "@/components/ui/card";
+import { usePrayerTimes } from "@/hooks/usePrayerTimes";
+import { useCountdown } from "@/hooks/useCountdown";
+import DateDisplay from "@/components/ui/date-display";
+import { PrayerList } from "@/components/prayer-list";
+import { CountdownDisplay } from "@/components/ui/countdown-timer";
+import { RamadanSection } from "@/components/ramadan-section";
 import { PrayerCardSkeleton } from "../skeletons";
-import clsx from "clsx";
-import { PrayerTimes } from "@/lib/definitions";
+import { AlertCircle } from "lucide-react";
 
-export default function PrayerTimesDisplay() {
-  const [time, setTime] = useState(new Date());
-  const [date, setDate] = useState(getDate(time));
-  const [prayerTimes, setPrayerTimes] = useState(fetchPrayerTimes(date));
-  const [iqamaTimes, setIqamaTimes] = useState(
-    fetchIqamaTimes(prayerTimes.prayerTimes, prayerTimes.info.hijri),
-  );
-  const [nextPrayerTime, setNextPrayerTime] = useState(
-    getNextPrayerTime(time, prayerTimes),
-  );
-  const [countdown, setCountdown] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [isTahajjudPeriod, setIsTahajjudPeriod] = useState(
-    isRamadan(prayerTimes.info.hijri),
+interface PrayerTimesDisplayProps {
+  selectedDate?: Date;
+}
+
+export function PrayerTimesDisplay({ selectedDate }: PrayerTimesDisplayProps) {
+  const prayerData = usePrayerTimes(selectedDate);
+  const countdown = useCountdown(
+    prayerData.nextPrayerInfo,
+    prayerData.iqamaTimes,
+    prayerData.currentTime,
   );
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime((prevTime) => {
-        const newTime = new Date(prevTime.getTime() + 1000); // Increment by 1 second
-        const newDate = getDate(newTime);
-
-        if (newDate !== date) {
-          setDate(newDate);
-          setPrayerTimes(fetchPrayerTimes(newDate));
-          setNextPrayerTime(
-            getNextPrayerTime(newTime, fetchPrayerTimes(newDate)),
-          );
-          setIsTahajjudPeriod(isRamadan(prayerTimes.info.hijri));
-        }
-
-        return newTime;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer); // Clean up the interval on component unmount
-  }, [date]);
-
-  useEffect(() => {
-    const countdownTimer = setInterval(() => {
-      if (nextPrayerTime) {
-        const now = new Date();
-        const timeDifference = nextPrayerTime.time.getTime() - now.getTime();
-        if (timeDifference > 0) {
-          const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24)
-            .toString()
-            .padStart(2, "0");
-          const minutes = Math.floor((timeDifference / (1000 * 60)) % 60)
-            .toString()
-            .padStart(2, "0");
-          const seconds = Math.floor((timeDifference / 1000) % 60)
-            .toString()
-            .padStart(2, "0");
-          setCountdown(`${hours}:${minutes}:${seconds}`);
-          setLoading(false);
-        } else {
-          setLoading(true);
-          setNextPrayerTime(getNextPrayerTime(time, prayerTimes));
-        }
-      }
-    }, 1000);
-
-    return () => clearInterval(countdownTimer); // Clean up the interval on component unmount
-  }, [nextPrayerTime]);
-
-  if (loading) {
+  // Show skeleton while loading
+  if (!prayerData) {
     return <PrayerCardSkeleton />;
   }
 
   return (
-    <>
-      <CardContent className="grid gap-4 py-6">
-        <DateDisplay
-          date={date}
-          hijri={prayerTimes.info.hijri}
-          day={prayerTimes.info.day}
-        />
-        <div className="my-3">
-          <div className="flex justify-between text-md leading-loose font-medium text-muted-foreground">
-            <p>Prayer</p>
-            <p>Adhan</p>
-            <p>Iqamah</p>
+    <div className="flex flex-col h-full">
+      <CardContent className="flex-1 py-6 space-y-4">
+        {/* Historical date indicator */}
+        {!prayerData.isToday && (
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-center gap-2">
+            <AlertCircle className="h-4 w-4 text-amber-600" />
+            <span className="text-sm text-amber-700 font-medium">
+              Viewing prayer times for{" "}
+              {prayerData.selectedDate?.toLocaleDateString()}
+            </span>
           </div>
-          {Object.entries(prayerTimes.prayerTimes).map(
-            ([key, timing], index) => (
-              <div
-                key={index}
-                className={clsx(
-                  "flex justify-between items-center text-md font-medium leading-loose",
-                  {
-                    "text-blue-600": key === nextPrayerTime.currentPrayer,
-                  },
-                )}
-              >
-                <p className="w-10">{key}</p>
-                <p>{timing}</p>
-                <p>{iqamaTimes[key as keyof PrayerTimes]}</p>
-              </div>
-            ),
-          )}
-          {isTahajjudPeriod && (
-            <>
-              <div className="mt-5 flex justify-between text-md leading-loose font-medium text-muted-foreground">
-                Ramadan
-              </div>
-              <div className="flex justify-between items-center text-md font-medium leading-loose text-emerald-600">
-                <p className="w-10">Tahajjud</p>
-                <p>{fetchTahajjudTime(date)}</p>
-              </div>
-            </>
-          )}
-        </div>
-      </CardContent>
-      <CardFooter className="bg-blue-600 py-3 rounded-b-lg">
-        <CountdownDisplay
-          countdown={countdown}
-          nextPrayer={nextPrayerTime.nextPrayer}
+        )}
+
+        <DateDisplay
+          date={prayerData.date}
+          hijri={prayerData.hijri}
+          day={prayerData.day}
         />
-      </CardFooter>
-    </>
+
+        <PrayerList
+          prayerTimes={prayerData.prayerTimes}
+          iqamaTimes={prayerData.iqamaTimes}
+          currentPrayer={prayerData.nextPrayerInfo?.currentPrayer}
+          isToday={prayerData.isToday}
+        />
+
+        {prayerData.isRamadanPeriod && prayerData.tahajjudTime && (
+          <RamadanSection tahajjudTime={prayerData.tahajjudTime} />
+        )}
+      </CardContent>
+
+      {/* Only show countdown for today */}
+      {countdown && prayerData.isToday && (
+        <CardFooter className="bg-primary text-primary-foreground py-3 rounded-b-lg mt-auto">
+          <CountdownDisplay
+            countdown={countdown.timeString}
+            targetPrayer={countdown.targetPrayer}
+            isIqamah={countdown.isCountingToIqamah}
+          />
+        </CardFooter>
+      )}
+
+      {/* Show static footer for other days */}
+      {!prayerData.isToday && (
+        <CardFooter className="bg-muted text-muted-foreground py-3 rounded-b-lg mt-auto">
+          <div className="w-full text-center text-sm">
+            Historical prayer times - no live countdown
+          </div>
+        </CardFooter>
+      )}
+    </div>
   );
 }

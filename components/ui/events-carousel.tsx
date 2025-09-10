@@ -52,25 +52,24 @@ export default function EventsCarousel() {
   );
   return (
     <div className="flex items-center justify-center">
-      {/* <Carousel className="w-full max-w-md" plugins={[plugin.current]}> */}
       <Carousel className="w-full" plugins={[plugin.current]}>
         <CarouselContent>
           {links.map((link) => {
             return (
               <CarouselItem
                 key={link.name}
-                className="lg:basis-1/2 xl:basis-1/3"
+                className="basis-full md:basis-1/2 lg:basis-1/2 xl:basis-1/3"
               >
                 <div className="rounded-xl p-1">
                   <Card className="overflow-hidden border-2">
-                    <CardContent className="flex items-center justify-center p-0 h-[550px]">
+                    <CardContent className="flex items-center justify-center p-0 h-[600px]">
                       <div
                         style={{ backgroundImage: `url(${link.image_url})` }}
                         className="relative bg-cover bg-center w-full h-full flex items-center justify-center"
                       >
                         <div className="absolute inset-0 bg-black opacity-50"></div>
                         <div className="relative z-10">
-                          <span className="text-3xl md:text-4xl font-bold text-white ">
+                          <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center">
                             {link.name}
                           </span>
                         </div>

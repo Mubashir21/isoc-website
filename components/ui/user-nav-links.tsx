@@ -39,7 +39,7 @@ const links = [
   },
   {
     name: "Events",
-    href: ["/events/future", "/events/past"],
+    href: ["/events"],
     icon: EventIcon,
     selectedIcon: EventOutlinedIcon,
   },

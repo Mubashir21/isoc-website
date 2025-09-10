@@ -1,14 +1,24 @@
-export default function CountdownDisplay({
+interface CountdownDisplayProps {
+  countdown: string;
+  targetPrayer: string;
+  isIqamah: boolean;
+}
+
+export function CountdownDisplay({
   countdown,
-  nextPrayer,
-}: {
-  countdown: String;
-  nextPrayer: String;
-}) {
+  targetPrayer,
+  isIqamah,
+}: CountdownDisplayProps) {
   return (
-    <div className="flex justify-between w-full text-md font-medium text-white">
-      <p>{nextPrayer}</p>
-      <p className="">{countdown}</p>
+    <div className="w-full text-center flex justify-between items-center">
+      <div className="text-2xl font-bold font-mono tracking-wider mb-1">
+        {countdown}
+      </div>
+      <div className="text-sm font-medium">
+        {isIqamah
+          ? `until ${targetPrayer} Iqamah`
+          : `until ${targetPrayer} Adhan`}
+      </div>
     </div>
   );
 }

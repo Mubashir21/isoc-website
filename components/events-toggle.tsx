@@ -1,38 +1,37 @@
 "use client";
-import { buttonVariants } from "@/components/ui/button";
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const links = [
-  {
-    name: "Future Events",
-    href: "/events/future",
-  },
-  { name: "Past Events", href: "/events/past" },
-];
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useRouter, usePathname } from "next/navigation";
 
 export function EventsToggle() {
+  const router = useRouter();
   const pathname = usePathname();
+
+  const currentTab = pathname.includes("/future") ? "future" : "past";
+
+  const handleTabChange = (value: string) => {
+    router.push(`/events/${value}`);
+  };
+
   return (
-    <div className="flex 2xl:w-1/4 p-2 bg-slate-300 gap-2 rounded-lg">
-      {links.map((link) => (
-        <Link
-          key={link.name}
-          href={link.href}
-          className={clsx(buttonVariants({ variant: "default" }), "w-full ", {
-            "bg-sky-100 hover:bg-sky-200": pathname !== link.href,
-          })}
+    <Tabs
+      value={currentTab}
+      onValueChange={handleTabChange}
+      className="w-full max-w-md"
+    >
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger
+          value="future"
+          className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
         >
-          <p
-            className={clsx("text-base", {
-              "text-blue-600": pathname !== link.href,
-            })}
-          >
-            {link.name}
-          </p>
-        </Link>
-      ))}
-    </div>
+          Future Events
+        </TabsTrigger>
+        <TabsTrigger
+          value="past"
+          className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
+        >
+          Past Events
+        </TabsTrigger>
+      </TabsList>
+    </Tabs>
   );
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Salam from "@/public/salam.png";
 import EventsCarousel from "@/components/ui/events-carousel";
 import Footer from "@/components/ui/footer";
+import { ResponsiveContainer } from "@/components/responsive-container";
 import { HOME_URLS } from "@/lib/images";
 
 const info = {
@@ -56,6 +57,75 @@ const info = {
   ),
 };
 
+// Reusable section component for individual sections within merged container
+interface SectionProps {
+  title: string;
+  content: React.ReactNode;
+  image: string;
+  imageAlt: string;
+  textColor: string;
+  contentTextColor: string;
+  imagePosition?: "left" | "right";
+}
+
+function Section({
+  title,
+  content,
+  image,
+  imageAlt,
+  textColor,
+  contentTextColor,
+  imagePosition = "left",
+}: SectionProps) {
+  return (
+    <>
+      {/* Mobile Layout - Always stacked */}
+      <div className="flex flex-col gap-5 xl:hidden">
+        <h1
+          className={`font-black text-4xl ${textColor} ${imagePosition === "right" ? "text-right" : ""}`}
+        >
+          {title}
+        </h1>
+        <div className="flex flex-1 items-center">
+          <Image
+            src={image}
+            width={900}
+            height={400}
+            alt={imageAlt}
+            className="rounded-xl h-full object-cover"
+          />
+        </div>
+        <p className={`text-justify text-sm md:text-base ${contentTextColor}`}>
+          {content}
+        </p>
+      </div>
+
+      {/* Desktop Layout - Side by side */}
+      <div
+        className={`hidden xl:flex gap-8 ${imagePosition === "right" ? "flex-row-reverse" : "flex-row"}`}
+      >
+        <div className="flex-1">
+          <Image
+            src={image}
+            width={900}
+            height={400}
+            alt={imageAlt}
+            className="h-full object-cover rounded-2xl"
+          />
+        </div>
+        <div className="flex flex-1 flex-col justify-evenly gap-2">
+          <h1 className={`font-black text-4xl ${textColor}`}>{title}</h1>
+          <p
+            className={`text-justify text-sm md:text-base ${contentTextColor}`}
+          >
+            {content}
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -65,11 +135,12 @@ export default function Home() {
         Home
       </h1>
       <div className="flex flex-col gap-5">
+        {/* Hero Section */}
         <div
-          className="relative bg-gray-200 rounded-xl h-[80vh] lg:h-screen p-5 bg-cover bg-center"
+          className="relative bg-gray-200 rounded-2xl h-[60vh] lg:h-[75vh] p-5 bg-cover bg-center"
           style={{ backgroundImage: `url(${HOME_URLS.hero})` }}
         >
-          <div className="absolute inset-0 bg-black opacity-60 rounded-xl"></div>
+          <div className="absolute inset-0 bg-black opacity-60 rounded-2xl"></div>
           <div className="text-white relative flex flex-col justify-center items-center h-full gap-6 lg:gap-9">
             <div>
               <Image
@@ -78,7 +149,7 @@ export default function Home() {
                 height={100}
                 alt="Salam"
                 className=""
-              ></Image>
+              />
             </div>
             <div className="text-center font-medium text-xl lg:text-3xl">
               <p>
@@ -88,105 +159,72 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-200 rounded-xl p-5 2xl:hidden border-2 lg:px-28 md:px-16 border-black">
-          <div className="flex flex-col gap-8">
-            <div className="flex Lflex-col gap-8">
-              <div className="flex flex-col gap-5">
-                <h1 className="text-blue-600 font-black text-4xl">
-                  Who Are We
-                </h1>
-                <div className="flex flex-1 items-center">
-                  <Image
-                    src={HOME_URLS.crowd}
-                    width={900}
-                    height={400}
-                    alt="Image of audience at a live talk"
-                    className="rounded-xl"
-                  ></Image>
-                </div>
 
-                <p className="text-justify text-slate-700 text-sm md:text-base">
-                  {info.about}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-blue-600 rounded-xl p-5 2xl:hidden lg:px-28 md:px-16 ">
-          <div className="flex flex-col gap-5">
-            <h1 className="text-white font-black text-4xl text-right">
-              Our Headquarters
-            </h1>
-            <div className="flex flex-1 items-center">
-              <Image
-                src={HOME_URLS.masjid}
-                width={900}
-                height={400}
-                alt="Image of Islamic Center at UNM"
-                className="rounded-xl"
-              ></Image>
-            </div>
+        {/* Merged About Us Section */}
+        <div className="bg-blue-600  rounded-2xl p-5">
+          <ResponsiveContainer
+            maxWidth={{
+              default: "xl",
+              md: "2xl",
+              lg: "2xl",
+              xl: "6xl",
+            }}
+          >
+            <div className="flex flex-col gap-8 xl:gap-12">
+              {/* Who Are We */}
+              <Section
+                title="Who Are We"
+                content={info.about}
+                image={HOME_URLS.crowd}
+                imageAlt="Image of audience at a live talk"
+                textColor="text-white"
+                contentTextColor="text-white"
+                imagePosition="right"
+              />
 
-            <p className="text-justify text-slate-200 text-sm md:text-base">
-              {info.masjid}
-            </p>
-          </div>
+              {/* Our Headquarters */}
+              <Section
+                title="Our Headquarters"
+                content={info.masjid}
+                image={HOME_URLS.masjid}
+                imageAlt="Image of Islamic Center at UNM"
+                textColor="text-white"
+                contentTextColor="text-white"
+                imagePosition="left"
+              />
+            </div>
+          </ResponsiveContainer>
         </div>
 
-        <div className="bg-gray-200 rounded-xl p-5 hidden 2xl:block border-2 2xl:px-64 border-black">
-          <div className="flex flex-col gap-8">
-            <div className="flex 2xl:flex-row-reverse gap-8">
-              <div className="flex-1">
-                <Image
-                  src={HOME_URLS.crowd}
-                  width={900}
-                  height={400}
-                  alt="Image of audience at a live talk"
-                  // className="rounded-xl"
-                  className="h-full w-auto  rounded-xl"
-                ></Image>
-              </div>
-              <div className="flex flex-1 flex-col justify-evenly gap-2">
-                <h1 className="text-blue-600 font-black text-4xl">
-                  Who Are We
-                </h1>
-                <p className="text-justify text-slate-700 text-sm md:text-base">
-                  {info.about}
-                </p>
-              </div>
+        {/* What We Do Section */}
+        <div className="bg-gray-200  rounded-2xl p-5">
+          <ResponsiveContainer
+            maxWidth={{
+              default: "xl",
+              md: "2xl",
+              lg: "2xl",
+              xl: "6xl",
+            }}
+          >
+            <div className="flex flex-col gap-5">
+              <h1 className="font-black text-4xl text-blue-600">What We Do</h1>
+              <EventsCarousel />
             </div>
-          </div>
+          </ResponsiveContainer>
         </div>
-        <div className="bg-blue-600 rounded-xl p-5 hidden 2xl:block 2xl:px-64 border-black">
-          <div className="flex 2xl:flex-row gap-8">
-            <div className="flex-1">
-              <Image
-                src={HOME_URLS.masjid}
-                width={900}
-                height={400}
-                alt="Image of Islamic Center at UNM"
-                // className="rounded-xl"
-                className="h-full w-auto  rounded-xl"
-              ></Image>
-            </div>
-            <div className="flex flex-1 flex-col justify-evenly gap-2">
-              <h1 className="text-white font-black text-4xl">
-                Our Headquarters
-              </h1>
-              <p className="text-justify text-slate-200 text-sm md:text-base">
-                {info.masjid}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-gray-200 border-2 border-black rounded-xl p-5 2xl:px-64 lg:px-32 md:px-16">
-          <div className="flex flex-col gap-5">
-            <h1 className="font-black text-4xl text-blue-600">What We Do</h1>
-            <EventsCarousel />
-          </div>
-        </div>
-        <div className="bg-gray-700 rounded-xl p-5 2xl:px-64 lg:px-28 md:px-16 ">
-          <Footer />
+
+        {/* Footer Section */}
+        <div className="bg-blue-600 rounded-xl p-5">
+          <ResponsiveContainer
+            maxWidth={{
+              default: "xl",
+              md: "2xl",
+              lg: "2xl",
+              xl: "6xl",
+            }}
+          >
+            <Footer />
+          </ResponsiveContainer>
         </div>
       </div>
     </main>

@@ -1,6 +1,10 @@
+// events/[id]/page.tsx
+import { Suspense } from "react";
 import { fetchEventById } from "@/lib/data";
-import EventDetails from "@/components/ui/event-details";
 import EventPictures from "@/components/ui/event-pictures";
+import { EventDetail } from "@/components/ui/event-details";
+import { ResponsiveContainer } from "@/components/responsive-container";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,34 +13,75 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import Image from "next/image";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const id = params.id;
+// Event pictures skeleton
+function EventPicturesSkeleton() {
+  return (
+    <div className="space-y-4">
+      <Skeleton className="h-8 w-48" />
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {Array.from({ length: 8 }, (_, i) => (
+          <Skeleton key={i} className="aspect-square rounded-lg" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default async function EventDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   const event = await fetchEventById(id);
   const eventDate = new Date(event.datetime);
   const currentDate = new Date();
-  const eventsHref =
-    eventDate < currentDate ? "/events/past" : "/events/future";
+  const eventsHref = "/events";
+
+  // Check if event was more than 24 hours ago (for pictures)
+  const showPictures = eventDate < new Date(Date.now() - 24 * 60 * 60 * 1000);
 
   return (
-    <main className="bg-gray-200 p-5 rounded-xl lg:px-28 md:px-16 2xl:px-64 flex flex-col gap-5">
-      <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href={eventsHref}>Events</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>{event.title}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+    <main>
+      <ResponsiveContainer
+        maxWidth={{
+          default: "xl",
+          md: "2xl",
+          lg: "2xl",
+          xl: "7xl",
+        }}
+      >
+        <div className="space-y-8">
+          {/* Breadcrumb */}
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href={eventsHref}>Events</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{event.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
-      <EventDetails event={event} />
+          {/* Unified event detail */}
+          <EventDetail event={event} />
 
-      {/* {new Date(event.datetime) <
-        new Date(Date.now() - 24 * 60 * 60 * 1000) && <EventPictures id={id} />} */}
+          {/* Event pictures (if available) */}
+          {/* {showPictures && (
+            <div className="bg-white rounded-xl p-6 border-2">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">
+                Event Photos
+              </h2>
+              <Suspense fallback={<EventPicturesSkeleton />}>
+                <EventPictures id={id} />
+              </Suspense>
+            </div>
+          )} */}
+        </div>
+      </ResponsiveContainer>
     </main>
   );
 }

@@ -1,13 +1,15 @@
 "use client";
 
 import { AdminField, EventsForm } from "@/lib/definitions";
-import { CalendarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, EventState } from "@/lib/actions";
 import { useFormState, useFormStatus } from "react-dom";
-import { formatDateTime } from "@/lib/utils";
-import { useState } from "react";
+import { formatDateTime, toMalaysiaTime } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import { Badge } from "./badge";
+import { Calendar, Clock, MapPin, User, FileImage, Type, Users } from "lucide-react";
 
 export default function EditEventForm({
   event,
@@ -26,6 +28,33 @@ export default function EditEventForm({
   const [state, formAction] = useFormState(updateEventWithId, initialState);
   const { pending } = useFormStatus();
   const [newImage, setNewImage] = useState<File | null>(null);
+
+  useEffect(() => {
+    const isRecurringCheckbox = document.getElementById('is_recurring') as HTMLInputElement;
+    const recurrenceFields = document.getElementById('recurrence-fields');
+    const endDateField = document.getElementById('end-date-field');
+
+    const toggleFields = () => {
+      if (isRecurringCheckbox.checked) {
+        recurrenceFields!.style.display = 'block';
+        endDateField!.style.display = 'block';
+      } else {
+        recurrenceFields!.style.display = 'none';
+        endDateField!.style.display = 'none';
+      }
+    };
+
+    if (isRecurringCheckbox) {
+      isRecurringCheckbox.addEventListener('change', toggleFields);
+      toggleFields(); // Initial state
+    }
+
+    return () => {
+      if (isRecurringCheckbox) {
+        isRecurringCheckbox.removeEventListener('change', toggleFields);
+      }
+    };
+  }, []);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -113,7 +142,7 @@ export default function EditEventForm({
                 </option>
               ))}
             </select>
-            <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <User className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="admin-error" aria-live="polite" aria-atomic="true">
             {state.errors?.created_by &&
@@ -128,18 +157,18 @@ export default function EditEventForm({
         {/* Event Date and Time */}
         <div className="mb-4">
           <label htmlFor="datetime" className="mb-2 block text-sm font-medium">
-            Date and Time
+            Date and Time <span className="text-gray-500 text-xs">(Malaysia Time - GMT+8)</span>
           </label>
           <div className="relative">
             <input
               id="datetime"
               name="datetime"
               type="datetime-local"
-              defaultValue={formatDateTime(event.datetime)}
+              defaultValue={event.datetime}
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               aria-describedby="datetime-error"
             />
-            <CalendarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+            <Clock className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="datetime-error" aria-live="polite" aria-atomic="true">
             {state.errors?.datetime &&
@@ -166,6 +195,7 @@ export default function EditEventForm({
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               aria-describedby="location-error"
             />
+            <MapPin className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
           <div id="location-error" aria-live="polite" aria-atomic="true">
             {state.errors?.location &&
@@ -207,10 +237,12 @@ export default function EditEventForm({
             Upload Image
           </label>
           {event.pic_url && (
-            <img
+            <Image
               src={event.pic_url}
               alt="Current event image"
-              className="mb-2 h-40 w-auto"
+              width={160}
+              height={160}
+              className="mb-2 h-40 w-auto object-cover"
             />
           )}
           <input
@@ -259,13 +291,51 @@ export default function EditEventForm({
           </div>
         </div>
 
-        {/* Submit Button */}
-        <div id="fields-error" aria-live="polite" aria-atomic="true">
-          {state.message && (
-            <p className="mt-2 text-sm text-red-500" key={state.message}>
-              {state.message}
-            </p>
-          )}
+        {/* Event Type */}
+        <div className="mb-4">
+          <label htmlFor="type" className="mb-2 block text-sm font-medium">
+            Event Type
+          </label>
+          <select
+            id="type"
+            name="type"
+            className="peer block w-full rounded-md border border-gray-200 py-2 pl-3 text-sm outline-2"
+            defaultValue={event.type || "lecture"}
+          >
+            <option value="lecture">Lecture</option>
+            <option value="sports">Sports</option>
+            <option value="masjid">Masjid Event</option>
+            <option value="major">Major Event</option>
+          </select>
+        </div>
+
+        {/* Gender Segregation */}
+        <div>
+          <label htmlFor="gender" className="mb-2 block text-sm font-medium">
+            Gender
+          </label>
+          <div className="relative">
+            <select
+              id="gender"
+              name="gender"
+              defaultValue={event.gender || "mixed"}
+              className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2"
+              aria-describedby="gender-error"
+            >
+              <option value="mixed">Mixed (Brothers & Sisters)</option>
+              <option value="brothers">Brothers Only</option>
+              <option value="sisters">Sisters Only</option>
+            </select>
+            <Users className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+          </div>
+          <div id="gender-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.gender &&
+              state.errors.gender.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
+          </div>
         </div>
       </div>
 

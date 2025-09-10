@@ -2,39 +2,51 @@ import Pagination from "@/components/ui/pagination";
 import Search from "@/components/ui/search";
 import { AnnouncementsTable } from "@/components/ui/table";
 import { CreateAnnouncement } from "@/components/ui/events-edit";
-// import { lusitana } from "@/app/ui/fonts";
-// import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
 import { fetchAnnouncementsPages } from "@/lib/data";
 import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Announcements Management - ISOC Admin",
+};
+
 export default async function Page({
   searchParams,
 }: {
-  searchParams?: {
+  searchParams?: Promise<{
     query?: string;
     page?: string;
-  };
+  }>;
 }) {
-  const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 1;
+  const params = await searchParams;
+  const query = params?.query || "";
+  const currentPage = Number(params?.page) || 1;
 
   const totalPages = await fetchAnnouncementsPages(query);
 
   return (
     <div className="w-full">
-      <div className="flex w-full items-center justify-between">
-        {/* <h1 className={`${lusitana.className} text-2xl`}>Invoices</h1> */}
-        <h1 className={`text-2xl`}>Announcements</h1>
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+          Announcements Management
+        </h1>
+        <p className="text-gray-600 mt-2">
+          Manage announcements for your community
+        </p>
       </div>
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-        <Search placeholder="Search announcements..." />
+
+      <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="w-full sm:w-auto">
+          <Search placeholder="Search announcements..." />
+        </div>
         <CreateAnnouncement />
       </div>
-      {/* <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}> */}
-      <AnnouncementsTable query={query} currentPage={currentPage} />
-      {/* </Suspense> */}
-      <div className="mt-5 flex w-full justify-center">
+
+      <div className="bg-white rounded-lg shadow overflow-hidden">
+        <AnnouncementsTable query={query} currentPage={currentPage} />
+      </div>
+
+      <div className="mt-6 flex w-full justify-center">
         <Pagination totalPages={totalPages} />
       </div>
     </div>

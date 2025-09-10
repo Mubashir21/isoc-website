@@ -69,30 +69,48 @@ export function getDate(now: Date) {
 }
 
 export function getNextPrayerTime(now: Date, data: PrayerTimesData) {
-  let prayers: String[] = [];
+  const prayers = Object.keys(data.prayerTimes);
   const prayerTimes = data.prayerTimes;
-  const today = new Date(now.toDateString()); // Start of today
-  const times = Object.entries(prayerTimes).map(([key, timing]) => {
-    prayers.push(key);
+
+  // Convert current time to Malaysia time (UTC+8) to match prayer times
+  const malaysiaTime = new Date(
+    now.toLocaleString("en-US", {
+      timeZone: "Asia/Kuala_Lumpur",
+    }),
+  );
+
+  const today = new Date(malaysiaTime.toDateString()); // Start of today
+
+  // Convert prayer times into Date objects
+  const prayerTimeEntries = Object.entries(prayerTimes).map(([key, timing]) => {
     const [hours, minutes] = timing.split(":").map(Number);
     const prayerTime = new Date(today);
     prayerTime.setHours(hours, minutes, 0, 0);
-    return prayerTime;
+    return { name: key, time: prayerTime };
   });
-  for (let i = 0; i < times.length; i++) {
-    if (times[i] > now) {
+
+  // Find the current and next prayer - compare with Malaysia time
+  for (let i = 0; i < prayerTimeEntries.length; i++) {
+    if (prayerTimeEntries[i].time > malaysiaTime) {
+      const currentPrayerIndex = i > 0 ? i - 1 : prayerTimeEntries.length - 1;
       return {
-        currentPrayer: prayers[i - 1],
-        nextPrayer: prayers[i],
-        time: times[i],
+        currentPrayer: prayerTimeEntries[currentPrayerIndex].name,
+        currentPrayerTime: prayerTimeEntries[currentPrayerIndex].time,
+        nextPrayer: prayerTimeEntries[i].name,
+        nextPrayerTime: prayerTimeEntries[i].time,
       };
     }
   }
-  // If all prayer times are in the past, return the first prayer time of the next day
+
+  // If all prayers have passed today, return the first prayer of the next day
+  const nextDayFirstPrayerTime = new Date(prayerTimeEntries[0].time);
+  nextDayFirstPrayerTime.setDate(nextDayFirstPrayerTime.getDate() + 1);
+
   return {
-    currentPrayer: prayers[4],
-    nextPrayer: prayers[0],
-    time: new Date(times[0].getTime() + 24 * 60 * 60 * 1000),
+    currentPrayer: prayerTimeEntries[prayerTimeEntries.length - 1].name,
+    currentPrayerTime: prayerTimeEntries[prayerTimeEntries.length - 1].time,
+    nextPrayer: prayerTimeEntries[0].name,
+    nextPrayerTime: nextDayFirstPrayerTime,
   };
 }
 
@@ -136,8 +154,14 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
 export const formatDateToLocal = (
   dateStr: string,
   locale: string = "en-US",
-) => {
+): string => {
   const date = new Date(dateStr);
+
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return "Invalid Date";
+  }
+
   const options: Intl.DateTimeFormatOptions = {
     day: "numeric",
     month: "short",
@@ -150,8 +174,14 @@ export const formatDateToLocal = (
 export const formatTimeTo24Hour = (
   dateStr: string,
   locale: string = "en-US",
-) => {
+): string => {
   const date = new Date(dateStr);
+
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return "Invalid Time";
+  }
+
   const options: Intl.DateTimeFormatOptions = {
     hour: "2-digit",
     minute: "2-digit",
@@ -163,7 +193,15 @@ export const formatTimeTo24Hour = (
 
 export const formatDateTime = (datetime: string): string => {
   const date = new Date(datetime);
-  return date.toISOString().slice(0, 16);
+
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return "";
+  }
+
+  // Convert to Malaysia time and format for datetime-local input
+  const malaysiaDate = toMalaysiaTime(date);
+  return malaysiaDate.toISOString().slice(0, 16);
 };
 
 export function isRamadan(hijriDate: string): boolean {
@@ -178,4 +216,60 @@ export function isRamadan(hijriDate: string): boolean {
 
 export function fetchTahajjudTime(date: string): string {
   return "02:30";
+}
+
+export function parseTimeToDate(timeStr: string, baseDate: Date): Date {
+  const [hours, minutes] = timeStr.split(":").map(Number);
+  const date = new Date(baseDate);
+  date.setHours(hours, minutes, 0, 0);
+  return date;
+}
+
+// Malaysia timezone utilities
+export function toMalaysiaTime(date: Date): Date {
+  return new Date(date.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+}
+
+export function fromMalaysiaTimeToUTC(dateString: string): Date {
+  // Parse the datetime-local input as if it's in Malaysia time
+  const localDate = new Date(dateString);
+  // Convert Malaysia time to UTC by subtracting 8 hours
+  return new Date(localDate.getTime() - 8 * 60 * 60 * 1000);
+}
+
+export function formatDateTimeForMalaysia(datetime: string | Date): string {
+  let date: Date;
+  
+  if (typeof datetime === 'string') {
+    date = new Date(datetime);
+  } else {
+    date = datetime;
+  }
+
+  // Check if the date is valid
+  if (isNaN(date.getTime())) {
+    return "";
+  }
+
+  // Convert to Malaysia time and format for datetime-local input
+  const malaysiaDate = toMalaysiaTime(date);
+  return malaysiaDate.toISOString().slice(0, 16);
+}
+
+export function formatDuration(durationMinutes: number | null): string {
+  if (!durationMinutes) return "";
+
+  if (durationMinutes < 60) {
+    return `${durationMinutes}m`;
+  } else if (durationMinutes < 1440) {
+    // Less than 24 hours
+    const hours = Math.floor(durationMinutes / 60);
+    const minutes = durationMinutes % 60;
+    return minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`;
+  } else {
+    // 24+ hours (multi-day events)
+    const days = Math.floor(durationMinutes / 1440);
+    const remainingHours = Math.floor((durationMinutes % 1440) / 60);
+    return remainingHours > 0 ? `${days}d ${remainingHours}h` : `${days}d`;
+  }
 }

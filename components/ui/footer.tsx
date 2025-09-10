@@ -4,8 +4,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import { linkSync } from "fs";
+import { cn } from "@/lib/utils";
 
 const links = {
   socials: [
@@ -55,162 +54,97 @@ const links = {
 
 export default function Footer() {
   const pathname = usePathname();
+
   return (
-    <>
-      <footer className="flex flex-col gap-3 md:hidden">
-        <div>
-          <span className="block text-2xl font-semibold mb-3 text-white">
-            Join Our Socials
-          </span>
-          <div className="flex flex-col gap-2">
+    <footer className="w-full">
+      {/* Main Footer Content */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Socials Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-white">Connect With Us</h3>
+          <div className="space-y-3">
             {links.socials.map((link) => {
               const LinkIcon = link.icon;
               return (
                 <Link
-                  className="flex hover:text-blue-600"
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors duration-200 group"
                 >
-                  <LinkIcon className="text-slate-200" />
-                  <span className="mx-3 font-medium text-slate-200">
-                    {link.name}
-                  </span>
+                  <div className="p-2 bg-slate-700 rounded-lg group-hover:bg-blue-600 transition-colors duration-200">
+                    <LinkIcon className="w-5 h-5" />
+                  </div>
+                  <span className="font-medium">{link.name}</span>
                 </Link>
               );
             })}
           </div>
         </div>
-        <hr className="border-blue-600" />
-        <div>
-          <span className="block text-2xl font-semibold mb-3 text-white">
-            Navigate
-          </span>
-          <div className="flex flex-col gap-2">
-            {links.navigate.map((link) => {
-              return (
-                <Link
-                  className="flex hover:text-blue-600 text-md"
-                  key={link.name}
-                  href={link.href}
-                >
-                  <span
-                    className={clsx(" font-medium text-slate-200", {
-                      underline: pathname == link.href,
-                    })}
-                  >
-                    {link.name}
-                  </span>
-                </Link>
-              );
-            })}
+
+        {/* Navigation Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-white">Quick Links</h3>
+          <div className="space-y-3">
+            {links.navigate.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "block text-slate-200 hover:text-white transition-colors duration-200 font-medium",
+                  pathname === link.href && "text-blue-400",
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
-        <hr className="border-blue-600" />
-        <div>
-          <span className="block text-2xl font-semibold mb-3 text-white">
-            Contribute
-          </span>
-          <div className="flex flex-col gap-2">
-            {" "}
+
+        {/* Contribute Section */}
+        <div className="space-y-4">
+          <h3 className="text-xl font-bold text-white">Get Involved</h3>
+          <div className="space-y-3">
             <Link
-              className="flex hover:text-blue-600"
-              key={links.contribute[0].name}
               href={links.contribute[0].href}
               target="_blank"
               rel="noopener noreferrer"
+              className="flex items-center gap-3 text-slate-200 hover:text-white transition-colors duration-200 group"
             >
-              <GitHubIcon className="text-slate-200" />
-              <span className="mx-3 font-medium text-slate-200">
-                {links.contribute[0].description}
-              </span>
+              <div className="p-2 bg-slate-700 rounded-lg group-hover:bg-green-600 transition-colors duration-200">
+                <GitHubIcon className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="font-medium block">Contribute</span>
+                <span className="text-sm text-slate-400">
+                  Help us improve our website
+                </span>
+              </div>
             </Link>
           </div>
-        </div>
-        <div className="flex justify-center">
-          <p className="text-muted-foreground text-sm text-slate-200">
-            {" "}
-            &#174; UNM ISOC 2025
-          </p>
-        </div>
-      </footer>
-      <footer className="hidden md:flex gap-3 justify-between">
-        <div>
-          <span className="block text-2xl font-semibold mb-3 text-blue-500">
-            Join Our Socials
-          </span>
-          <div className="flex flex-col gap-2">
-            {links.socials.map((link) => {
-              const LinkIcon = link.icon;
-              return (
-                <Link
-                  className="flex hover:text-blue-600"
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkIcon className="text-slate-200" />
-                  <span className="mx-3 font-medium text-slate-200">
-                    {link.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        <hr className="border-blue-600" />
-        <div>
-          <span className="block text-2xl font-semibold mb-3 text-blue-500">
-            Navigate
-          </span>
-          <div className="flex flex-col gap-2">
-            {links.navigate.map((link) => {
-              return (
-                <Link
-                  className="flex hover:text-blue-600 text-md"
-                  key={link.name}
-                  href={link.href}
-                >
-                  <span
-                    className={clsx(" font-medium text-slate-200", {
-                      underline: pathname == link.href,
-                    })}
-                  >
-                    {link.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-        <hr className="border-blue-600" />
-        <div className="">
-          <span className="block text-2xl font-semibold mb-3 text-blue-500">
-            Contribute
-          </span>
-          <div className="flex flex-col justify-between h-full pb-11">
-            <div className="flex flex-col gap-2">
-              <Link
-                className="flex hover:text-blue-600"
-                key={links.contribute[0].name}
-                href={links.contribute[0].href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GitHubIcon className="text-slate-200" />
-                <span className="mx-3 font-medium text-slate-200">
-                  {links.contribute[0].description}
-                </span>
-              </Link>
-            </div>
-            <p className="text-muted-foreground text-sm text-right text-slate-200">
-              &#174; UNM ISOC 2025
+
+          {/* About ISOC */}
+          <div className="mt-6 p-4 bg-black rounded-lg">
+            <p className="text-sm text-slate-200 leading-relaxed">
+              The Islamic Society at UNM Malaysia - fostering brotherhood,
+              sisterhood, and spiritual growth since 2006.
             </p>
           </div>
         </div>
-      </footer>
-    </>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="border-t border-slate-500 pt-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-slate-300 text-sm">
+            <p>&copy; 2025 UNM Islamic Society. All rights reserved.</p>
+          </div>
+          <div className="flex items-center gap-4 text-slate-300 text-sm">
+            <span>Made with ❤️ for the community</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }

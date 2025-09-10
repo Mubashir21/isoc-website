@@ -11,8 +11,8 @@ import { notFound } from "next/navigation";
 
 import { fetchAdmins, fetchEventById } from "@/lib/data";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const id = params.id;
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const [admins, event] = await Promise.all([
     fetchAdmins(),
     fetchEventById(id),

@@ -6,32 +6,44 @@ import { Calendar as CalendarIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { PrayerCalendar } from "@/components/ui/calendar";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
-  PopoverContent,
   PopoverTrigger,
+  PopoverContent,
 } from "@/components/ui/popover";
 
-export default function DatePicker() {
-  const [date, setDate] = React.useState<Date>();
+interface DatePickerProps {
+  date: Date;
+  setDate: (date: Date) => void;
+  disabled?: (date: Date) => boolean;
+}
 
-  console.log(date);
+export default function DatePicker({
+  date,
+  setDate,
+  disabled,
+}: DatePickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant={"outline"}
-          className={cn("justify-start text-left font-normal")}
+          variant="outline"
+          className={cn(
+            "w-[200px] justify-start text-left font-normal",
+            !date && "text-muted-foreground",
+          )}
         >
-          <CalendarIcon className="h-4 w-4" />
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
-        <PrayerCalendar
+        <Calendar
           mode="single"
           selected={date}
-          onSelect={setDate}
+          onSelect={(d) => d && setDate(d)}
+          disabled={disabled}
           initialFocus
         />
       </PopoverContent>
