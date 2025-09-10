@@ -111,7 +111,7 @@ async function PrayerTimesContent() {
                           • Friday Jummah: Buses to PGA & TTS mosques at 12:45,
                           1:00 & 1:15 PM (depart from outside Islamic Center)
                         </li>
-                        <li>• Eid prayers during festival periods</li>
+                  
                       </ul>
                     </div>
                   </CardContent>

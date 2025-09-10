@@ -173,7 +173,7 @@ export default function Home() {
             <div className="flex flex-col gap-8 xl:gap-12">
               {/* Who Are We */}
               <Section
-                title="Who Are We"
+                title="Who We Are"
                 content={info.about}
                 image={HOME_URLS.crowd}
                 imageAlt="Image of audience at a live talk"

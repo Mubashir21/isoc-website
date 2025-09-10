@@ -65,10 +65,24 @@ export function MonthlyPrayerTimes({
     setIsExporting(true);
 
     try {
-      // Using html2pdf library (you'll need to install: npm install html2pdf.js)
+      // Check if we're on a mobile device
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        // On mobile, use print() which is more reliable
+        window.print();
+        return;
+      }
+
+      // Using html2pdf library for desktop
       const html2pdf = (await import("html2pdf.js" as any)).default;
 
       const element = document.getElementById("monthly-prayer-times-table");
+      
+      if (!element) {
+        throw new Error("Prayer times table not found");
+      }
+
       const opt = {
         margin: [0.5, 0.5, 0.5, 0.5], // [top, right, bottom, left] margins in inches
         filename: `prayer-times-${monthName.replace(" ", "-").toLowerCase()}.pdf`,
@@ -77,19 +91,21 @@ export function MonthlyPrayerTimes({
           scale: 2,
           useCORS: true,
           allowTaint: true,
+          logging: false,
+          letterRendering: true,
         },
         jsPDF: {
           unit: "in",
           format: "a4",
-          orientation: "portrait", // Changed to portrait
+          orientation: "portrait",
         },
-        pagebreak: { mode: ["avoid-all", "css", "legacy"] }, // Better page break handling
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
       };
 
       await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("Error exporting PDF:", error);
-      // Fallback: print the page
+      // Fallback: always use print on error
       window.print();
     } finally {
       setIsExporting(false);
@@ -126,11 +142,13 @@ export function MonthlyPrayerTimes({
               <>
                 <Printer className="h-4 w-4 animate-spin" />
                 <span className="hidden sm:inline">Exporting...</span>
+                <span className="sm:hidden">Loading...</span>
               </>
             ) : (
               <>
                 <Download className="h-4 w-4" />
                 <span className="hidden sm:inline">Export PDF</span>
+                <span className="sm:hidden">Download</span>
               </>
             )}
           </Button>

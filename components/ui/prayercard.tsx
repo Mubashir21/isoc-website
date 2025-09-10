@@ -31,13 +31,35 @@ export function PrayerCard({ className, ...props }: CardProps) {
   const isViewingOtherDay =
     selectedDate && selectedDate.toDateString() !== new Date().toDateString();
 
+  const getViewLabel = () => {
+    if (!selectedDate || selectedDate.toDateString() === new Date().toDateString()) {
+      return null;
+    }
+    
+    const today = new Date();
+    const selected = new Date(selectedDate);
+    
+    // Reset time to compare only dates
+    today.setHours(0, 0, 0, 0);
+    selected.setHours(0, 0, 0, 0);
+    
+    if (selected < today) {
+      return "Historical View";
+    } else if (selected > today) {
+      return "Future View";
+    }
+    return null;
+  };
+
   return (
     <Card className={cn("w-full h-full flex flex-col", className)} {...props}>
       <CardHeader
         className={cn(
           "rounded-t-lg transition-colors",
-          isViewingOtherDay
+          isViewingOtherDay && getViewLabel() === "Historical View"
             ? "bg-amber-100 border-b border-amber-200"
+            : isViewingOtherDay && getViewLabel() === "Future View"
+            ? "bg-blue-100 border-b border-blue-200"
             : "bg-muted",
         )}
       >
@@ -52,7 +74,12 @@ export function PrayerCard({ className, ...props }: CardProps) {
                   variant="outline"
                   size="sm"
                   onClick={resetToToday}
-                  className="text-xs border-amber-300 bg-amber-50 text-amber-700"
+                  className={cn(
+                    "text-xs",
+                    getViewLabel() === "Historical View"
+                      ? "border-amber-300 bg-amber-50 text-amber-700"
+                      : "border-blue-300 bg-blue-50 text-blue-700"
+                  )}
                 >
                   <RotateCcw className="h-3 w-3 mr-1" />
                   Today
@@ -65,8 +92,10 @@ export function PrayerCard({ className, ...props }: CardProps) {
                   size="sm"
                   onClick={() => setShowDatePicker(!showDatePicker)}
                   className={cn(
-                    isViewingOtherDay &&
+                    isViewingOtherDay && getViewLabel() === "Historical View" &&
                       "border-amber-300 bg-amber-50 text-amber-700",
+                    isViewingOtherDay && getViewLabel() === "Future View" &&
+                      "border-blue-300 bg-blue-50 text-blue-700",
                   )}
                 >
                   <Calendar className="h-4 w-4" />
@@ -92,14 +121,22 @@ export function PrayerCard({ className, ...props }: CardProps) {
           {/* Description row */}
           <div className="flex items-center justify-between">
             <CardDescription
-              className={cn(isViewingOtherDay && "text-amber-700 font-medium")}
+              className={cn(
+                isViewingOtherDay && getViewLabel() === "Historical View" && "text-amber-700 font-medium",
+                isViewingOtherDay && getViewLabel() === "Future View" && "text-blue-700 font-medium"
+              )}
             >
               UNM Islamic Center
             </CardDescription>
 
-            {isViewingOtherDay && (
-              <span className="text-xs bg-amber-200 text-amber-800 px-2 py-1 rounded-full">
-                Historical View
+            {getViewLabel() && (
+              <span className={cn(
+                "text-xs px-2 py-1 rounded-full",
+                getViewLabel() === "Historical View" 
+                  ? "bg-amber-200 text-amber-800"
+                  : "bg-blue-200 text-blue-800"
+              )}>
+                {getViewLabel()}
               </span>
             )}
           </div>

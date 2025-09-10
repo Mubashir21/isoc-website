@@ -26,14 +26,45 @@ export function PrayerTimesDisplay({ selectedDate }: PrayerTimesDisplayProps) {
     return <PrayerCardSkeleton />;
   }
 
+  // Determine if viewing past or future date
+  const getDateContext = () => {
+    if (!selectedDate || prayerData.isToday) {
+      return null;
+    }
+    
+    const today = new Date();
+    const selected = new Date(selectedDate);
+    
+    // Reset time to compare only dates
+    today.setHours(0, 0, 0, 0);
+    selected.setHours(0, 0, 0, 0);
+    
+    if (selected < today) {
+      return "past";
+    } else if (selected > today) {
+      return "future";
+    }
+    return null;
+  };
+
+  const dateContext = getDateContext();
+
   return (
     <div className="flex flex-col h-full">
       <CardContent className="flex-1 py-6 space-y-4">
-        {/* Historical date indicator */}
-        {!prayerData.isToday && (
-          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 text-amber-600" />
-            <span className="text-sm text-amber-700 font-medium">
+        {/* Date context indicator */}
+        {dateContext && (
+          <div className={`rounded-lg p-3 flex items-center gap-2 ${
+            dateContext === "past" 
+              ? "bg-amber-50 border border-amber-200" 
+              : "bg-blue-50 border border-blue-200"
+          }`}>
+            <AlertCircle className={`h-4 w-4 ${
+              dateContext === "past" ? "text-amber-600" : "text-blue-600"
+            }`} />
+            <span className={`text-sm font-medium ${
+              dateContext === "past" ? "text-amber-700" : "text-blue-700"
+            }`}>
               Viewing prayer times for{" "}
               {prayerData.selectedDate?.toLocaleDateString()}
             </span>
@@ -70,10 +101,13 @@ export function PrayerTimesDisplay({ selectedDate }: PrayerTimesDisplayProps) {
       )}
 
       {/* Show static footer for other days */}
-      {!prayerData.isToday && (
+      {dateContext && (
         <CardFooter className="bg-muted text-muted-foreground py-3 rounded-b-lg mt-auto">
           <div className="w-full text-center text-sm">
-            Historical prayer times - no live countdown
+            {dateContext === "past" 
+              ? "Historical prayer times - no live countdown"
+              : "Future prayer times - no live countdown"
+            }
           </div>
         </CardFooter>
       )}
