@@ -61,20 +61,273 @@ export function MonthlyPrayerTimes({
     year: "numeric",
   });
 
+  const printPrayerTimes = () => {
+    // Create a new window with only the prayer times content
+    const printWindow = window.open('', '_blank');
+    
+    if (!printWindow) {
+      alert('Please allow popups for this site to download the prayer times.');
+      return;
+    }
+
+    const printContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Prayer Times - ${monthName}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+          body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            padding: 20px;
+            background: white;
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+          }
+          .header h1 { font-size: 24px; margin-bottom: 8px; }
+          .header h2 { font-size: 18px; margin-bottom: 5px; }
+          .header p { font-size: 14px; color: #666; }
+          
+          .mobile-cards {
+            display: block;
+          }
+          .day-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            break-inside: avoid;
+          }
+          .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+          }
+          .day-info h3 { font-size: 16px; margin-bottom: 3px; }
+          .day-info p { font-size: 12px; color: #666; }
+          .today-badge {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+          }
+          .prayers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+          }
+          .prayer-time {
+            text-align: center;
+            padding: 12px 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #f9f9f9;
+          }
+          .prayer-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 4px;
+          }
+          .adhan-time {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 3px;
+          }
+          .iqamah-time {
+            font-size: 10px;
+            color: #666;
+          }
+          
+          .desktop-table {
+            display: none;
+          }
+          
+          .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+          }
+          
+          @media (min-width: 768px) {
+            .mobile-cards { display: none; }
+            .desktop-table { display: block; }
+            
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              font-size: 12px;
+            }
+            th, td {
+              border: 1px solid #000;
+              padding: 6px 4px;
+              text-align: center;
+            }
+            th {
+              background: #f3f4f6;
+              font-weight: 600;
+            }
+            .date-cell {
+              text-align: left;
+              font-weight: 500;
+            }
+            .time-cell {
+              font-size: 10px;
+            }
+            .today-row {
+              background: #fef3c7;
+            }
+            .weekend-row {
+              background: #f9f9f9;
+            }
+          }
+          
+          @media print {
+            body { padding: 10px; }
+            .day-card { break-inside: avoid; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>UNM Islamic Center</h1>
+          <h2>Prayer Times - ${monthName}</h2>
+          <p>University of Nottingham Malaysia Campus</p>
+        </div>
+
+        <!-- Mobile Cards View -->
+        <div class="mobile-cards">
+          ${monthlyData.map(dayData => {
+            const isToday = dayData.date.toDateString() === new Date().toDateString();
+            
+            return `
+              <div class="day-card">
+                <div class="day-header">
+                  <div class="day-info">
+                    <h3>${dayData.day} ${dayData.dayName}</h3>
+                    <p>${dayData.date.toLocaleDateString()}</p>
+                  </div>
+                  ${isToday ? '<span class="today-badge">Today</span>' : ''}
+                </div>
+                <div class="prayers-grid">
+                  <div class="prayer-time">
+                    <div class="prayer-name">Fajr</div>
+                    <div class="adhan-time">${dayData.prayerTimes.Fajr}</div>
+                    <div class="iqamah-time">Iqamah: ${dayData.iqamaTimes.Fajr}</div>
+                  </div>
+                  <div class="prayer-time">
+                    <div class="prayer-name">Dhuhr</div>
+                    <div class="adhan-time">${dayData.prayerTimes.Dhuhr}</div>
+                    <div class="iqamah-time">Iqamah: ${dayData.iqamaTimes.Dhuhr}</div>
+                  </div>
+                  <div class="prayer-time">
+                    <div class="prayer-name">Asr</div>
+                    <div class="adhan-time">${dayData.prayerTimes.Asr}</div>
+                    <div class="iqamah-time">Iqamah: ${dayData.iqamaTimes.Asr}</div>
+                  </div>
+                  <div class="prayer-time">
+                    <div class="prayer-name">Maghrib</div>
+                    <div class="adhan-time">${dayData.prayerTimes.Maghrib}</div>
+                    <div class="iqamah-time">Iqamah: ${dayData.iqamaTimes.Maghrib}</div>
+                  </div>
+                  <div class="prayer-time">
+                    <div class="prayer-name">Isha</div>
+                    <div class="adhan-time">${dayData.prayerTimes.Isha}</div>
+                    <div class="iqamah-time">Iqamah: ${dayData.iqamaTimes.Isha}</div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Desktop Table View -->
+        <div class="desktop-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Fajr<br><small>A / I</small></th>
+                <th>Dhuhr<br><small>A / I</small></th>
+                <th>Asr<br><small>A / I</small></th>
+                <th>Maghrib<br><small>A / I</small></th>
+                <th>Isha<br><small>A / I</small></th>
+              </tr>
+            </thead>
+            <tbody>
+              ${monthlyData.map((dayData, index) => {
+                const isToday = dayData.date.toDateString() === new Date().toDateString();
+                const isWeekend = dayData.date.getDay() === 0 || dayData.date.getDay() === 6;
+                
+                let rowClass = '';
+                if (isToday) rowClass = 'today-row';
+                else if (isWeekend) rowClass = 'weekend-row';
+                
+                return `
+                  <tr class="${rowClass}">
+                    <td class="date-cell">
+                      ${dayData.day}
+                      ${isToday ? '<small> (Today)</small>' : ''}
+                    </td>
+                    <td>${dayData.dayName}</td>
+                    <td class="time-cell">${dayData.prayerTimes.Fajr}<br><small>${dayData.iqamaTimes.Fajr}</small></td>
+                    <td class="time-cell">${dayData.prayerTimes.Dhuhr}<br><small>${dayData.iqamaTimes.Dhuhr}</small></td>
+                    <td class="time-cell">${dayData.prayerTimes.Asr}<br><small>${dayData.iqamaTimes.Asr}</small></td>
+                    <td class="time-cell">${dayData.prayerTimes.Maghrib}<br><small>${dayData.iqamaTimes.Maghrib}</small></td>
+                    <td class="time-cell">${dayData.prayerTimes.Isha}<br><small>${dayData.iqamaTimes.Isha}</small></td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="footer">
+          <p><strong>A</strong> = Adhan Time | <strong>I</strong> = Iqamah Time</p>
+          <p>Generated on ${new Date().toLocaleDateString()} | UNM Islamic Center</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    
+    // Wait a bit for content to load, then print
+    setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+      
+      // Close the window after printing (optional)
+      printWindow.onafterprint = () => {
+        printWindow.close();
+      };
+    }, 250);
+  };
+
   const exportToPDF = async () => {
     setIsExporting(true);
 
     try {
-      // Check if we're on a mobile device
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      
-      if (isMobile) {
-        // On mobile, use print() which is more reliable
-        window.print();
-        return;
-      }
-
-      // Using html2pdf library for desktop
+      // Always use html2pdf library for consistent PDF generation across all devices
       const html2pdf = (await import("html2pdf.js" as any)).default;
 
       const element = document.getElementById("monthly-prayer-times-table");
@@ -84,7 +337,7 @@ export function MonthlyPrayerTimes({
       }
 
       const opt = {
-        margin: [0.5, 0.5, 0.5, 0.5], // [top, right, bottom, left] margins in inches
+        margin: [0.5, 0.5, 0.5, 0.5],
         filename: `prayer-times-${monthName.replace(" ", "-").toLowerCase()}.pdf`,
         image: { type: "jpeg", quality: 0.98 },
         html2canvas: {
@@ -105,7 +358,7 @@ export function MonthlyPrayerTimes({
       await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error("Error exporting PDF:", error);
-      // Fallback: always use print on error
+      // Fallback: use print dialog
       window.print();
     } finally {
       setIsExporting(false);
@@ -121,8 +374,8 @@ export function MonthlyPrayerTimes({
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="w-[95vw] max-w-none h-[90vh] max-h-[90vh] overflow-hidden p-0 sm:w-[90vw] lg:w-[85vw] xl:w-[80vw] 2xl:w-[75vw]">
-        <DialogHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0 p-4 border-b">
+      <DialogContent className="w-[95vw] max-w-none h-[95vh] max-h-[95vh] overflow-hidden p-0 sm:w-[90vw] lg:w-[85vw] xl:w-[80vw] 2xl:w-[75vw] flex flex-col">
+        <DialogHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-3 sm:space-y-0 p-4 border-b flex-shrink-0">
           <div>
             <DialogTitle className="text-lg sm:text-xl lg:text-2xl">
               Prayer Times - {monthName}
@@ -141,20 +394,18 @@ export function MonthlyPrayerTimes({
             {isExporting ? (
               <>
                 <Printer className="h-4 w-4 animate-spin" />
-                <span className="hidden sm:inline">Exporting...</span>
-                <span className="sm:hidden">Loading...</span>
+                <span>Exporting...</span>
               </>
             ) : (
               <>
                 <Download className="h-4 w-4" />
-                <span className="hidden sm:inline">Export PDF</span>
-                <span className="sm:hidden">Download</span>
+                <span>Export PDF</span>
               </>
             )}
           </Button>
         </DialogHeader>
 
-        <div className="overflow-auto h-[calc(90vh-120px)] p-2 sm:p-4">
+        <div className="overflow-auto flex-1 p-2 sm:p-4">
           {/* Mobile View - Cards */}
           <div className="block lg:hidden space-y-3">
             {/* Mobile Legend */}
@@ -210,7 +461,7 @@ export function MonthlyPrayerTimes({
                         </div>
                       </div>
                       {isToday && (
-                        <span className="text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full print:hidden">
                           Today
                         </span>
                       )}
@@ -317,25 +568,25 @@ export function MonthlyPrayerTimes({
                         pageBreakAfter: "auto",
                       }}
                     >
-                      <th className="border border-gray-300 px-3 py-2 text-left print:border-black">
+                      <th className="border border-gray-300 px-3 py-2 text-left print:border-black w-16">
                         Date
                       </th>
-                      <th className="border border-gray-300 px-3 py-2 text-left print:border-black">
+                      <th className="border border-gray-300 px-3 py-2 text-left print:border-black w-16">
                         Day
                       </th>
-                      <th className="border border-gray-300 px-2 py-2 print:border-black">
+                      <th className="border border-gray-300 px-2 py-2 print:border-black w-20">
                         Fajr
                       </th>
-                      <th className="border border-gray-300 px-2 py-2 print:border-black">
+                      <th className="border border-gray-300 px-2 py-2 print:border-black w-20">
                         Dhuhr
                       </th>
-                      <th className="border border-gray-300 px-2 py-2 print:border-black">
+                      <th className="border border-gray-300 px-2 py-2 print:border-black w-20">
                         Asr
                       </th>
-                      <th className="border border-gray-300 px-2 py-2 print:border-black">
+                      <th className="border border-gray-300 px-2 py-2 print:border-black w-20">
                         Maghrib
                       </th>
-                      <th className="border border-gray-300 px-2 py-2 print:border-black">
+                      <th className="border border-gray-300 px-2 py-2 print:border-black w-20">
                         Isha
                       </th>
                     </tr>
@@ -401,7 +652,7 @@ export function MonthlyPrayerTimes({
                           <td className="border border-gray-300 px-3 py-2 font-medium print:border-black">
                             {dayData.day}
                             {isToday && (
-                              <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-1 rounded print:bg-yellow-300 print:text-black">
+                              <span className="ml-2 text-xs bg-yellow-200 text-yellow-800 px-1 rounded print:hidden">
                                 Today
                               </span>
                             )}
