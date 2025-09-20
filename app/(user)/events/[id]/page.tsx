@@ -1,4 +1,5 @@
 // events/[id]/page.tsx
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { fetchEventById } from "@/lib/data";
 import EventPictures from "@/components/ui/event-pictures";
@@ -13,6 +14,48 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  
+  try {
+    const event = await fetchEventById(id);
+    const eventDate = new Date(event.datetime).toLocaleDateString("en-MY", {
+      weekday: "long",
+      year: "numeric", 
+      month: "long",
+      day: "numeric",
+    });
+    
+    return {
+      title: `${event.title} | Events | Islamic Society UNM`,
+      description: `Join us for ${event.title} on ${eventDate}. ${event.description || "Organized by the Islamic Society at the University of Nottingham Malaysia."}`,
+      keywords: [
+        event.title,
+        "ISOC event",
+        "Islamic Society UNM",
+        event.type || "community event",
+        "University Nottingham Malaysia",
+        "Muslim student activity"
+      ],
+      openGraph: {
+        title: `${event.title} | Islamic Society UNM`,
+        description: `Join us for ${event.title} on ${eventDate}.`,
+        type: "website",
+        images: event.pic_url ? [{ url: event.pic_url, alt: event.title }] : undefined,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Event | Islamic Society UNM",
+      description: "Event details from the Islamic Society at the University of Nottingham Malaysia.",
+    };
+  }
+}
 
 // Event pictures skeleton
 function EventPicturesSkeleton() {

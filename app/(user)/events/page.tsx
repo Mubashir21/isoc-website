@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import {
   fetchFutureEvents,
@@ -35,6 +36,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+export const metadata: Metadata = {
+  title: "Events | Islamic Society UNM", 
+  description: "Discover upcoming and past events organized by the Islamic Society at the University of Nottingham Malaysia. Join our lectures, sports activities, masjid programs, and special community events.",
+  keywords: [
+    "ISOC events",
+    "Islamic events UNM",
+    "Muslim student activities",
+    "University Nottingham Malaysia events",
+    "Islamic lectures",
+    "Sports activities",
+    "Masjid programs",
+    "Community events",
+    "Student society events"
+  ],
+  openGraph: {
+    title: "Events | Islamic Society UNM",
+    description: "Stay connected with our society activities and programs. Browse upcoming events and explore our past community gatherings.",
+    type: "website",
+  },
+};
 
 const eventTypeConfig = {
   lecture: {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import {
   Breadcrumb,
@@ -17,6 +18,27 @@ import {
   PrayerDateProvider,
 } from "@/components/monthly-view-button";
 import { PrayerTimesPageSkeleton } from "@/components/skeletons/events-skeleton";
+
+export const metadata: Metadata = {
+  title: "Prayer Times | Islamic Society UNM",
+  description: "Check daily and monthly prayer times for the UNM Islamic Center.",
+  keywords: [
+    "Prayer times UNM",
+    "Islamic Center prayer schedule",
+    "Salah times Malaysia",
+    "University Nottingham Malaysia mosque",
+    "Daily prayer times",
+    "Monthly prayer calendar",
+    "Fajr Dhuhr Asr Maghrib Isha",
+    "Campus mosque times",
+    "Muslim prayer schedule"
+  ],
+  openGraph: {
+    title: "Prayer Times | Islamic Society UNM",
+    description: "Check daily and monthly prayer times for the UNM Islamic Center. Always up-to-date prayer schedules for our campus mosque.",
+    type: "website",
+  },
+};
 
 async function PrayerTimesContent() {
   return (

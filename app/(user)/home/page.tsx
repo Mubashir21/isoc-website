@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { lusitana } from "@/components/ui/fonts";
 import { buttonVariants } from "@/components/ui/button";
@@ -7,6 +8,26 @@ import EventsCarousel from "@/components/ui/events-carousel";
 import Footer from "@/components/ui/footer";
 import { ResponsiveContainer } from "@/components/responsive-container";
 import { HOME_URLS } from "@/lib/images";
+
+export const metadata: Metadata = {
+  title: "Home | Islamic Society UNM",
+  description: "Welcome to the Islamic Society at the University of Nottingham Malaysia. Discover our vibrant community, upcoming events, and learn about our mission to foster brotherhood and sisterhood among students.",
+  keywords: [
+    "ISOC UNM home",
+    "Islamic Society UNM",
+    "Muslim community Malaysia",
+    "University Nottingham Islamic Center",
+    "Student organization",
+    "Islamic events Malaysia",
+    "Brotherhood sisterhood",
+    "Campus mosque"
+  ],
+  openGraph: {
+    title: "Home | Islamic Society UNM",
+    description: "Welcome to the Islamic Society at the University of Nottingham Malaysia. Join our vibrant community of Muslim students.",
+    type: "website",
+  },
+};
 
 const info = {
   about: (

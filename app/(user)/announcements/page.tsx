@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import {
   Breadcrumb,
@@ -11,6 +12,26 @@ import {
 import { ResponsiveContainer } from "@/components/responsive-container";
 import { AnnouncementTimeline } from "@/components/announcement-timeline";
 import { AnnouncementsSkeleton } from "@/components/skeletons";
+
+export const metadata: Metadata = {
+  title: "Announcements | Islamic Society UNM",
+  description: "Stay updated with the latest news, announcements, and updates from the Islamic Society at the University of Nottingham Malaysia. Get important community information and society news.",
+  keywords: [
+    "ISOC announcements",
+    "Islamic Society news",
+    "UNM ISOC updates",
+    "Muslim student news",
+    "University Nottingham Malaysia announcements",
+    "Community updates",
+    "Society news",
+    "Islamic Center updates"
+  ],
+  openGraph: {
+    title: "Announcements | Islamic Society UNM",
+    description: "Stay updated with the latest news from UNM ISOC. Important announcements and community updates.",
+    type: "website",
+  },
+};
 
 export default async function AnnouncementsPage({
   searchParams,
