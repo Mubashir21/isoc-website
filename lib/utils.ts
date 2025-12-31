@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import prayerTimes from "../public/data/prayertimes_2025.json";
+import prayerTimes from "../public/data/prayertimes_2026.json";
 import {
   PrayerTimesJSON,
   PrayerTimesData,
@@ -227,7 +227,9 @@ export function parseTimeToDate(timeStr: string, baseDate: Date): Date {
 
 // Malaysia timezone utilities
 export function toMalaysiaTime(date: Date): Date {
-  return new Date(date.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+  return new Date(
+    date.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }),
+  );
 }
 
 export function fromMalaysiaTimeToUTC(dateString: string): Date {
@@ -239,8 +241,8 @@ export function fromMalaysiaTimeToUTC(dateString: string): Date {
 
 export function formatDateTimeForMalaysia(datetime: string | Date): string {
   let date: Date;
-  
-  if (typeof datetime === 'string') {
+
+  if (typeof datetime === "string") {
     date = new Date(datetime);
   } else {
     date = datetime;
