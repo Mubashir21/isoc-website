@@ -2,7 +2,6 @@ import { sql } from "@vercel/postgres";
 import {
   Event,
   EventForm,
-  AdminField,
   EventCard,
   AnnouncementInfo,
   AnnouncementsTable,
@@ -52,11 +51,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -94,11 +92,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -138,11 +135,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -180,11 +176,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -225,11 +220,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -267,11 +261,10 @@ export async function fetchFilteredEvents(
             events.status,
             events.created_at,
             events.updated_at,
-            users.name AS created_by
+            events.created_by
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -304,11 +297,10 @@ export async function fetchFilteredAnnouncements(
         announcements.content,
         announcements.created_at,
         announcements.updated_at,
-        users.name AS created_by
+        announcements.created_by
       FROM announcements
-      JOIN users ON announcements.created_by = users.id
       WHERE
-        users.name ILIKE ${`%${query}%`} OR
+        announcements.created_by ILIKE ${`%${query}%`} OR
         announcements.title ILIKE ${`%${query}%`} OR
         announcements.content ILIKE ${`%${query}%`} OR
         announcements.created_at::text ILIKE ${`%${query}%`} OR
@@ -340,9 +332,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -355,9 +346,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -372,9 +362,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -387,9 +376,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -405,9 +393,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -420,9 +407,8 @@ export async function fetchEventsPages(
         const count = await sql`
           SELECT COUNT(*)
           FROM events
-          JOIN users ON events.created_by = users.id
           WHERE (
-            users.name ILIKE ${searchPattern} OR
+            events.created_by ILIKE ${searchPattern} OR
             events.title ILIKE ${searchPattern} OR
             events.location ILIKE ${searchPattern} OR
             events.speaker ILIKE ${searchPattern} OR
@@ -443,9 +429,8 @@ export async function fetchAnnouncementsPages(query: string) {
   try {
     const count = await sql`SELECT COUNT(*)
     FROM announcements
-    JOIN users ON announcements.created_by = users.id
     WHERE
-        users.name ILIKE ${`%${query}%`} OR
+        announcements.created_by ILIKE ${`%${query}%`} OR
         announcements.title ILIKE ${`%${query}%`} OR
         announcements.content ILIKE ${`%${query}%`} OR
         announcements.updated_at::text ILIKE ${`%${query}%`} OR
@@ -468,7 +453,6 @@ export async function fetchPastAnnouncementsPages(query: string) {
   try {
     const count = await sql`SELECT COUNT(*)
     FROM announcements
-    JOIN users ON announcements.created_by = users.id
     WHERE
       DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
   `;
@@ -610,9 +594,8 @@ export async function fetchFutureEvents() {
         events.gender,
         events.is_recurring,
         events.status,
-        users.name AS created_by
+        events.created_by
       FROM events
-      JOIN users ON events.created_by = users.id
       WHERE
         events.datetime >= ${currentDateTime}
         AND events.is_recurring = false
@@ -646,9 +629,8 @@ export async function fetchPastEvents() {
         events.gender,
         events.is_recurring,
         events.status,
-        users.name AS created_by
+        events.created_by
       FROM events
-      JOIN users ON events.created_by = users.id
       WHERE
         events.datetime < ${currentDateTime}
         AND events.is_recurring = false
@@ -659,23 +641,6 @@ export async function fetchPastEvents() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch past events.");
-  }
-}
-
-export async function fetchAdmins() {
-  try {
-    const { rows } = await sql<AdminField>`
-      SELECT 
-        id,
-        name
-      FROM users
-      ORDER BY name ASC
-    `;
-
-    return rows;
-  } catch (err) {
-    console.error("Database Error:", err);
-    throw new Error("Failed to fetch admins.");
   }
 }
 
@@ -758,11 +723,10 @@ export async function fetchFilteredRecurringEvents(
           events.status,
           events.created_at,
           events.updated_at,
-          users.name AS created_by
+          events.created_by
         FROM events
-        JOIN users ON events.created_by = users.id
         WHERE (
-          users.name ILIKE ${searchPattern} OR
+          events.created_by ILIKE ${searchPattern} OR
           events.title ILIKE ${searchPattern} OR
           events.location ILIKE ${searchPattern} OR
           events.speaker ILIKE ${searchPattern} OR
@@ -800,11 +764,10 @@ export async function fetchFilteredRecurringEvents(
           events.status,
           events.created_at,
           events.updated_at,
-          users.name AS created_by
+          events.created_by
         FROM events
-        JOIN users ON events.created_by = users.id
         WHERE (
-          users.name ILIKE ${searchPattern} OR
+          events.created_by ILIKE ${searchPattern} OR
           events.title ILIKE ${searchPattern} OR
           events.location ILIKE ${searchPattern} OR
           events.speaker ILIKE ${searchPattern} OR

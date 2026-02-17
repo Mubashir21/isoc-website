@@ -9,14 +9,11 @@ import {
 } from "@/components/ui/breadcrumb";
 import { notFound } from "next/navigation";
 
-import { fetchAdmins, fetchRecurringEventById } from "@/lib/data";
+import { fetchRecurringEventById } from "@/lib/data";
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [admins, event] = await Promise.all([
-    fetchAdmins(),
-    fetchRecurringEventById(id),
-  ]);
+  const event = await fetchRecurringEventById(id);
 
   if (!event) {
     notFound();
@@ -36,8 +33,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <EditRecurringEventForm admins={admins} event={event} />
+      <EditRecurringEventForm event={event} />
     </main>
   );
 }
-

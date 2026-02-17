@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
-import { AdminField } from "@/lib/definitions";
 import { useState, useEffect } from "react";
 import { Badge } from "./badge";
 import { Calendar, Clock, MapPin, FileImage, Type, Users, Repeat, CalendarDays } from "lucide-react";
@@ -10,7 +9,7 @@ import { createRecurringEvent, RecurringEventState } from "@/lib/actions";
 import { useActionState } from "react";
 import { toMalaysiaTime } from "@/lib/utils";
 
-export default function CreateRecurringEventForm({ admins }: { admins: AdminField[] }) {
+export default function CreateRecurringEventForm() {
   const initialState: RecurringEventState = { message: null, errors: {} };
   const [state, formAction] = useActionState(createRecurringEvent, initialState);
   
@@ -101,26 +100,6 @@ export default function CreateRecurringEventForm({ admins }: { admins: AdminFiel
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-3 text-sm outline-2 placeholder:text-gray-500"
               required
             />
-          </div>
-
-          {/* Admin Name */}
-          <div>
-            <label htmlFor="admin" className="mb-2 block text-sm font-medium">
-              Choose admin
-            </label>
-            <select
-              id="admin"
-              name="created_by"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-3 text-sm outline-2"
-              required
-            >
-              <option value="" disabled>Select an admin</option>
-              {admins.map((admin) => (
-                <option key={admin.id} value={admin.id}>
-                  {admin.name}
-                </option>
-              ))}
-            </select>
           </div>
 
           {/* Location */}

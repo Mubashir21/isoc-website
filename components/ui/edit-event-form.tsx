@@ -1,22 +1,20 @@
 "use client";
 
-import { AdminField, EventsForm } from "@/lib/definitions";
+import { EventsForm } from "@/lib/definitions";
 import Link from "next/link";
 import Image from "next/image";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, EventState } from "@/lib/actions";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
 import { formatDateTime, toMalaysiaTime } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Badge } from "./badge";
-import { Calendar, Clock, MapPin, User, FileImage, Type, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, FileImage, Type, Users } from "lucide-react";
 
 export default function EditEventForm({
   event,
-  admins,
 }: {
   event: EventsForm;
-  admins: AdminField[];
 }) {
   const initialState: EventState = { message: null, errors: {} };
   const updateEventWithId = updateEvent.bind(
@@ -25,8 +23,7 @@ export default function EditEventForm({
     event.pic_url,
     event.pic_file_id,
   );
-  const [state, formAction] = useFormState(updateEventWithId, initialState);
-  const { pending } = useFormStatus();
+  const [state, formAction] = useActionState(updateEventWithId, initialState);
   const [newImage, setNewImage] = useState<File | null>(null);
 
   useEffect(() => {
@@ -113,40 +110,6 @@ export default function EditEventForm({
           <div id="title-error" aria-live="polite" aria-atomic="true">
             {state.errors?.title &&
               state.errors.title.map((error: string) => (
-                <p className="mt-2 text-sm text-red-500" key={error}>
-                  {error}
-                </p>
-              ))}
-          </div>
-        </div>
-
-        {/* Admin Name */}
-        <div className="mb-4">
-          <label htmlFor="admin" className="mb-2 block text-sm font-medium">
-            Choose admin
-          </label>
-          <div className="relative">
-            <select
-              id="admin"
-              name="created_by"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue={event.created_by}
-              aria-describedby="admin-error"
-            >
-              <option value="" disabled>
-                Select an admin
-              </option>
-              {admins.map((admin) => (
-                <option key={admin.id} value={admin.id}>
-                  {admin.name}
-                </option>
-              ))}
-            </select>
-            <User className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
-          </div>
-          <div id="admin-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.created_by &&
-              state.errors.created_by.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>

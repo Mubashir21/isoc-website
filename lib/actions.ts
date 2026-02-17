@@ -7,12 +7,20 @@ import { redirect } from "next/navigation";
 import { DateTime } from "luxon";
 import { eventSchema, type EventFormValues } from "@/lib/schemas";
 import { toMalaysiaTime } from "@/lib/utils";
+import { auth, clerkClient } from "@clerk/nextjs/server";
+
+async function getClerkUserName(): Promise<string> {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Not authenticated");
+  const client = await clerkClient();
+  const user = await client.users.getUser(userId);
+  return user.firstName || user.username || "Unknown";
+}
 
 const AnnouncementFormSchema = z.object({
   id: z.string(),
   title: z.string().min(1, { message: "Title is required." }),
   content: z.string().min(1, { message: "Content is required." }),
-  created_by: z.string().min(1, { message: "Admin is required." }),
   created_at: z.date().optional(),
   updated_at: z.date().optional(),
 });
@@ -40,7 +48,6 @@ export type EventState = {
     parent_event_id?: string[];
     is_exception?: string[];
     status?: string[];
-    created_by?: string[];
   };
   message: string | null;
 };
@@ -49,7 +56,6 @@ export type AnnouncementState = {
   errors: {
     title?: string[];
     content?: string[];
-    created_by?: string[];
   };
   message: string | null;
 };
@@ -68,7 +74,6 @@ export async function createAnnouncement(
   const validatedFields = CreateAnnouncement.safeParse({
     title: formData.get("title"),
     content: formData.get("content"),
-    created_by: formData.get("created_by"),
   });
 
   // If form validation fails, return errors early.
@@ -79,7 +84,8 @@ export async function createAnnouncement(
     };
   }
   // Prepare data for insertion into the database
-  const { title, content, created_by } = validatedFields.data;
+  const { title, content } = validatedFields.data;
+  const created_by = await getClerkUserName();
 
   try {
     await sql`
@@ -116,7 +122,6 @@ export async function updateAnnouncement(
   const validatedFields = UpdateAnnouncement.safeParse({
     title: formData.get("title"),
     content: formData.get("content"),
-    created_by: formData.get("created_by"),
   });
 
   if (!validatedFields.success) {
@@ -126,7 +131,8 @@ export async function updateAnnouncement(
     };
   }
 
-  const { title, content, created_by } = validatedFields.data;
+  const { title, content } = validatedFields.data;
+  const created_by = await getClerkUserName();
   // Use Malaysia timezone for consistency across all operations
   const updatedDateTime = DateTime.now().setZone("Asia/Kuala_Lumpur");
 
@@ -178,7 +184,6 @@ export async function createEvent(
     day_of_month: parseInt(formData.get("day_of_month") as string) || 1,
     month_of_year: parseInt(formData.get("month_of_year") as string) || 1,
     recurrence_end: (formData.get("recurrence_end") as string) || "",
-    created_by: formData.get("created_by") as string,
     pic_url: formData.get("pic_url"), // Handle file upload
   };
 
@@ -193,6 +198,7 @@ export async function createEvent(
   }
 
   const data = validatedFields.data;
+  const created_by = await getClerkUserName();
 
   // Handle image upload (your existing logic is fine)
   let imageUrl: string | null = null;
@@ -270,7 +276,7 @@ export async function createEvent(
       ${null},
       ${false},
       ${"active"},
-      ${data.created_by}
+      ${created_by}
     )
   `;
 
@@ -314,7 +320,6 @@ export async function updateEvent(
     month_of_year: parseInt(formData.get("month_of_year") as string) || 1,
     recurrence_end: (formData.get("recurrence_end") as string) || "",
     status: (formData.get("status") as string) || "active",
-    created_by: formData.get("created_by") as string,
     pic_url: formData.get("pic_url"), // Handle file upload
   };
 
@@ -331,6 +336,7 @@ export async function updateEvent(
   }
 
   const data = validatedFields.data;
+  const created_by = await getClerkUserName();
 
   // Handle pic_url: if a new file is provided, upload it; otherwise, use the previous URL
   let pic_url = prev_pic_url;
@@ -434,7 +440,7 @@ export async function updateEvent(
         month_of_year = ${data.is_recurring && data.recurrence_type === "yearly" ? data.month_of_year : null},
         recurrence_end = ${recurrenceEnd},
         status = ${data.status},
-        created_by = ${data.created_by},
+        created_by = ${created_by},
         updated_at = CURRENT_TIMESTAMP
       WHERE id = ${id}
     `;

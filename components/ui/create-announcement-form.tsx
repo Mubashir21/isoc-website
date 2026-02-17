@@ -3,13 +3,11 @@
 import Link from "next/link";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { AnnouncementState, createAnnouncement } from "@/lib/actions";
-import { useFormState, useFormStatus } from "react-dom";
-import { AdminField } from "@/lib/definitions";
+import { useActionState } from "react";
 
-export default function Form({ admins }: { admins: AdminField[] }) {
+export default function Form() {
   const initialState: AnnouncementState = { message: null, errors: {} };
-  const [state, formAction] = useFormState(createAnnouncement, initialState);
-  const { pending } = useFormStatus();
+  const [state, formAction] = useActionState(createAnnouncement, initialState);
 
   return (
     <form action={formAction}>
@@ -30,39 +28,6 @@ export default function Form({ admins }: { admins: AdminField[] }) {
           <div id="title-error" aria-live="polite" aria-atomic="true">
             {state.errors?.title &&
               state.errors.title.map((error: string) => (
-                <p className="mt-2 text-sm text-red-500" key={error}>
-                  {error}
-                </p>
-              ))}
-          </div>
-        </div>
-        {/* Admin Name */}
-        <div className="mb-4">
-          <label htmlFor="admin" className="mb-2 block text-sm font-medium">
-            Choose admin
-          </label>
-          <div className="relative">
-            <select
-              id="admin"
-              name="created_by"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-              defaultValue=""
-              aria-describedby="admin-error"
-            >
-              <option value="" disabled>
-                Select a admin
-              </option>
-              {admins.map((admin) => (
-                <option key={admin.id} value={admin.id}>
-                  {admin.name}
-                </option>
-              ))}
-            </select>
-            {/* <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" /> */}
-          </div>
-          <div id="admin-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.created_by &&
-              state.errors.created_by.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
