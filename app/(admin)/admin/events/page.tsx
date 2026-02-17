@@ -5,7 +5,7 @@ import { RegularEventsTable } from "@/components/ui/table";
 import { RecurringEventsTable } from "@/components/ui/recurring-events-table";
 import { CreateEventButton } from "@/components/ui/create-event-button";
 import { EventTypeFilter } from "@/components/ui/event-type-filter";
-import { fetchEventsPages, fetchAdmins } from "@/lib/data";
+import { fetchEventsPages } from "@/lib/data";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { Calendar, Repeat, Clock, Users } from "lucide-react";
@@ -33,10 +33,9 @@ export default async function EventsPage({
   const activeTab = resolvedSearchParams.tab || "regular";
   const category = resolvedSearchParams.category || "all";
 
-  const [regularPages, recurringPages, admins] = await Promise.all([
+  const [regularPages, recurringPages] = await Promise.all([
     fetchEventsPages(query, "regular", category),
     fetchEventsPages(query, "recurring", category),
-    fetchAdmins(),
   ]);
 
   console.log("hello" +  recurringPages);
@@ -74,7 +73,7 @@ export default async function EventsPage({
           </div>
           {/* <EventTypeFilter currentType="all" currentCategory={category} /> */}
         </div>
-        <CreateEventButton admins={admins} />
+        <CreateEventButton />
       </div>
 
       {/* Events Tables with Tabs */}

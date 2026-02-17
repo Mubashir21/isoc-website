@@ -38,9 +38,6 @@ export const eventSchema = z
     // Status field
     status: z.enum(["active", "paused", "cancelled"]).default("active"),
 
-    // Admin field
-    created_by: z.string().min(1, "Please select who is creating this event"),
-
     // File upload (optional)
     pic_url: z.any().optional(),
   })

@@ -8,11 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { fetchAdmins } from "@/lib/data";
-
 export default async function Page() {
-  const admins = await fetchAdmins();
-
   return (
     <main>
       <Breadcrumb>
@@ -29,7 +25,7 @@ export default async function Page() {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Form admins={admins} />
+      <Form />
     </main>
   );
 }

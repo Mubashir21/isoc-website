@@ -12,13 +12,8 @@ import {
 import { PlusIcon } from "lucide-react";
 import { useState } from "react";
 import CreateEventForm from "./create-event-form";
-import { AdminField } from "@/lib/definitions";
 
-interface CreateRegularEventProps {
-  admins: AdminField[];
-}
-
-export function CreateEventButton({ admins }: CreateRegularEventProps) {
+export function CreateEventButton() {
   const [open, setOpen] = useState(false);
 
   const handleSuccess = () => {
@@ -44,7 +39,7 @@ export function CreateEventButton({ admins }: CreateRegularEventProps) {
             Set up a one-time event with specific date, time, and details.
           </DialogDescription>
         </DialogHeader>
-        <CreateEventForm admins={admins} onSuccess={handleSuccess} />
+        <CreateEventForm onSuccess={handleSuccess} />
       </DialogContent>
     </Dialog>
   );

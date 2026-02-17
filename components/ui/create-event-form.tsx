@@ -4,7 +4,6 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { createEvent } from "@/lib/actions";
-import { AdminField } from "@/lib/definitions";
 import { eventSchema, type EventFormValues } from "@/lib/schemas";
 import { toMalaysiaTime } from "@/lib/utils";
 
@@ -67,11 +66,10 @@ const eventTypeConfig = {
 };
 
 interface EventFormProps {
-  admins: AdminField[];
   onSuccess?: () => void;
 }
 
-export default function EventForm({ admins, onSuccess }: EventFormProps) {
+export default function EventForm({ onSuccess }: EventFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeTab, setActiveTab] = useState("regular");
 
@@ -94,7 +92,6 @@ export default function EventForm({ admins, onSuccess }: EventFormProps) {
       day_of_month: 1,
       month_of_year: 1,
       recurrence_end: "",
-      created_by: "",
     },
   });
 
@@ -174,7 +171,6 @@ export default function EventForm({ admins, onSuccess }: EventFormProps) {
                 <CardContent className="space-y-6">
                   <EventFormFields
                     form={form}
-                    admins={admins}
                     isRecurring={false}
                   />
                 </CardContent>
@@ -192,7 +188,6 @@ export default function EventForm({ admins, onSuccess }: EventFormProps) {
                 <CardContent className="space-y-6">
                   <EventFormFields
                     form={form}
-                    admins={admins}
                     isRecurring={true}
                   />
 
@@ -229,11 +224,9 @@ export default function EventForm({ admins, onSuccess }: EventFormProps) {
 // Shared form fields component
 function EventFormFields({
   form,
-  admins,
   isRecurring,
 }: {
   form: any;
-  admins: AdminField[];
   isRecurring: boolean;
 }) {
   return (
@@ -385,31 +378,6 @@ function EventFormFields({
             <FormDescription>
               Upload an image (max 5MB, JPG/PNG)
             </FormDescription>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-
-      <FormField
-        control={form.control}
-        name="created_by"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>Created by</FormLabel>
-            <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <FormControl>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select an admin" />
-                </SelectTrigger>
-              </FormControl>
-              <SelectContent>
-                {admins.map((admin) => (
-                  <SelectItem key={admin.id} value={admin.id}>
-                    {admin.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
             <FormMessage />
           </FormItem>
         )}

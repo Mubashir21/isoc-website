@@ -9,14 +9,11 @@ import {
 } from "@/components/ui/breadcrumb";
 import { notFound } from "next/navigation";
 
-import { fetchAdmins, fetchAnnouncementById } from "@/lib/data";
+import { fetchAnnouncementById } from "@/lib/data";
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [admins, announcement] = await Promise.all([
-    fetchAdmins(),
-    fetchAnnouncementById(id),
-  ]);
+  const announcement = await fetchAnnouncementById(id);
 
   if (!announcement) {
     notFound();
@@ -38,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         </BreadcrumbList>
       </Breadcrumb>
 
-      <Form admins={admins} announcement={announcement} />
+      <Form announcement={announcement} />
     </main>
   );
 }

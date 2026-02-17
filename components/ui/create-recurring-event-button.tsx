@@ -12,13 +12,8 @@ import {
 import { PlusIcon } from "lucide-react";
 import { useState } from "react";
 import CreateRecurringEventForm from "./create-recurring-event-form";
-import { AdminField } from "@/lib/definitions";
 
-interface CreateRecurringEventProps {
-  admins: AdminField[];
-}
-
-export function CreateRecurringEvent({ admins }: CreateRecurringEventProps) {
+export function CreateRecurringEvent() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,7 +31,7 @@ export function CreateRecurringEvent({ admins }: CreateRecurringEventProps) {
             Set up a recurring event with custom recurrence patterns, timing, and settings.
           </DialogDescription>
         </DialogHeader>
-        <CreateRecurringEventForm admins={admins} />
+        <CreateRecurringEventForm />
       </DialogContent>
     </Dialog>
   );

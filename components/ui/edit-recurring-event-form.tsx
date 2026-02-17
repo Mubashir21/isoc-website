@@ -1,6 +1,6 @@
 "use client";
 
-import { AdminField, EventForm } from "@/lib/definitions";
+import { EventForm } from "@/lib/definitions";
 import SubmitButton from "@/components/ui/form-submit-button";
 import { updateEvent, EventState } from "@/lib/actions";
 import { useActionState } from "react";
@@ -12,10 +12,8 @@ import { useRouter } from "next/navigation";
 
 export default function EditRecurringEventForm({
   event,
-  admins,
 }: {
   event: EventForm;
-  admins: AdminField[];
 }) {
   const initialState: EventState = { message: null, errors: {} };
   const updateEventWithId = updateEvent.bind(
@@ -524,39 +522,6 @@ export default function EditRecurringEventForm({
           <div id="status-error" aria-live="polite" aria-atomic="true">
             {state.errors?.status &&
               state.errors.status.map((error: string) => (
-                <p className="mt-2 text-sm text-red-500" key={error}>
-                  {error}
-                </p>
-              ))}
-          </div>
-        </div>
-
-        {/* Admin Selection */}
-        <div className="mb-4">
-          <label htmlFor="created_by" className="mb-2 block text-sm font-medium">
-            Admin
-          </label>
-          <div className="relative">
-            <select
-              id="created_by"
-              name="created_by"
-              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-3 text-sm outline-2"
-              defaultValue={event.created_by}
-              aria-describedby="admin-error"
-            >
-              <option value="" disabled>
-                Select an admin
-              </option>
-              {admins.map((admin) => (
-                <option key={admin.id} value={admin.id}>
-                  {admin.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div id="admin-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.created_by &&
-              state.errors.created_by.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
