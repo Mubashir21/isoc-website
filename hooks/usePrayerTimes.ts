@@ -29,19 +29,6 @@ export function usePrayerTimes(selectedDate?: Date) {
     const isRamadanPeriod = isRamadan(prayerTimes.info.hijri);
     const tahajjudTime = isRamadanPeriod ? fetchTahajjudTime(date) : null;
 
-    // Night number: changes at Fajr (not midnight). Before Fajr we're still in
-    // the previous Islamic night, so use hijriDay - 20. After Fajr, tonight's
-    // night begins at Maghrib, so use hijriDay - 19.
-    let ramadanNight: number | null = null;
-    if (isRamadanPeriod) {
-      const malaysiaTime = new Date(
-        currentTime.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }),
-      );
-      const fajrTime = parseTimeToDate(prayerTimes.prayerTimes["Fajr"], malaysiaTime);
-      const hijriDay = parseInt(prayerTimes.info.hijri.split(" ")[0], 10);
-      ramadanNight = malaysiaTime < fajrTime ? hijriDay - 20 : hijriDay - 19;
-    }
-
     // Only calculate next prayer info for today
     const isToday = selectedDate
       ? selectedDate.toDateString() === currentTime.toDateString()
@@ -63,8 +50,9 @@ export function usePrayerTimes(selectedDate?: Date) {
       }
       const firstPrayer = Object.keys(prayerTimes.prayerTimes)[0];
 
-      // If all prayers have passed (next = Fajr) and tahajjud hasn't happened yet
-      if (nextPrayerInfo.nextPrayer === firstPrayer && tahajjudDateObj > malaysiaTime) {
+      // If all prayers have passed (next = Fajr), tahajjud hasn't happened yet,
+      // and tahajjud is before Fajr (prevents showing tomorrow's tahajjud after 02:30)
+      if (nextPrayerInfo.nextPrayer === firstPrayer && tahajjudDateObj > malaysiaTime && tahajjudDateObj < nextPrayerInfo.nextPrayerTime) {
         nextPrayerInfo = {
           ...nextPrayerInfo,
           nextPrayer: "Qiyam ul Layl",
@@ -82,7 +70,6 @@ export function usePrayerTimes(selectedDate?: Date) {
       nextPrayerInfo,
       isRamadanPeriod,
       tahajjudTime,
-      ramadanNight,
       currentTime,
       isToday,
       selectedDate,

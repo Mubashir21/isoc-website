@@ -84,8 +84,8 @@ export function PrayerTimesDisplay({ selectedDate }: PrayerTimesDisplayProps) {
           isToday={prayerData.isToday}
         />
 
-        {prayerData.isRamadanPeriod && prayerData.tahajjudTime && prayerData.ramadanNight && (
-          <RamadanSection tahajjudTime={prayerData.tahajjudTime} nightNumber={prayerData.ramadanNight} />
+        {prayerData.isRamadanPeriod && prayerData.tahajjudTime && (
+          <RamadanSection tahajjudTime={prayerData.tahajjudTime} />
         )}
       </CardContent>
 
