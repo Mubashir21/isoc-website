@@ -1,85 +1,89 @@
-# ISOC Website
+<div align="center">
+  <img src="./public/ISoc-logo-white.png" alt="ISOC UNM Logo" width="120" />
+  <h1>ISOC UNM Website</h1>
+  <p>The official website for the Islamic Society of the University of Nottingham Malaysia.</p>
+</div>
 
-Welcome to the ISOC Website repository. This project is a web application built using Next.js, designed to provide information and resources related to ISOC.
+<br />
 
-## Table of Contents
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=white)](https://clerk.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![PNPM](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Zod](https://img.shields.io/badge/Zod-408AFF?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+# About
 
-## Features
+ISOC UNM is a community website for the Islamic Society of the University of Nottingham Malaysia. It shows daily prayer times with live countdowns, community announcements, and upcoming events. During the last 10 nights of Ramadan, the prayer card displays Qiyam ul Layl and the dua for Laylatul Qadr. An admin portal lets committee members manage all content.
 
-- **Responsive Design**: Ensures optimal viewing experience across various devices.
-- **Dynamic Content**: Utilizes Next.js's capabilities for server-side rendering and dynamic routing.
-- **Styling**: Incorporates Tailwind CSS for efficient and customizable styling.
+# Features
 
-## Technologies Used
+- daily adhan and iqamah times with a live countdown to the next prayer
+- Ramadan mode — Qiyam ul Layl (02:30 AM) injected into the countdown for the last 10 nights
+- community announcements with a date-grouped timeline (MYT)
+- regular and recurring event listings with search, filters, and pagination
+- admin portal — create, edit, and delete events and announcements with image uploads
+- analytics via PostHog
 
-- [Next.js](https://nextjs.org/): A React framework for server-side rendering and static site generation.
-- [TypeScript](https://www.typescriptlang.org/): A statically typed programming language that builds on JavaScript.
-- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapid UI development.
+# Getting Started
 
-## Getting Started
+```bash
+git clone https://github.com/Mubashir21/isoc-website.git
+cd isoc-website
+pnpm install
+pnpm dev
+```
 
-To set up the project locally, follow these steps:
+Open [http://localhost:3000](http://localhost:3000). The admin portal is at `/admin`.
 
-1. **Clone the repository**:
+# Environment Variables
 
-   ```bash
-   git clone https://github.com/Mubashir21/isoc-website.git
-   cd isoc-website
-   ```
+Create a `.env.local` file in the root:
 
-2. **Install dependencies**:
+```bash
+# Clerk
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
 
-   Depending on your package manager of choice, run one of the following commands:
+# Postgres (Neon)
+DATABASE_URL=
+DATABASE_URL_UNPOOLED=
+PGHOST=
+PGHOST_UNPOOLED=
+PGUSER=
+PGDATABASE=
+PGPASSWORD=
+POSTGRES_URL=
+POSTGRES_URL_NON_POOLING=
+POSTGRES_URL_NO_SSL=
+POSTGRES_PRISMA_URL=
+POSTGRES_USER=
+POSTGRES_HOST=
+POSTGRES_PASSWORD=
+POSTGRES_DATABASE=
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+# ImageKit
+IMAGEKIT_PUBLIC_KEY=
+IMAGEKIT_PRIVATE_KEY=
+IMAGEKIT_URL_ENDPOINT=
 
-3. **Start the development server**:
+# PostHog
+NEXT_PUBLIC_POSTHOG_KEY=
+NEXT_PUBLIC_POSTHOG_HOST=
 
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
+# App
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
 
-   The application will be available at [http://localhost:3000](http://localhost:3000).
-
-## Project Structure
-
-The project's structure is organized as follows:
-
-- `app/`: Contains the main application components and pages.
-- `components/`: Reusable React components used throughout the application.
-- `lib/`: Utility functions and libraries.
-- `public/`: Static assets like images and fonts.
-- `styles/`: Global and component-specific styles.
-
-## Contributing
-
-We welcome contributions to enhance the project. To contribute:
+# Want to Contribute?
 
 1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes with clear and descriptive messages.
-4. Push your changes to your forked repository.
-5. Open a pull request to the `dev` branch of the main repository.
+2. Create a branch off `dev`.
+3. Commit your changes following [conventional commits](https://www.conventionalcommits.org/) — e.g. `feat:`, `fix:`, `refactor:`, `docs:`.
+4. Open a pull request to `dev`.
 
-Please ensure that your contributions align with the project's coding standards and conventions.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+May Allah reward you with good for your contributions.
