@@ -38,8 +38,6 @@ export default async function EventsPage({
     fetchEventsPages(query, "recurring", category),
   ]);
 
-  console.log("hello" +  recurringPages);
-
   return (
     <div className="w-full space-y-6">
       {/* Header */}

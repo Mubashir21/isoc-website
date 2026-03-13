@@ -59,37 +59,6 @@ export default function EditEventForm({
     }
   };
 
-  // const handleSubmit = async (formData: FormData) => {
-  //   if (newImage) {
-  //     // If there's a new image, upload it to Cloudinary first
-  //     const imageData = new FormData();
-  //     imageData.append("file", newImage);
-  //     imageData.append("upload_preset", "your_cloudinary_upload_preset");
-
-  //     try {
-  //       const res = await fetch(
-  //         "https://api.cloudinary.com/v1_1/your_cloud_name/image/upload",
-  //         {
-  //           method: "POST",
-  //           body: imageData,
-  //         },
-  //       );
-  //       const data = await res.json();
-  //       formData.set("pic_url", data.secure_url);
-  //     } catch (error) {
-  //       console.error("Error uploading image:", error);
-  //       // Handle error (e.g., show error message to user)
-  //       return;
-  //     }
-  //   } else {
-  //     // If no new image, keep the existing pic_url
-  //     formData.set("pic_url", event.pic_url);
-  //   }
-
-  //   // Now submit the form with potentially updated pic_url
-  //   formAction(formData);
-  // };
-
   return (
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">

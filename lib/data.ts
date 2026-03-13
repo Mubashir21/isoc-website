@@ -438,7 +438,6 @@ export async function fetchAnnouncementsPages(query: string) {
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
-    console.log(totalPages);
     return totalPages;
   } catch (error) {
     console.error("Database Error:", error);
