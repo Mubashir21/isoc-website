@@ -24,19 +24,19 @@ export function useCountdown(
     const currentPrayerName =
       nextPrayerInfo.currentPrayer as keyof typeof iqamaTimes;
     const iqamahTime = iqamaTimes[currentPrayerName];
-    const iqamahTimeObj = parseTimeToDate(iqamahTime, malaysiaTime).getTime();
 
-    let targetTime: number;
+    let targetTime: number = nextAdhanTime;
     let isCountingToIqamah = false;
     let targetPrayer = nextPrayerInfo.nextPrayer;
 
-    // Logic: Are we between Adhan and Iqamah?
-    if (current >= currentAdhanTime && current < iqamahTimeObj) {
-      targetTime = iqamahTimeObj;
-      isCountingToIqamah = true;
-      targetPrayer = nextPrayerInfo.currentPrayer;
-    } else {
-      targetTime = nextAdhanTime;
+    // Logic: Are we between Adhan and Iqamah? (only if iqamah exists for this prayer)
+    if (iqamahTime) {
+      const iqamahTimeObj = parseTimeToDate(iqamahTime, malaysiaTime).getTime();
+      if (current >= currentAdhanTime && current < iqamahTimeObj) {
+        targetTime = iqamahTimeObj;
+        isCountingToIqamah = true;
+        targetPrayer = nextPrayerInfo.currentPrayer;
+      }
     }
 
     // If we're past the target time, no countdown

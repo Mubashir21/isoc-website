@@ -214,6 +214,7 @@ export function isRamadan(hijriDate: string): boolean {
   return monthAbbr === "Rmdn." && dayNumber >= 21;
 }
 
+
 export function fetchTahajjudTime(date: string): string {
   return "02:30";
 }
