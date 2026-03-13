@@ -447,14 +447,14 @@ export async function fetchAnnouncementsPages(query: string) {
 }
 
 export async function fetchPastAnnouncementsPages(query: string) {
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   noStore();
 
   try {
     const count = await sql`SELECT COUNT(*)
     FROM announcements
     WHERE
-      DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
+      DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < CURRENT_DATE
+      AND (announcements.title ILIKE ${'%' + query + '%'} OR announcements.content ILIKE ${'%' + query + '%'})
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
@@ -551,7 +551,6 @@ export async function fetchPastAnnouncements(
   currentPage: number,
 ) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   noStore();
 
   try {
@@ -562,9 +561,10 @@ export async function fetchPastAnnouncements(
         announcements.content,
         announcements.updated_at
       FROM announcements
-      WHERE 
-        DATE(announcements.updated_at AT TIME ZONE ${userTimezone}) < CURRENT_DATE
-        ORDER BY announcements.updated_at DESC  -- Order by upcoming events
+      WHERE
+        DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < CURRENT_DATE
+        AND (announcements.title ILIKE ${'%' + query + '%'} OR announcements.content ILIKE ${'%' + query + '%'})
+        ORDER BY announcements.updated_at DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
 
