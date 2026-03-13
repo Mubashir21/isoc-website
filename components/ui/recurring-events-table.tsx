@@ -17,7 +17,6 @@ export async function RecurringEventsTable({
   category?: string;
 }) {
   const events = await fetchFilteredRecurringEvents(query, currentPage, category);
-  console.log("brother" +  events);
 
   const getRecurrenceDescription = (event: any) => {
     switch (event.recurrence_type) {

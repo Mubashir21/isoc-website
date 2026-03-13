@@ -6,8 +6,6 @@ import {
   PrayerTimesData,
   PrayerTimes,
 } from "@/lib/definitions";
-import { StringDecoder } from "node:string_decoder";
-
 const typedPrayerTimes: PrayerTimesJSON = prayerTimes as PrayerTimesJSON;
 
 export function fetchPrayerTimes(date: string): PrayerTimesJSON[string] {
