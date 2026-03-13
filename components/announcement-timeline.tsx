@@ -25,8 +25,6 @@ export async function AnnouncementTimeline({
       fetchPastAnnouncementsPages(query),
     ],
   );
-  console.log("Today Announcements:", todayAnnouncements);
-
   // Combine and sort all announcements
   const allAnnouncements = [...todayAnnouncements, ...pastAnnouncements].sort(
     (a, b) =>

@@ -453,7 +453,7 @@ export async function fetchPastAnnouncementsPages(query: string) {
     const count = await sql`SELECT COUNT(*)
     FROM announcements
     WHERE
-      DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < CURRENT_DATE
+      DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < DATE(CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kuala_Lumpur')
       AND (announcements.title ILIKE ${'%' + query + '%'} OR announcements.content ILIKE ${'%' + query + '%'})
   `;
 
@@ -562,7 +562,7 @@ export async function fetchPastAnnouncements(
         announcements.updated_at
       FROM announcements
       WHERE
-        DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < CURRENT_DATE
+        DATE(announcements.updated_at AT TIME ZONE 'Asia/Kuala_Lumpur') < DATE(CURRENT_TIMESTAMP AT TIME ZONE 'Asia/Kuala_Lumpur')
         AND (announcements.title ILIKE ${'%' + query + '%'} OR announcements.content ILIKE ${'%' + query + '%'})
         ORDER BY announcements.updated_at DESC
         LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}

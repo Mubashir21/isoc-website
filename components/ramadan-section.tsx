@@ -1,16 +1,13 @@
 interface RamadanSectionProps {
   tahajjudTime: string;
-  nightNumber: number;
 }
 
-export function RamadanSection({ tahajjudTime, nightNumber }: RamadanSectionProps) {
-  const isOddNight = nightNumber % 2 !== 0;
-
+export function RamadanSection({ tahajjudTime }: RamadanSectionProps) {
   return (
     <div className="pt-4 border-t space-y-2">
       <div className="flex justify-between text-sm font-medium text-muted-foreground">
         <span>Last 10 Nights</span>
-        <span>Night {nightNumber}{isOddNight ? " · Seek Laylatul Qadr" : ""}</span>
+        <span>Seek Laylatul Qadr</span>
       </div>
 
       <div className="py-2 px-3 rounded-md text-sm font-medium bg-primary/10 text-primary border border-primary/20">
