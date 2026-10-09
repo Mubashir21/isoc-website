@@ -130,8 +130,12 @@ async function PrayerTimesContent() {
                           • Separate prayer areas for brothers and sisters
                         </li>
                         <li>
-                          • Friday Jummah: Buses to PGA & TTS mosques at 12:45,
-                          1:00 & 1:15 PM (depart from outside Islamic Center)
+                          • Friday Jummah: 3 buses to PGA Mosque at 12:50 PM
+                          (depart from campus mosque)
+                        </li>
+                        <li>
+                          • Return: 3 buses from PGA Mosque at 2:00 PM (drop off
+                          at campus cafeteria)
                         </li>
                   
                       </ul>
